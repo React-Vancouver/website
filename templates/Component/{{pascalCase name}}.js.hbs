@@ -1,0 +1,17 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withSpacing } from '@utilities/styles/spacing';
+
+const {{pascalCase name}} = ({ className }) => {
+    return (
+        <div className={className}>
+            {{pascalCase name}}
+        </div>
+    )
+};
+
+{{pascalCase name}}.propTypes = {
+    className: PropTypes.string,
+};
+
+export default withSpacing({{pascalCase name}});
