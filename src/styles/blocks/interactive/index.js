@@ -25,8 +25,7 @@ export const area = {
 export const link = {
     ...base,
     fontFamily: S.TYPOGRAPHY_TEXT_FONT,
-    fontWeight: S.TYPOGRAPHY_FONT_WEIGHT_BOLD,
-    textDecoration: 'none',
+    textDecoration: 'underline',
     color: S.COLOR_UTILITY.ACTION,
     '&:hover': {
         color: lighten(0.1, S.COLOR_UTILITY.ACTION),
