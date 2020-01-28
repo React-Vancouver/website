@@ -1,7 +1,7 @@
 import React from 'react';
 import Text from '@elements/Text';
-import Shell from '@elements/Shell';
-import SEO from '@elements/SEO';
+import Shell from '@constructs/Shell';
+import SEO from '@constructs/SEO';
 
 const IndexPage = () => (
     <Shell>
