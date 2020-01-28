@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Shell from 'Elements/Shell';
+import Shell from '@elements/Shell';
 import notes from './Shell.notes.md';
 
-storiesOf('Element', module).add('Shell', () => <Shell />, { notes });
+storiesOf('Elements', module).add('Shell', () => <Shell />, { notes });

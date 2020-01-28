@@ -13,7 +13,7 @@ const Shell = ({ children }) => {
 };
 
 Shell.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
 };
 
 export default Shell;

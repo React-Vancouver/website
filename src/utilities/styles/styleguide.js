@@ -1,7 +1,6 @@
 import React from 'react';
 import { withSpacing } from '@utilities/styles/spacing';
 import PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
 import S from '@symbols';
 import styled from '@emotion/styled';
 import text from '@blocks/typography';
@@ -83,8 +82,6 @@ class Styleguide extends React.Component {
         fontWeight,
         margin: `0 0 ${S.calcSpace(2)} 0`,
     }));
-
-    static Markdown = (source) => <ReactMarkdown source={source} />;
 
     render() {
         return <Styleguide.Main>{this.props.children}</Styleguide.Main>;

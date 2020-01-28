@@ -1,6 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import SEO from 'Elements/SEO';
+// import SEO from '@elements/SEO';
 import notes from './SEO.notes.md';
 
-storiesOf('Element', module).add('SEO', () => <SEO />, { notes });
+storiesOf('Elements', module).add('SEO', () => <>No preview available</>, {
+    notes,
+});

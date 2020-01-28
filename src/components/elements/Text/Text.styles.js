@@ -28,7 +28,7 @@ export const constructStyles = (props) => [
     cssMap({
         props,
         prop: 'color',
-        map: { ...S.COLOR_THEME_HUES, ...S.COLOR_GREYS },
+        map: { ...S.COLOR_THEME, ...S.COLOR_GREYS },
         makeCSS: makeColorModifier,
     }),
 ];
