@@ -150,7 +150,7 @@ export const GLOBAL_STYLES = {
         minHeight: calcSpace(5),
         backgroundColor: 'transparent',
         border: S.LINE_DEFAULT_BORDER,
-        borderRadius: S.LINE_BORDER_RADIUS,
+        borderRadius: S.LINE_BORDER_RADIUS_0,
         fontWeight: S.TYPOGRAPHY_FONT_WEIGHT_REGULAR,
         fontFamily: S.TYPOGRAPHY_TEXT_FONT,
         ...getFontScale(1),

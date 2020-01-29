@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import styled from '@emotion/styled';
-import Styleguide from 'Utilities/styleguide';
+import Styleguide from '@utilities/styles/styleguide';
 import text from './index';
 
-storiesOf('Blocks/typography', module)
+storiesOf('Blocks/Typography', module)
     .add('Headings', () => {
         const Title = styled.h1(text.title);
         const Heading = styled.h1(text.heading);

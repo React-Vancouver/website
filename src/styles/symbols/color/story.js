@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Styleguide from 'Utilities/styleguide';
+import Styleguide from '@utilities/styles/styleguide';
 import notes from './notes.md';
 
 import S from '@symbols';

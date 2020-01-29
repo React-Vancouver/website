@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Styleguide from 'Utilities/styleguide';
+import Styleguide from '@utilities/styles/styleguide';
 
 storiesOf('Global/Typography', module)
     .add('h1-h6', () => (

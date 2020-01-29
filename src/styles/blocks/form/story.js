@@ -1,8 +1,7 @@
 // import React from 'react'
 // import { storiesOf } from '@storybook/react'
 // import styled from '@emotion/styled'
-// import Styleguide from 'Utilities/styleguide'
-// import link from './index'
+// import Styleguide from '@utilities/styles/styleguide'
 
 // storiesOf('Blocks/Form', module)
 //     .add('base', () => {

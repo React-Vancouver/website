@@ -1,7 +1,7 @@
 import S from '@symbols';
 import { lighten } from 'polished';
 
-const { calcFontSize, calcLineHeight, calcSpace } = S;
+const { calcFontSize, calcSpace, makePlaneShadow } = S;
 
 export const base = {
     cursor: 'pointer',
@@ -16,7 +16,6 @@ export const base = {
 export const area = {
     ...base,
     backgroundColor: 'transparent',
-    borderRadius: S.LINE_BORDER_RADIUS,
     borderStyle: 'solid',
     borderWidth: '0',
     boxShadow: S.PLANE_SHADOW_2,
@@ -34,27 +33,34 @@ export const link = {
 
 export const button = {
     ...area,
-    ...link,
-    textTransform: 'uppercase',
-    fontSize: calcFontSize(1),
+    borderRadius: S.LINE_BORDER_RADIUS,
+    textDecoration: 'none',
+    fontSize: calcFontSize(4),
     letterSpacing: '0.1rem',
-
+    boxShadow: makePlaneShadow({
+        plane: 4,
+        color: S.COLOR_UTILITY.ACTION,
+    }),
     alignItems: 'center',
     appearance: '',
-    backgroundColor: S.COLOR_GREYS.WHITE,
-    cursor: 'pointer',
+    color: S.COLOR_GREYS.WHITE,
+    backgroundColor: S.COLOR_UTILITY.ACTION,
     display: 'inline-flex',
     fontSmoothing: 'antialiased',
-    fontWeight: S.TYPOGRAPHY_FONT_WEIGHT_BOLD,
-    height: calcSpace(5),
-    lineHeight: calcLineHeight(1),
+    fontWeight: S.TYPOGRAPHY_FONT_WEIGHT_REGULAR,
+    height: calcSpace(6),
+    lineHeight: calcSpace(6),
     paddingBottom: 0,
-    paddingLeft: calcSpace(3),
-    paddingRight: calcSpace(3),
+    paddingLeft: calcSpace(5),
+    paddingRight: calcSpace(5),
     paddingTop: 0,
     userSelect: 'none',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
+
+    '&:hover': {
+        backgroundColor: lighten(0.05, S.COLOR_UTILITY.ACTION),
+    },
 };
 
 export const makeSolidModifier = (color) => ({
@@ -85,6 +91,7 @@ export const makeOutlineModifier = (color) => ({
 
 export const card = {
     position: 'relative',
+    borderRadius: S.LINE_BORDER_RADIUS_4,
     backgroundColor: S.COLOR_GREYS.WHITE,
     height: calcSpace(28),
     width: calcSpace(20),
@@ -96,7 +103,7 @@ export const card = {
         width: '100%',
         height: '100%',
         boxShadow: S.PLANE_SHADOW_4,
-        borderRadius: S.LINE_BORDER_RADIUS,
+        borderRadius: S.LINE_BORDER_RADIUS_4,
         opacity: 0,
         transition: `opacity ${S.MOTION_BASE_DURATION} ${S.MOTION_BASE_TIMING}`,
     },

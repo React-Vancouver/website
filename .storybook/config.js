@@ -22,7 +22,7 @@ addDecorator(withKnobs);
  * components, (optional) constructs, (optional), views
  */
 // Automatically import all files ending in *.story.js
-configure(require.context('../src', true, /\.story\.js$/), module);
+configure(require.context('../src', true, /story\.js$/), module);
 
 // Gatsby’s Link overrides:
 // Gatsby defines a global called ___loader to prevent its method calls from
