@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withSpacing } from '@utilities/styles/spacing';
-import { constructStyles } from './Picture.styles';
 
 const Source = ({ srcSet, media }) => <source srcSet={srcSet} media={media} />;
 
@@ -10,11 +9,9 @@ Source.propTypes = {
     media: PropTypes.string,
 };
 
-const Picture = ({ alt, src, srcSets, className, ...restProps }) => {
-    const styles = useMemo(() => constructStyles(restProps), [restProps]);
-
+const Picture = ({ alt, src, srcSets, className }) => {
     return (
-        <picture css={styles}>
+        <picture>
             {srcSets.map(({ srcSet, media }) => (
                 <Source key={srcSet} srcSet={srcSet} media={media} />
             ))}

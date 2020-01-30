@@ -1,3 +1,5 @@
+const path = require(`path`);
+
 module.exports = {
     siteMetadata: {
         title: 'ReactVancouver',
@@ -7,6 +9,13 @@ module.exports = {
     },
     plugins: [
         'gatsby-plugin-react-helmet',
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `assets`,
+                path: path.join(__dirname, `src`, `assets`),
+            },
+        },
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
         {
