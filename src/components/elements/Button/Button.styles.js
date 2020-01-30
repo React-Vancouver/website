@@ -1,7 +1,7 @@
 import { cssValue, cssSwitch } from '@utilities/styles';
 import S from '@symbols';
-const { calcSpace, makePlaneShadow, calcFontSize } = S;
-import { lighten } from 'polished';
+import { makeOutlineModifier, makeFillModifier } from '@blocks/interactive';
+const { calcSpace, calcFontSize } = S;
 
 export const sizes = { small: 5, medium: 6, large: 8 };
 export const fontSizes = { small: 4, medium: 4, large: 5 };
@@ -20,31 +20,6 @@ const hasOwnProperty = (obj, prop) => {
 
 const base = { display: 'inline-block', width: '100%', textAlign: 'center' };
 
-const makeFillButton = (color = S.COLOR_UTILITY.ACTION) => ({
-    boxShadow: makePlaneShadow({
-        plane: 4,
-        color,
-    }),
-    color: S.COLOR_GREYS.WHITE,
-    backgroundColor: color,
-
-    '&:hover': {
-        backgroundColor: lighten(0.05, color),
-    },
-});
-
-const makeOutlineButton = (color = S.COLOR_THEME.SECONDARY_D) => ({
-    backgroundColor: S.COLOR_GREYS.WHITE,
-    color,
-    boxShadow: makePlaneShadow({
-        plane: 4,
-        color,
-    }),
-    '&:hover': {
-        backgroundColor: S.COLOR_GREYS.WHITE,
-    },
-});
-
 const cssButton = ({ props }) => {
     let color;
     if (
@@ -57,10 +32,10 @@ const cssButton = ({ props }) => {
     }
 
     if (hasOwnProperty(props, 'outline') && !!props.outline) {
-        return makeOutlineButton(color);
+        return makeOutlineModifier(color);
     }
 
-    return makeFillButton(color);
+    return makeFillModifier(color);
 };
 
 const makeSizeModifier = (size) => ({

@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Button from '@elements/Button';
-import notes from './Button.notes.md';
-import { sizes, colors } from './Button.styles';
+import ButtonWithIcon from '@elements/ButtonWithIcon';
+import notes from './ButtonWithIcon.notes.md';
+import { sizes, colors } from './ButtonWithIcon.styles';
 import { boolean, select, text } from '@storybook/addon-knobs';
 
 const makeOptions = (obj) =>
@@ -18,16 +18,15 @@ const colorOptions = makeOptions(colors);
 const sizeOptions = makeOptions(sizes);
 
 storiesOf('Elements', module).add(
-    'Button',
+    'ButtonWithIcon',
     () => (
-        <Button
+        <ButtonWithIcon
             size={select('size', sizeOptions)}
             color={select('color', colorOptions)}
-            outline={boolean('outline', false)}
             capped={boolean('capped', false)}
         >
-            {text('children', 'Button')}
-        </Button>
+            {text('children', 'ButtonWithIcon')}
+        </ButtonWithIcon>
     ),
     { notes }
 );

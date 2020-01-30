@@ -83,6 +83,17 @@ class Styleguide extends React.Component {
         margin: `0 0 ${S.calcSpace(2)} 0`,
     }));
 
+    static Figure = styled.figure({
+        height: calcSpace(10),
+        border: S.LINE_DEFAULT_BORDER,
+    });
+
+    static Figcaption = withSpacing(
+        styled.figcaption(text.caption, {
+            color: S.COLOR_GREYS.MEDIUM,
+        })
+    );
+
     render() {
         return <Styleguide.Main>{this.props.children}</Styleguide.Main>;
     }

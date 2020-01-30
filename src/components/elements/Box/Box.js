@@ -7,9 +7,9 @@ const Box = ({ className, children, element: Element, ...restProps }) => {
     const styles = useMemo(() => constructStyles(restProps), [restProps]);
 
     return (
-        <div css={styles} className={className}>
+        <Element css={styles} className={className}>
             {children}
-        </div>
+        </Element>
     );
 };
 
