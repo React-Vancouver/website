@@ -11,6 +11,7 @@ import {
 import S from '@symbols';
 const { getFontScale } = S;
 
+const colors = { ...S.COLOR_THEME, ...S.COLOR_GREYS };
 const base = paragraph;
 
 const makeColorModifier = (color) => ({ color });
@@ -28,7 +29,7 @@ export const constructStyles = (props) => [
     cssMap({
         props,
         prop: 'color',
-        map: { ...S.COLOR_THEME, ...S.COLOR_GREYS },
+        map: colors,
         makeCSS: makeColorModifier,
     }),
 ];

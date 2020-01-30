@@ -63,29 +63,28 @@ export const button = {
     },
 };
 
-export const makeSolidModifier = (color) => ({
-    color: S.GREY_COLORS.white,
+export const makeFillModifier = (color = S.COLOR_UTILITY.ACTION) => ({
+    boxShadow: makePlaneShadow({
+        plane: 4,
+        color,
+    }),
+    color: S.COLOR_GREYS.WHITE,
     backgroundColor: color,
-    '&:hover': {
-        backgroundColor: color,
-    },
-    '&:focus': {
-        backgroundColor: color,
+
+    ['&:hover, &:focus']: {
+        backgroundColor: lighten(0.05, color),
     },
 });
 
-export const makeOutlineModifier = (color) => ({
+export const makeOutlineModifier = (color = S.COLOR_THEME.SECONDARY_D) => ({
+    backgroundColor: S.COLOR_GREYS.WHITE,
     color,
-    backgroundColor: 'transparent',
-    borderWidth: '0.1rem',
-    borderColor: color,
-    '&:hover': {
-        backgroundColor: color,
-        color: S.GREY_COLORS.white,
-    },
-    '&:focus': {
-        backgroundColor: color,
-        color: S.GREY_COLORS.white,
+    boxShadow: makePlaneShadow({
+        plane: 4,
+        color,
+    }),
+    ['&:hover, &:focus']: {
+        backgroundColor: S.COLOR_GREYS.WHITE,
     },
 });
 
