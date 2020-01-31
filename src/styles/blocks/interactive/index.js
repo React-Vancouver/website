@@ -88,12 +88,10 @@ export const makeOutlineModifier = (color = S.COLOR_THEME.SECONDARY_D) => ({
     },
 });
 
-export const card = {
+export const cardAnimated = {
     position: 'relative',
     borderRadius: S.LINE_BORDER_RADIUS_4,
     backgroundColor: S.COLOR_GREYS.WHITE,
-    height: calcSpace(28),
-    width: calcSpace(20),
     transition: `transform ${S.MOTION_BASE_DURATION} ${S.MOTION_BASE_TIMING}`,
     '&::before': {
         content: '" "',
@@ -112,4 +110,10 @@ export const card = {
             opacity: 0.5,
         },
     },
+};
+
+export const card = {
+    borderRadius: S.LINE_BORDER_RADIUS_4,
+    backgroundColor: S.COLOR_GREYS.WHITE,
+    boxShadow: S.PLANE_SHADOW_2,
 };
