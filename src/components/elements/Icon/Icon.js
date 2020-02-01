@@ -1,26 +1,21 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withSpacing } from '@utilities/styles/spacing';
-import { constructStyles } from './Icon.styles';
 import icons from './icons';
 
-const Icon = ({ name, className, ...restProps }) => {
-    const styles = useMemo(() => constructStyles(restProps), [restProps]);
+const IconWrapper = ({ name, className }) => {
     const Icon = icons[name];
 
-    console.log(icons);
-    console.log(Icon);
-
     if (!Icon) {
-        return <></>;
+        return <div />;
     }
 
-    return <Icon css={styles} className={className} />;
+    return <Icon className={className} />;
 };
 
-Icon.propTypes = {
+IconWrapper.propTypes = {
     className: PropTypes.string,
     name: PropTypes.string,
 };
 
-export default withSpacing(Icon);
+export default withSpacing(IconWrapper);

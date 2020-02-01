@@ -30,11 +30,15 @@ class Styleguide extends React.Component {
         padding: `${calcSpace(4)} ${calcSpace(2)}`,
     });
 
-    static Grid = styled.div({
-        gridTemplateColumns: `repeat(auto-fill, minmax(14rem, 1fr))`,
-        display: `grid`,
-        gridGap: `${calcSpace(2)}`,
-    });
+    static Grid = styled.div(
+        {
+            display: `grid`,
+            gridGap: `${calcSpace(2)}`,
+        },
+        ({ size = 14 }) => ({
+            gridTemplateColumns: `repeat(auto-fill, minmax(${size}rem, 1fr))`,
+        })
+    );
 
     static DefinitionList = styled.dl({
         gridTemplateColumns: `repeat(2, 1fr)`,
@@ -84,7 +88,7 @@ class Styleguide extends React.Component {
     }));
 
     static Figure = styled.figure({
-        height: calcSpace(10),
+        minHeight: calcSpace(10),
         border: S.LINE_DEFAULT_BORDER,
     });
 
