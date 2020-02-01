@@ -5,7 +5,7 @@
 import { rgba } from 'polished';
 
 export const PLANE_SHADOW_0 =
-    '0 0.1rem 0.2rem rgba(0,0,0,0.1), 0 0.1rem 0.6rem rgba(0,0,0,0.1)';
+    '0 0.1rem 0.2rem rgba(0,0,0,0.1), 0 0.1rem 0.6rem rgba(0,0,0,0.05)';
 export const PLANE_SHADOW_2 =
     '0 0.1rem 0.2rem rgba(0,0,0,0.1), 0 0.4rem 1.6rem rgba(0,0,0,0.15)';
 export const PLANE_SHADOW_4 =

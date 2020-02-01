@@ -17,9 +17,11 @@ storiesOf('Elements', module).add(
     () => (
         <Avatar
             alt={text('alt', 'Ria’s photo')}
-            src={src}
-            srcSets={srcSets}
+            firstName={text('firstName', 'Ria')}
+            lastName={text('lastName', 'Carmin')}
             scale={number('scale', 12)}
+            src={text('src', src)}
+            srcSets={srcSets}
         />
     ),
     { notes }
