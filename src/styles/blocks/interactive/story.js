@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { area, link, button, card, cardAnimated } from './index';
 import styled from '@emotion/styled';

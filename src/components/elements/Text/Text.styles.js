@@ -3,11 +3,11 @@ import {
     caption,
     emphasis,
     heading,
-    label,
     paragraph,
     subheading,
     title,
 } from '@blocks/typography';
+import { label } from '@blocks/form';
 import S from '@symbols';
 const { getFontScale } = S;
 
