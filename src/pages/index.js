@@ -1,9 +1,11 @@
 import React from 'react';
 import Text from '@elements/Text';
-import Shell from '@elements/Shell';
+import Shell from '@constructs/Shell';
+import SEO from '@constructs/SEO';
 
 const IndexPage = () => (
     <Shell>
+        <SEO title="Home" />
         <Text title element="h1" my2>
             Title
         </Text>

@@ -1,7 +1,7 @@
 import S from '@symbols';
 import { lighten } from 'polished';
 
-const { calcFontSize, calcLineHeight, calcSpace } = S;
+const { calcFontSize, calcSpace, makePlaneShadow } = S;
 
 export const base = {
     cursor: 'pointer',
@@ -16,7 +16,6 @@ export const base = {
 export const area = {
     ...base,
     backgroundColor: 'transparent',
-    borderRadius: S.LINE_BORDER_RADIUS,
     borderStyle: 'solid',
     borderWidth: '0',
     boxShadow: S.PLANE_SHADOW_2,
@@ -25,8 +24,7 @@ export const area = {
 export const link = {
     ...base,
     fontFamily: S.TYPOGRAPHY_TEXT_FONT,
-    fontWeight: S.TYPOGRAPHY_FONT_WEIGHT_BOLD,
-    textDecoration: 'none',
+    textDecoration: 'underline',
     color: S.COLOR_UTILITY.ACTION,
     '&:hover': {
         color: lighten(0.1, S.COLOR_UTILITY.ACTION),
@@ -35,60 +33,65 @@ export const link = {
 
 export const button = {
     ...area,
-    ...link,
-    textTransform: 'uppercase',
-    fontSize: calcFontSize(1),
+    borderRadius: S.LINE_BORDER_RADIUS,
+    textDecoration: 'none',
+    fontSize: calcFontSize(4),
     letterSpacing: '0.1rem',
-
+    boxShadow: makePlaneShadow({
+        plane: 4,
+        color: S.COLOR_UTILITY.ACTION,
+    }),
     alignItems: 'center',
     appearance: '',
-    backgroundColor: S.COLOR_GREYS.WHITE,
-    cursor: 'pointer',
+    color: S.COLOR_GREYS.WHITE,
+    backgroundColor: S.COLOR_UTILITY.ACTION,
     display: 'inline-flex',
     fontSmoothing: 'antialiased',
-    fontWeight: S.TYPOGRAPHY_FONT_WEIGHT_BOLD,
-    height: calcSpace(5),
-    lineHeight: calcLineHeight(1),
+    fontWeight: S.TYPOGRAPHY_FONT_WEIGHT_REGULAR,
+    height: calcSpace(6),
+    lineHeight: calcSpace(6),
     paddingBottom: 0,
-    paddingLeft: calcSpace(3),
-    paddingRight: calcSpace(3),
+    paddingLeft: calcSpace(5),
+    paddingRight: calcSpace(5),
     paddingTop: 0,
     userSelect: 'none',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
+
+    '&:hover': {
+        backgroundColor: lighten(0.05, S.COLOR_UTILITY.ACTION),
+    },
 };
 
-export const makeSolidModifier = (color) => ({
-    color: S.GREY_COLORS.white,
+export const makeFillModifier = (color = S.COLOR_UTILITY.ACTION) => ({
+    boxShadow: makePlaneShadow({
+        plane: 4,
+        color,
+    }),
+    color: S.COLOR_GREYS.WHITE,
     backgroundColor: color,
-    '&:hover': {
-        backgroundColor: color,
-    },
-    '&:focus': {
-        backgroundColor: color,
+
+    ['&:hover, &:focus']: {
+        backgroundColor: lighten(0.05, color),
     },
 });
 
-export const makeOutlineModifier = (color) => ({
-    color,
-    backgroundColor: 'transparent',
-    borderWidth: '0.1rem',
-    borderColor: color,
-    '&:hover': {
-        backgroundColor: color,
-        color: S.GREY_COLORS.white,
-    },
-    '&:focus': {
-        backgroundColor: color,
-        color: S.GREY_COLORS.white,
-    },
-});
-
-export const card = {
-    position: 'relative',
+export const makeOutlineModifier = (color = S.COLOR_THEME.SECONDARY_D) => ({
     backgroundColor: S.COLOR_GREYS.WHITE,
-    height: calcSpace(28),
-    width: calcSpace(20),
+    color,
+    boxShadow: makePlaneShadow({
+        plane: 4,
+        color,
+    }),
+    ['&:hover, &:focus']: {
+        backgroundColor: S.COLOR_GREYS.WHITE,
+    },
+});
+
+export const cardAnimated = {
+    position: 'relative',
+    borderRadius: S.LINE_BORDER_RADIUS_4,
+    backgroundColor: S.COLOR_GREYS.WHITE,
     transition: `transform ${S.MOTION_BASE_DURATION} ${S.MOTION_BASE_TIMING}`,
     '&::before': {
         content: '" "',
@@ -97,7 +100,7 @@ export const card = {
         width: '100%',
         height: '100%',
         boxShadow: S.PLANE_SHADOW_4,
-        borderRadius: S.LINE_BORDER_RADIUS,
+        borderRadius: S.LINE_BORDER_RADIUS_4,
         opacity: 0,
         transition: `opacity ${S.MOTION_BASE_DURATION} ${S.MOTION_BASE_TIMING}`,
     },
@@ -107,4 +110,10 @@ export const card = {
             opacity: 0.5,
         },
     },
+};
+
+export const card = {
+    borderRadius: S.LINE_BORDER_RADIUS_4,
+    backgroundColor: S.COLOR_GREYS.WHITE,
+    boxShadow: S.PLANE_SHADOW_2,
 };

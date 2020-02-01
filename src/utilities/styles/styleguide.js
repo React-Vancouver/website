@@ -1,7 +1,6 @@
 import React from 'react';
 import { withSpacing } from '@utilities/styles/spacing';
 import PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
 import S from '@symbols';
 import styled from '@emotion/styled';
 import text from '@blocks/typography';
@@ -31,11 +30,15 @@ class Styleguide extends React.Component {
         padding: `${calcSpace(4)} ${calcSpace(2)}`,
     });
 
-    static Grid = styled.div({
-        gridTemplateColumns: `repeat(auto-fill, minmax(14rem, 1fr))`,
-        display: `grid`,
-        gridGap: `${calcSpace(2)}`,
-    });
+    static Grid = styled.div(
+        {
+            display: `grid`,
+            gridGap: `${calcSpace(2)}`,
+        },
+        ({ size = 14 }) => ({
+            gridTemplateColumns: `repeat(auto-fill, minmax(${size}rem, 1fr))`,
+        })
+    );
 
     static DefinitionList = styled.dl({
         gridTemplateColumns: `repeat(2, 1fr)`,
@@ -84,7 +87,16 @@ class Styleguide extends React.Component {
         margin: `0 0 ${S.calcSpace(2)} 0`,
     }));
 
-    static Markdown = (source) => <ReactMarkdown source={source} />;
+    static Figure = styled.figure({
+        minHeight: calcSpace(10),
+        border: S.LINE_DEFAULT_BORDER,
+    });
+
+    static Figcaption = withSpacing(
+        styled.figcaption(text.caption, {
+            color: S.COLOR_GREYS.MEDIUM,
+        })
+    );
 
     render() {
         return <Styleguide.Main>{this.props.children}</Styleguide.Main>;

@@ -1,12 +1,9 @@
 import React from 'react';
 import S from '@symbols';
 import { Global } from '@emotion/core';
-import { paragraph, caption, emphasis, label } from '@blocks/typography';
+import { paragraph, caption, emphasis } from '@blocks/typography';
 import { link, button } from '@blocks/interactive';
-
-/**
- * @todo: Create style blocks for forms.
- */
+import { input, label } from '@blocks/form';
 
 const { getFontScale, calcFontSize, calcLineHeight, calcSpace } = S;
 
@@ -143,35 +140,11 @@ export const GLOBAL_STYLES = {
     },
     // FORM ====================================================================
     'input, textarea, select': {
-        display: 'block',
-        margin: 0,
-        padding: `0 ${calcSpace(2)}`,
-        width: '100%',
-        minHeight: calcSpace(5),
-        backgroundColor: 'transparent',
-        border: S.LINE_DEFAULT_BORDER,
-        borderRadius: S.LINE_BORDER_RADIUS,
-        fontWeight: S.TYPOGRAPHY_FONT_WEIGHT_REGULAR,
-        fontFamily: S.TYPOGRAPHY_TEXT_FONT,
-        ...getFontScale(1),
-        color: S.COLOR_TEXT,
-        caretColor: 'currentColor',
-        transition: S.MOTION_DEFAULT_TRANSITION,
-        '&:hover': {
-            borderColor: S.COLOR_UTILITY.ACTION,
-        },
-        '&:focus': {
-            borderColor: S.COLOR_UTILITY.ACTION,
-            outline: 'none',
-        },
-        '&:disabled': {
-            cursor: 'not-allowed',
-            opacity: 0.5,
-        },
+        ...input,
     },
     label: {
         display: 'block',
-        marginBottom: calcSpace(2),
+        marginBottom: calcSpace(1),
     },
     'input[type="color"]': {
         padding: 0,
@@ -191,7 +164,7 @@ export const GLOBAL_STYLES = {
     textarea: {
         resize: 'vertical',
         minHeight: calcSpace(7),
-        padding: `${calcSpace(1)} ${calcSpace(2)}`,
+        padding: calcSpace(2),
     },
     select: {
         maxWidth: '100%',

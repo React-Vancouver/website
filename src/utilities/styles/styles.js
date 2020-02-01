@@ -1,6 +1,6 @@
 import { logger } from '@utilities/styles/logger';
 
-const hasOwnProperty = (obj, prop) => {
+export const hasOwnProperty = (obj, prop) => {
     return Object.prototype.hasOwnProperty.call(obj, prop);
 };
 
