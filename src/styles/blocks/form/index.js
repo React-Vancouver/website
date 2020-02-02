@@ -3,7 +3,6 @@ import S from '@symbols';
 const { getFontScale, calcSpace } = S;
 
 export const input = {
-    display: 'block',
     margin: 0,
     padding: `0 ${calcSpace(2)}`,
     width: '100%',
@@ -14,8 +13,8 @@ export const input = {
     fontWeight: S.TYPOGRAPHY_FONT_WEIGHT_REGULAR,
     fontFamily: S.TYPOGRAPHY_TEXT_FONT,
     ...getFontScale(1),
-    color: S.COLOR_TEXT,
     caretColor: S.COLOR_THEME.SECONDARY_D,
+    color: S.COLOR_GREYS.GREY_50,
     transition: S.MOTION_DEFAULT_TRANSITION,
     '&:hover': {
         borderColor: S.COLOR_THEME.SECONDARY_D,
@@ -43,6 +42,7 @@ export const inputGroup = {
 export const label = {
     fontFamily: S.TYPOGRAPHY_TEXT_FONT,
     fontWeight: S.TYPOGRAPHY_FONT_WEIGHT_BOLD,
+    color: S.COLOR_GREYS.GREY_50,
     letterSpacing: '0.015rem',
     ...getFontScale(4),
 };

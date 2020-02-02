@@ -19,6 +19,7 @@ const Picture = ({ alt, src, srcSets, className }) => {
         </picture>
     );
 };
+
 Picture.defaultProps = {
     srcSets: [],
 };

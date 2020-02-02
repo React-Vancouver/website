@@ -21,7 +21,8 @@
     "start": "npm run develop",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "build-storybook && now ./storybook-static"
   },
   "dependencies": {
     "@emotion/babel-preset-css-prop": "^10.0.23",
@@ -37,6 +38,7 @@
     "gatsby-plugin-sharp": "^2.3.4",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-sharp": "^2.3.6",
+    "moment": "^2.24.0",
     "polished": "^3.4.3",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

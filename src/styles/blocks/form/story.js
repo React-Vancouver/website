@@ -21,6 +21,7 @@ storiesOf('Blocks/Form', module)
             <div css={inputGroup}>
                 <input css={inputWithLabel} type="text" />
                 <label css={[label, labelPosition]}>Label</label>
+                {/* <label css={[labelPosition]}>Label</label> */}
             </div>
         </Styleguide>
     ));
