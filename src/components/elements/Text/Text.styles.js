@@ -13,8 +13,14 @@ const { getFontScale } = S;
 
 const colors = { ...S.COLOR_THEME, ...S.COLOR_GREYS };
 const base = paragraph;
+export const FONTS = {
+    TEXT: S.TYPOGRAPHY_TEXT_FONT,
+    HEADING: S.TYPOGRAPHY_HEADING_FONT,
+};
+FONTS.DEFAULT = FONTS.HEADING;
 
 const makeColorModifier = (color) => ({ color });
+const makeFontModifier = (fontFamily) => ({ fontFamily });
 
 export const constructStyles = (props) => [
     base,
@@ -31,5 +37,11 @@ export const constructStyles = (props) => [
         prop: 'color',
         map: colors,
         makeCSS: makeColorModifier,
+    }),
+    cssMap({
+        props,
+        prop: 'font',
+        map: FONTS,
+        makeCSS: makeFontModifier,
     }),
 ];
