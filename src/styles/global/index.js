@@ -38,12 +38,13 @@ export const GLOBAL_STYLES = {
         marginRight: 0,
     },
     'h1, h2, h3, h4, h5, h6': {
-        fontSize: calcFontSize(2),
-        lineHeight: calcLineHeight(2),
+        ...getFontScale(4),
         marginBottom: calcSpace(2),
         marginTop: 0,
         marginLeft: 0,
         marginRight: 0,
+        fontWeight: S.TYPOGRAPHY_FONT_WEIGHT_REGULAR,
+        fontFamily: S.TYPOGRAPHY_HEADING_FONT,
     },
     blockquote: {
         marginBlockStart: calcSpace(2),
