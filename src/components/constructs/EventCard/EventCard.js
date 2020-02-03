@@ -8,15 +8,16 @@ import Text from '@elements/Text';
 import moment from 'moment';
 
 const EventCard = ({ className, data, image: Image, onClick }) => {
-    const talks = data.event.talks.map(({ title }) => `“${title}”`).join(', ');
-    const date = moment(data.event.date).format('MMM Do, YYYY');
+    console.log(data);
+    const talks = data.talks.map(({ title }) => `“${title}”`).join(', ');
+    const date = moment(data.date).format('MMM Do, YYYY');
     return (
         <article css={rootStyles} className={className} onClick={onClick}>
             <header css={headerStyles}>
                 {Image ? <Image /> : <>&nbsp;</>}
             </header>
             <Box css={speakersStyles} px3>
-                {data.event.talks.map((talk) => (
+                {data.talks.map((talk) => (
                     <Avatar
                         mr1
                         scale={5}
@@ -33,7 +34,7 @@ const EventCard = ({ className, data, image: Image, onClick }) => {
                         {date}
                     </Text>
                     <Text subheading color="grey_70">
-                        &emsp;@&thinsp;{data.event.host.companyName}
+                        &emsp;@&thinsp;{data.host.companyName}
                     </Text>
                 </Text>
                 <Text element="p" m0 color="grey_50">

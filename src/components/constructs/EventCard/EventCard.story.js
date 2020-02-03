@@ -4,7 +4,8 @@ import { storiesOf } from '@storybook/react';
 import EventCard from '@constructs/EventCard';
 import notes from './EventCard.notes.md';
 
-import data from '../../../../__mocks__/data/event-mock';
+import fakeEvent from '../../../../__mocks__/data/event-mock';
+const data = fakeEvent({ withTalks: true });
 
 storiesOf('Constructs', module).add(
     'EventCard',
