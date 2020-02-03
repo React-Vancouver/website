@@ -51,6 +51,7 @@ const SpeakerCard = ({ className, data, onClick }) => {
 SpeakerCard.propTypes = {
     className: PropTypes.string,
     data: PropTypes.shape(speakerPropTypes),
+    onClick: PropTypes.func,
 };
 
 export default withSpacing(SpeakerCard);
