@@ -8,6 +8,7 @@ const fakeTalk = (options = {}) => {
         id: faker.random.uuid(),
         title: faker.lorem.words(),
         description: faker.lorem.sentences(),
+        slidesUrl: 'https://slides.com',
     };
 
     if (withSpeaker) {

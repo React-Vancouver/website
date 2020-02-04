@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withSpacing } from '@utilities/styles/spacing';
 import { rootStyles, headerStyles, speakersStyles } from './EventCard.styles';
+import { withSpacing } from '@utilities/styles/spacing';
 import Avatar from '@elements/Avatar';
 import Box from '@elements/Box';
-import Text from '@elements/Text';
+import eventPropTypes from '@utilities/prop-types/event';
 import moment from 'moment';
+import Text from '@elements/Text';
 
 const EventCard = ({ className, data, image: Image, onClick }) => {
     console.log(data);
@@ -47,7 +48,7 @@ const EventCard = ({ className, data, image: Image, onClick }) => {
 
 EventCard.propTypes = {
     className: PropTypes.string,
-    data: PropTypes.object,
+    data: eventPropTypes,
     image: PropTypes.node,
     onClick: PropTypes.func,
 };

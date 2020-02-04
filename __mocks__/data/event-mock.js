@@ -6,7 +6,7 @@ const fakeEvent = (options = {}) => {
     const { withTalks } = options;
     const _event = {
         id: faker.random.uuid(),
-        date: new Date(),
+        date: faker.date.recent(),
         host: fakeSponsor(),
         photos: [],
     };
@@ -14,7 +14,7 @@ const fakeEvent = (options = {}) => {
         _event.talks = [
             fakeTalk({ withSpeaker: true }),
             fakeTalk({ withSpeaker: true }),
-            fakeTalk({ withSpeaker: true }),
+            // fakeTalk({ withSpeaker: true }),
         ];
     }
     return _event;
