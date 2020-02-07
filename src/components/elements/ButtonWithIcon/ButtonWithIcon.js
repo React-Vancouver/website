@@ -4,14 +4,20 @@ import { withSpacing } from '@utilities/styles/spacing';
 import { constructStyles, constructIconStyles } from './ButtonWithIcon.styles';
 import Icon from '@elements/Icon';
 
-const ButtonWithIcon = ({ onClick, className, icon, ...restProps }) => {
+const ButtonWithIcon = ({
+    children,
+    className,
+    icon,
+    onClick,
+    ...restProps
+}) => {
     const styles = useMemo(() => constructStyles(restProps), [restProps]);
     const iconStyles = useMemo(() => constructIconStyles(restProps), [
         restProps,
     ]);
     return (
         <button onClick={onClick} css={styles} className={className}>
-            ButtonWithIcon
+            {children}
             <span css={iconStyles}>
                 <Icon name={icon} />
             </span>
@@ -26,9 +32,10 @@ ButtonWithIcon.defaultProps = {
 };
 
 ButtonWithIcon.propTypes = {
+    children: PropTypes.node,
     className: PropTypes.string,
     onClick: PropTypes.func,
-    name: PropTypes.string,
+    icon: PropTypes.string,
 };
 
 export default withSpacing(ButtonWithIcon);
