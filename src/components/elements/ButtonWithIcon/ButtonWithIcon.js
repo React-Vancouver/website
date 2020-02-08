@@ -7,7 +7,7 @@ import Icon from '@elements/Icon';
 const ButtonWithIcon = ({
     children,
     className,
-    icon,
+    iconName,
     onClick,
     ...restProps
 }) => {
@@ -19,7 +19,7 @@ const ButtonWithIcon = ({
         <button onClick={onClick} css={styles} className={className}>
             {children}
             <span css={iconStyles}>
-                <Icon name={icon} />
+                <Icon name={iconName} />
             </span>
         </button>
     );
@@ -28,14 +28,14 @@ const ButtonWithIcon = ({
 ButtonWithIcon.defaultProps = {
     color: 'action',
     size: 'medium',
-    icon: 'pointer',
+    iconName: 'pointer',
 };
 
 ButtonWithIcon.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
     onClick: PropTypes.func,
-    icon: PropTypes.string,
+    iconName: PropTypes.string,
 };
 
 export default withSpacing(ButtonWithIcon);

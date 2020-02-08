@@ -11,11 +11,12 @@ const Nav = ({ className, links, buttonText, onButtonClick }) => {
     return (
         <Grid fixed={2} className={className}>
             <Box css={linksStyles}>
-                {links.map(({ title, to }) => (
-                    <Link mr4 key={title} to={to}>
-                        {title}
-                    </Link>
-                ))}
+                {links &&
+                    links.map(({ title, to }) => (
+                        <Link mr4 key={title} to={to}>
+                            {title}
+                        </Link>
+                    ))}
             </Box>
             <Box css={buttonStyles}>
                 <ButtonWithIcon

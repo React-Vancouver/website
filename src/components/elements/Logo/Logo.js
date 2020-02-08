@@ -10,11 +10,7 @@ const LogoWrapper = ({ type, className }) => {
         return <div />;
     }
 
-    return (
-        <div className={className}>
-            <Logo />
-        </div>
-    );
+    return <Logo className={className} />;
 };
 
 LogoWrapper.propTypes = {
