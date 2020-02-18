@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 
 export default {
-    id: PropTypes.string,
-    companyName: PropTypes.string,
     address: PropTypes.string,
+    companyName: PropTypes.string,
+    fixed: PropTypes.object,
+    fluid: PropTypes.object,
+    googleMapsUrl: PropTypes.string,
+    id: PropTypes.string,
 };

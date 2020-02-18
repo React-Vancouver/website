@@ -150,8 +150,8 @@ export const toHSL = (color, alpha = 1) => {
 
 export const calcGrey = (hue = 255, lightness = 60) => {
     // Linear interpolation
-    const satStart = 3;
-    const satEnd = 7;
+    const satStart = 5;
+    const satEnd = 32;
 
     const sat = ((100 - lightness) * satEnd + lightness * satStart) / 100;
     return `hsl(${hue}, ${sat}%, ${lightness}%)`;
