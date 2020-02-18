@@ -18,11 +18,7 @@ const links = [
 ];
 storiesOf('Constructs', module).add(
     'AsideMenu',
-    () => (
-        <div css={{ height: '100%' }}>
-            <AsideMenu links={links} />
-        </div>
-    ),
+    () => <AsideMenu links={links} />,
     {
         notes,
     }

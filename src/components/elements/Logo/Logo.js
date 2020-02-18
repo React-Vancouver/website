@@ -13,6 +13,10 @@ const LogoWrapper = ({ type, className }) => {
     return <Logo className={className} />;
 };
 
+LogoWrapper.defaultProps = {
+    type: 'logotype-primary',
+};
+
 LogoWrapper.propTypes = {
     className: PropTypes.string,
     type: PropTypes.string,

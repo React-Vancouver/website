@@ -9,6 +9,7 @@ import format, {
     talkSchema,
     speakerSchema,
 } from '@utilities/schema';
+import { JOIN_SLACK } from '@constants/urls';
 
 import Box from '@elements/Box';
 import Button from '@elements/Button';
@@ -33,6 +34,14 @@ const NextEvent = ({ className, data = {} }) => {
             ])
         )
     );
+
+    const hasEvent = data && data.ticketsUrl;
+    const handleClick = (e) => {
+        e.preventDefault();
+        const url = hasEvent ? data.ticketsUrl : JOIN_SLACK;
+        const _window = window.open(url, '_blank');
+        _window.focus();
+    };
 
     return (
         <Box p5 css={rootStyles} className={className}>
@@ -65,8 +74,14 @@ const NextEvent = ({ className, data = {} }) => {
                     }
                 />
             ))}
-
-            <Button mt3>Get tickets › ›</Button>
+            {!data || !data.ticketsUrl}
+            <Button
+                mt3
+                color={hasEvent ? 'primary' : 'tertiary'}
+                onClick={handleClick}
+            >
+                {hasEvent ? 'Get tickets › ›' : 'Join Slack for updates'}
+            </Button>
         </Box>
     );
 };
@@ -74,6 +89,7 @@ const NextEvent = ({ className, data = {} }) => {
 NextEvent.propTypes = {
     className: PropTypes.string,
     data: PropTypes.shape(eventPropTypes),
+    onButtonClick: PropTypes.func,
 };
 
 export default withSpacing(NextEvent);

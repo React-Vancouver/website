@@ -23,10 +23,18 @@ storiesOf('Blocks/Typography', module)
         const Paragraph = styled.p(text.paragraph);
         const Caption = styled.p(text.caption);
         const Emphasis = styled.p(text.emphasis);
+        const Lead = styled.p(text.lead);
 
         return (
             <Styleguide>
                 <Styleguide.Title>body typography</Styleguide.Title>
+                <Lead>
+                    Lead. Lorem ipsum dolor sit amet, ea nominati salutatus ius,
+                    vix cu ubique corrumpit concludaturque. Ne tollit mentitum
+                    invenire pro, in sit etiam essent euismod, propriae oporteat
+                    vituperatoribus mei in. Sit in solet dolore dissentiunt,
+                    sumo reque appareat ne eos.
+                </Lead>
                 <Emphasis>
                     Emphasis. Lorem ipsum dolor sit amet, ea nominati salutatus
                     ius, vix cu ubique corrumpit concludaturque. Ne tollit

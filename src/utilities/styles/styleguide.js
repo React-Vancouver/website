@@ -10,7 +10,6 @@ const { calcSpace } = S;
 class Styleguide extends React.Component {
     static Title = styled.h1({
         fontFamily: S.TYPOGRAPHY_HEADING_FONT,
-        fontWeight: S.TYPOGRAPHY_FONT_WEIGHT_REGULAR,
         borderBottom: `0.1rem solid ${S.COLOR_GREYS.GREY_80}`,
         paddingBottom: calcSpace(1),
         margin: `${calcSpace(4)} 0`,
@@ -25,9 +24,8 @@ class Styleguide extends React.Component {
     });
 
     static Main = styled.div({
-        maxWidth: '76rem',
+        maxWidth: S.LAYOUT_CONTAINER,
         margin: '0 auto',
-        padding: `${calcSpace(4)} ${calcSpace(2)}`,
     });
 
     static Grid = styled.div(

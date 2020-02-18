@@ -3,6 +3,7 @@ import {
     caption,
     emphasis,
     heading,
+    lead,
     paragraph,
     subheading,
     title,
@@ -30,6 +31,7 @@ export const constructStyles = (props) => [
     cssSwitch({ props, prop: 'caption', css: caption }),
     cssSwitch({ props, prop: 'emphasis', css: emphasis }),
     cssSwitch({ props, prop: 'label', css: label }),
+    cssSwitch({ props, prop: 'lead', css: lead }),
     cssValue({ props, prop: 'scale', makeCSS: getFontScale }),
     makeColorModifier(S.COLOR_TEXT),
     cssMap({

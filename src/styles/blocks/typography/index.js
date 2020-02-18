@@ -40,6 +40,11 @@ export const caption = {
     ...getFontScale(3),
 };
 
+export const lead = {
+    fontFamily: S.TYPOGRAPHY_TEXT_FONT,
+    ...getFontScale(5),
+};
+
 export default {
     caption,
     emphasis,
@@ -47,4 +52,5 @@ export default {
     paragraph,
     subheading,
     title,
+    lead,
 };

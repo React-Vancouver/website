@@ -9,6 +9,8 @@ const fakeEvent = (options = {}) => {
         date: faker.date.recent(),
         host: fakeSponsor(),
         photos: [],
+        sponsors: [fakeSponsor(), fakeSponsor()],
+        ticketsUrl: 'https://eventbrite.ca',
     };
     if (withTalks) {
         _event.talks = [
