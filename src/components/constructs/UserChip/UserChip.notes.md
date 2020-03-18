@@ -16,7 +16,7 @@ const user = {
 }
 
 <UserChip
-    onClick={() => console.log('Clicked!')}
+    onClick={() => {}} // It does something!
     avatarProps={{
         firstName: user.firstName,
         lastName: user.lastName,

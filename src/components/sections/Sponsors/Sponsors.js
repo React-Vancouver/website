@@ -11,7 +11,6 @@ import Grid from '@elements/Grid';
 import Text from '@elements/Text';
 
 const Sponsors = ({ className, sponsors, background }) => {
-    console.log(background);
     return (
         <Box my4 css={rootStyles} className={className}>
             <Box css={headingStyles} mb3>

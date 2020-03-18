@@ -8,8 +8,6 @@ import Text from '@elements/Text';
 import UserChip from '@constructs/UserChip';
 
 const SecondPage = ({ data }) => {
-    console.log(data);
-
     const user = {
         firstName: 'Ria',
         lastName: 'Carmin',
