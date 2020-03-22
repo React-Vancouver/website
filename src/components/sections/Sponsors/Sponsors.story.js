@@ -4,34 +4,34 @@ import Sponsors from '@sections/Sponsors';
 import notes from './Sponsors.notes.md';
 import { select } from '@storybook/addon-knobs';
 
-import fakeSponsor from '../../../../__mocks__/data/sponsor-mock';
+import fakeCompany from '../../../../__mocks__/data/company-mock';
 const sponsors = [
-    fakeSponsor(),
-    fakeSponsor(),
-    fakeSponsor(),
-    fakeSponsor(),
-    fakeSponsor(),
-    fakeSponsor(),
-    fakeSponsor(),
-    fakeSponsor(),
-    fakeSponsor(),
-    fakeSponsor(),
+  fakeCompany(),
+  fakeCompany(),
+  fakeCompany(),
+  fakeCompany(),
+  fakeCompany(),
+  fakeCompany(),
+  fakeCompany(),
+  fakeCompany(),
+  fakeCompany(),
+  fakeCompany(),
 ];
 
 const themeOptions = {
-    dark: 'dark',
-    light: 'light',
+  dark: 'dark',
+  light: 'light',
 };
 
 storiesOf('Sections', module).add(
-    'Sponsors',
-    () => (
-        <Sponsors
-            background={select('background', themeOptions)}
-            sponsors={sponsors}
-        />
-    ),
-    {
-        notes,
-    }
+  'Sponsors',
+  () => (
+    <Sponsors
+      background={select('background', themeOptions)}
+      sponsors={sponsors}
+    />
+  ),
+  {
+    notes,
+  }
 );

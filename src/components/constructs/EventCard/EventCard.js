@@ -29,6 +29,7 @@ const EventCard = ({ className, data, image: Image, onClick }) => {
             firstName={talk?.speaker?.firstName}
             lastName={talk?.speaker?.lastName}
             alt={`${talk?.speaker?.firstName} ${talk?.speaker?.lastName} avatar photo`}
+            {...talk?.speaker?.avatar}
           />
         ))}
       </Box>
@@ -38,7 +39,7 @@ const EventCard = ({ className, data, image: Image, onClick }) => {
             {date}
           </Text>
           <Text subheading color="grey_70">
-            &emsp;@&thinsp;{data?.host?.companyName}
+            &emsp;@&thinsp;{data?.host?.name}
           </Text>
         </Text>
         <Text element="p" m0 color="grey_50">

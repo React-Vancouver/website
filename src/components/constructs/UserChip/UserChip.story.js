@@ -5,28 +5,21 @@ import { text, boolean } from '@storybook/addon-knobs';
 import UserChip from '@constructs/UserChip';
 import notes from './UserChip.notes.md';
 
-storiesOf('Constructs', module).add(
-    'UserChip',
-    () => {
-        const firstName = text('firstName', 'Lucy');
-        const lastName = text('lastName', 'Liu');
-        const avatarProps = {
-            firstName,
-            lastName,
-            alt: `${firstName} ${lastName} avatar photo`,
-            src: text('src', null),
-        };
+import fakePerson from '../../../../__mocks__/data/person-mock';
 
-        return (
-            <UserChip
-                onClick={action('onClick')}
-                avatarProps={avatarProps}
-                capped={boolean('capped', true)}
-                text={`${firstName} ${lastName}`}
-            />
-        );
-    },
-    {
-        notes,
-    }
+const data = fakePerson({ withTalks: true, withEvent: true });
+
+storiesOf('Constructs', module).add(
+  'UserChip',
+  () => (
+    <UserChip
+      onClick={action('onClick')}
+      data={data}
+      capped={boolean('capped', true)}
+      text={text('text')}
+    />
+  ),
+  {
+    notes,
+  }
 );

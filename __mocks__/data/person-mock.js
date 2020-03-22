@@ -1,27 +1,29 @@
-import fakeTalk from './talk-mock';
 import faker from 'faker';
+import fakeTalk from './talk-mock';
+import fakeCompany from './company-mock';
 
-const fakeSpeaker = (options = {}) => {
-  const { withTalks, withEvent } = options;
-  const _speaker = {
+const fakePerson = ({ withTalks, withEvent } = {}) => {
+  const _person = {
     id: faker.random.uuid(),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
-    companyName: faker.company.companyName(),
+    company: fakeCompany(),
     title: faker.lorem.words(),
     bio: faker.lorem.sentences(),
-    avatarUrl: faker.image.avatar(),
+    avatar: {
+      src: faker.image.avatar(),
+    },
   };
 
   if (withTalks) {
-    _speaker.talks = [
+    _person.talks = [
       fakeTalk({ withEvent }),
       fakeTalk({ withEvent }),
       fakeTalk({ withEvent }),
     ];
   }
 
-  return _speaker;
+  return _person;
 };
 
-export default fakeSpeaker;
+export default fakePerson;
