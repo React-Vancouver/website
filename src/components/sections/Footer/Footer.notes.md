@@ -1,0 +1,9 @@
+# Footer
+
+---
+
+(description)
+
+### Usage
+-   …
+-   …
