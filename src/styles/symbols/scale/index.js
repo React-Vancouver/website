@@ -13,7 +13,7 @@ export const SCALE_RATIO = 1.5;
  * @returns {string} Rem value
  */
 export const calcSpace = (n, adjustment = 0) =>
-    `${(SCALE_STEP * n) / SCALE_REM + adjustment}rem`;
+  `${(SCALE_STEP * n) / SCALE_REM + adjustment}rem`;
 
 export const calcSpaceRaw = (n, adjustment = 0) =>
-    (SCALE_STEP * n) / SCALE_REM + adjustment;
+  (SCALE_STEP * n) / SCALE_REM + adjustment;

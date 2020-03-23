@@ -4,23 +4,23 @@ import { withSpacing } from '@utilities/styles/spacing';
 import { constructStyles } from './Box.styles';
 
 const Box = ({ className, children, element: Element, ...restProps }) => {
-    const styles = useMemo(() => constructStyles(restProps), [restProps]);
+  const styles = useMemo(() => constructStyles(restProps), [restProps]);
 
-    return (
-        <Element css={styles} className={className}>
-            {children}
-        </Element>
-    );
+  return (
+    <Element css={styles} className={className}>
+      {children}
+    </Element>
+  );
 };
 
 Box.defaultProps = {
-    element: 'div',
+  element: 'div',
 };
 
 Box.propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    element: PropTypes.node,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  element: PropTypes.node,
 };
 
 export default withSpacing(Box);

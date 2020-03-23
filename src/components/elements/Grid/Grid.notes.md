@@ -4,8 +4,8 @@
 
 Applies a grid on the children components. Implements two most common design patterns:
 
--   **Fixed** grid with columns. E.g. passing `fixed={4}` will create a layout with 4 columns.
--   **Fluid** grid where elements have a minimum width. E.g. passing `fluid={15}` will create a layout where the minimum width of a child is `15rem` and maximum `1fr`. The grid will fill the available space (`auto-fit`).
+- **Fixed** grid with columns. E.g. passing `fixed={4}` will create a layout with 4 columns.
+- **Fluid** grid where elements have a minimum width. E.g. passing `fluid={15}` will create a layout where the minimum width of a child is `15rem` and maximum `1fr`. The grid will fill the available space (`auto-fit`).
 
 [Learn more about CSS Grids and `grid-template-columns`.](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns)
 

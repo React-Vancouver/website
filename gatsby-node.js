@@ -7,13 +7,13 @@
 const alias = require('./config/alias');
 
 exports.onCreateWebpackConfig = ({
-    // stage,
-    // rules,
-    // loaders,
-    // plugins,
-    actions,
+  // stage,
+  // rules,
+  // loaders,
+  // plugins,
+  actions,
 }) => {
-    actions.setWebpackConfig({
-        resolve: { alias },
-    });
+  actions.setWebpackConfig({
+    resolve: { alias },
+  });
 };

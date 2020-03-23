@@ -5,8 +5,8 @@ import { render } from '@testing-library/react';
 import Pip from './Pip';
 
 describe('Pip', () => {
-    it('renders correctly', () => {
-        const tree = renderer.create(<Pip />).toJSON();
-        expect(tree).toMatchSnapshot();
-    });
+  it('renders correctly', () => {
+    const tree = renderer.create(<Pip />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

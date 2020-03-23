@@ -4,18 +4,18 @@ import { withSpacing } from '@utilities/styles/spacing';
 import icons from './icons';
 
 const IconWrapper = ({ name, className }) => {
-    const Icon = icons[name];
+  const Icon = icons[name];
 
-    if (!Icon) {
-        return <div />;
-    }
+  if (!Icon) {
+    return <div />;
+  }
 
-    return <Icon className={className} />;
+  return <Icon className={className} />;
 };
 
 IconWrapper.propTypes = {
-    className: PropTypes.string,
-    name: PropTypes.string,
+  className: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default withSpacing(IconWrapper);

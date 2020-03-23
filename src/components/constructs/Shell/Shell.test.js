@@ -5,8 +5,8 @@ import renderer from 'react-test-renderer';
 import Shell from './Shell';
 
 describe('Shell', () => {
-    it('renders correctly', () => {
-        const tree = renderer.create(<Shell />).toJSON();
-        expect(tree).toMatchSnapshot();
-    });
+  it('renders correctly', () => {
+    const tree = renderer.create(<Shell />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

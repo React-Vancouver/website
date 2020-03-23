@@ -15,7 +15,7 @@ import GatsbyImage from 'gatsby-image';
 import Grid from '@elements/Grid';
 import Text from '@elements/Text';
 
-const Sponsors = ({ className, sponsors, background }) => {
+const Sponsors = ({ className, data, background }) => {
   return (
     <Box my4 css={rootStyles} className={className}>
       <Box css={headingStyles} mb3>
@@ -36,7 +36,7 @@ const Sponsors = ({ className, sponsors, background }) => {
         </ButtonWithIcon>
       </Box>
       <Grid fluid={18} gap={2} css={sponsorsStyles}>
-        {sponsors.map(({ id, name, logo: { fluid, fixed } }) => {
+        {data.map(({ id, name, logo: { fluid, fixed } }) => {
           if (fluid || fixed) {
             return (
               <GatsbyImage
@@ -66,7 +66,7 @@ Sponsors.defaultProps = {
 Sponsors.propTypes = {
   background: PropTypes.oneOf(['light', 'dark']),
   className: PropTypes.string,
-  sponsors: PropTypes.arrayOf(companyPropTypes),
+  data: PropTypes.arrayOf(companyPropTypes),
 };
 
 export default withSpacing(Sponsors);

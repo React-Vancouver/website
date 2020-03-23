@@ -2,9 +2,9 @@
 
 ---
 
--   If provided an `out` prop, renders an **external link** using `<a>` tag with `target="_blank" rel="noopener noreferrer"`.
--   If provided a `to` prop, renders an **internal link** using Gatsby’s `<Link>`.
--   Defaults to a `<span>` that has an `onClick` handler.
+- If provided an `out` prop, renders an **external link** using `<a>` tag with `target="_blank" rel="noopener noreferrer"`.
+- If provided a `to` prop, renders an **internal link** using Gatsby’s `<Link>`.
+- Defaults to a `<span>` that has an `onClick` handler.
 
 | Prop      |  Type  | Notes                         |
 | --------- | :----: | ----------------------------- |

@@ -4,18 +4,18 @@ import { withSpacing } from '@utilities/styles/spacing';
 import svgs from './svgs';
 
 const IllustrationWrapper = ({ name, className }) => {
-    const Illustration = svgs[name];
+  const Illustration = svgs[name];
 
-    if (!Illustration) {
-        return <div />;
-    }
+  if (!Illustration) {
+    return <div />;
+  }
 
-    return <Illustration className={className} />;
+  return <Illustration className={className} />;
 };
 
 IllustrationWrapper.propTypes = {
-    className: PropTypes.string,
-    name: PropTypes.string,
+  className: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default withSpacing(IllustrationWrapper);

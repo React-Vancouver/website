@@ -4,14 +4,14 @@
 
 Pulls data from site metadata and sets it on a page.
 
--   description
--   og:title
--   og:description
--   og:type
--   twitter:card
--   twitter:creator
--   twitter:title
--   twitter:description
+- description
+- og:title
+- og:description
+- og:type
+- twitter:card
+- twitter:creator
+- twitter:title
+- twitter:description
 
 ### Usage
 

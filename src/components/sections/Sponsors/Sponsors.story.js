@@ -5,18 +5,7 @@ import notes from './Sponsors.notes.md';
 import { select } from '@storybook/addon-knobs';
 
 import fakeCompany from '../../../../__mocks__/data/company-mock';
-const sponsors = [
-  fakeCompany(),
-  fakeCompany(),
-  fakeCompany(),
-  fakeCompany(),
-  fakeCompany(),
-  fakeCompany(),
-  fakeCompany(),
-  fakeCompany(),
-  fakeCompany(),
-  fakeCompany(),
-];
+const data = Array.from(Array(12)).map(() => fakeCompany());
 
 const themeOptions = {
   dark: 'dark',
@@ -26,10 +15,7 @@ const themeOptions = {
 storiesOf('Sections', module).add(
   'Sponsors',
   () => (
-    <Sponsors
-      background={select('background', themeOptions)}
-      sponsors={sponsors}
-    />
+    <Sponsors background={select('background', themeOptions)} data={data} />
   ),
   {
     notes,

@@ -1,3 +1,3 @@
 export const rootStyles = {
-    textAlign: 'center',
+  textAlign: 'center',
 };

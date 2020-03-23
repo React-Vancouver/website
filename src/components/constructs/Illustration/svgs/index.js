@@ -4,8 +4,8 @@ import glitchThree from './glitch-three';
 import glitchFour from './glitch-four';
 
 export default {
-    ['glitch-one']: glitchOne,
-    ['glitch-two']: glitchTwo,
-    ['glitch-three']: glitchThree,
-    ['glitch-four']: glitchFour,
+  ['glitch-one']: glitchOne,
+  ['glitch-two']: glitchTwo,
+  ['glitch-three']: glitchThree,
+  ['glitch-four']: glitchFour,
 };

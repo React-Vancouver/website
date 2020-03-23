@@ -15,40 +15,40 @@ export const colors = { ...S.COLOR_UTILITY, ...S.COLOR_THEME };
     at hasOwnProperty (<anonymous>)`
  */
 const hasOwnProperty = (obj, prop) => {
-    return Object.prototype.hasOwnProperty.call(obj, prop);
+  return Object.prototype.hasOwnProperty.call(obj, prop);
 };
 
 const base = { display: 'inline-block', width: '100%', textAlign: 'center' };
 
 const cssButton = ({ props }) => {
-    let color;
-    if (
-        hasOwnProperty(props, 'color') &&
-        !!props.color &&
-        typeof props.color === 'string'
-    ) {
-        const _c = props.color.toUpperCase();
-        color = colors[_c];
-    }
+  let color;
+  if (
+    hasOwnProperty(props, 'color') &&
+    !!props.color &&
+    typeof props.color === 'string'
+  ) {
+    const _c = props.color.toUpperCase();
+    color = colors[_c];
+  }
 
-    if (hasOwnProperty(props, 'outline') && !!props.outline) {
-        return makeOutlineModifier(color);
-    }
+  if (hasOwnProperty(props, 'outline') && !!props.outline) {
+    return makeOutlineModifier(color);
+  }
 
-    return makeFillModifier(color);
+  return makeFillModifier(color);
 };
 
 const makeSizeModifier = (size) => ({
-    height: calcSpace(sizes[size] || sizes.medium),
-    lineHeight: calcSpace(sizes[size] || sizes.medium),
-    fontSize: calcFontSize(fontSizes[size] || sizes.medium),
+  height: calcSpace(sizes[size] || sizes.medium),
+  lineHeight: calcSpace(sizes[size] || sizes.medium),
+  fontSize: calcFontSize(fontSizes[size] || sizes.medium),
 });
 
 const cappedModifier = { width: 'unset' };
 
 export const constructStyles = (props) => [
-    base,
-    cssSwitch({ props, prop: 'capped', css: cappedModifier }),
-    cssValue({ props, prop: 'size', makeCSS: makeSizeModifier }),
-    cssButton({ props }),
+  base,
+  cssSwitch({ props, prop: 'capped', css: cappedModifier }),
+  cssValue({ props, prop: 'size', makeCSS: makeSizeModifier }),
+  cssButton({ props }),
 ];

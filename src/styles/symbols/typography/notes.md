@@ -4,7 +4,7 @@
 
 ###### Usage
 
--   Text elements
+- Text elements
 
 | Symbol                             | Value                         |
 | ---------------------------------- | ----------------------------- |

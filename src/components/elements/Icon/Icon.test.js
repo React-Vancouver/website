@@ -5,8 +5,8 @@ import { render } from '@testing-library/react';
 import Icon from './Icon';
 
 describe('Icon', () => {
-    it('renders correctly', () => {
-        const tree = renderer.create(<Icon />).toJSON();
-        expect(tree).toMatchSnapshot();
-    });
+  it('renders correctly', () => {
+    const tree = renderer.create(<Icon />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
