@@ -4,7 +4,7 @@
 
 Replacement for `<div>` element that allows for setting margins and paddings with `withSpacing` utility.
 
--   Container variant applies the `LAYOUT_CONTAINER` max-width and centers on the page.
+- Container variant applies the `LAYOUT_CONTAINER` max-width and centers on the page.
 
 ### Usage
 

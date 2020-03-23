@@ -8,14 +8,14 @@ import fakeEvent from '../../../../__mocks__/data/event-mock';
 const data = fakeEvent({ withTalks: true });
 
 const dataOptions = {
-    withData: data,
-    blank: null,
+  withData: data,
+  blank: null,
 };
 
 storiesOf('Constructs', module).add(
-    'NextEvent',
-    () => <NextEvent data={select('data', dataOptions, dataOptions.blank)} />,
-    {
-        notes,
-    }
+  'NextEvent',
+  () => <NextEvent data={select('data', dataOptions, dataOptions.blank)} />,
+  {
+    notes,
+  }
 );

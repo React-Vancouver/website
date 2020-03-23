@@ -4,16 +4,16 @@ import { Global } from '@emotion/core';
 import { GLOBAL_STYLES } from '@global';
 
 const Shell = ({ children }) => {
-    return (
-        <>
-            <Global styles={GLOBAL_STYLES} />
-            {children}
-        </>
-    );
+  return (
+    <>
+      <Global styles={GLOBAL_STYLES} />
+      {children}
+    </>
+  );
 };
 
 Shell.propTypes = {
-    children: PropTypes.node,
+  children: PropTypes.node,
 };
 
 export default Shell;

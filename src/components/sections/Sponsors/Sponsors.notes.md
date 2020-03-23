@@ -1,0 +1,10 @@
+# Sponsors
+
+---
+
+(description)
+
+### Usage
+
+- …
+- …

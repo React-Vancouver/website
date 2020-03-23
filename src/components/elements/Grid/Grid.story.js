@@ -8,26 +8,26 @@ import styled from '@emotion/styled';
 import S from '@symbols';
 
 const GridItem = styled(Box)({
-    backgroundColor: S.COLOR_GREYS.GREY_90,
-    color: S.COLOR_GREYS.GREY_50,
+  backgroundColor: S.COLOR_GREYS.GREY_90,
+  color: S.COLOR_GREYS.GREY_50,
 });
 
 storiesOf('Elements', module).add(
-    'Grid',
-    () => (
-        <Grid
-            gap={number('gap', 2)}
-            fixed={number('fixed')}
-            fluid={number('fluid')}
-        >
-            <GridItem p3>Grid Item</GridItem>
-            <GridItem p3>Grid Item</GridItem>
-            <GridItem p3>Grid Item</GridItem>
-            <GridItem p3>Grid Item</GridItem>
-            <GridItem p3>Grid Item</GridItem>
-            <GridItem p3>Grid Item</GridItem>
-            <GridItem p3>Grid Item</GridItem>
-        </Grid>
-    ),
-    { notes }
+  'Grid',
+  () => (
+    <Grid
+      gap={number('gap', 2)}
+      fixed={number('fixed')}
+      fluid={number('fluid')}
+    >
+      <GridItem p3>Grid Item</GridItem>
+      <GridItem p3>Grid Item</GridItem>
+      <GridItem p3>Grid Item</GridItem>
+      <GridItem p3>Grid Item</GridItem>
+      <GridItem p3>Grid Item</GridItem>
+      <GridItem p3>Grid Item</GridItem>
+      <GridItem p3>Grid Item</GridItem>
+    </Grid>
+  ),
+  { notes }
 );

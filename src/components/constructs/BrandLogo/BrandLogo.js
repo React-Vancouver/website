@@ -4,18 +4,18 @@ import { withSpacing } from '@utilities/styles/spacing';
 import brands from './brands';
 
 const BrandLogoWrapper = ({ name, className }) => {
-    const BrandLogo = brands[name];
+  const BrandLogo = brands[name];
 
-    if (!BrandLogo) {
-        return <div />;
-    }
+  if (!BrandLogo) {
+    return <div />;
+  }
 
-    return <BrandLogo className={className} />;
+  return <BrandLogo className={className} />;
 };
 
 BrandLogoWrapper.propTypes = {
-    className: PropTypes.string,
-    name: PropTypes.string,
+  className: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default withSpacing(BrandLogoWrapper);

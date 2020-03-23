@@ -6,22 +6,22 @@ import S from '@symbols';
 import Stat from '@constructs/Stat';
 
 const colorOptions = Object.keys(S.COLOR_THEME).reduce(
-    (acc, color) => {
-        const _c = color.toLowerCase();
-        acc[_c] = _c;
-        return acc;
-    },
-    { none: null }
+  (acc, color) => {
+    const _c = color.toLowerCase();
+    acc[_c] = _c;
+    return acc;
+  },
+  { none: null }
 );
 
 storiesOf('Constructs', module).add(
-    'Stat',
-    () => (
-        <Stat
-            color={select('color', colorOptions)}
-            number={text('number', '100')}
-            title={text('title', 'Talks since October 2015')}
-        />
-    ),
-    { notes }
+  'Stat',
+  () => (
+    <Stat
+      color={select('color', colorOptions)}
+      number={text('number', '100')}
+      title={text('title', 'Talks since October 2015')}
+    />
+  ),
+  { notes }
 );

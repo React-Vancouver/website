@@ -4,5 +4,5 @@ import { storiesOf } from '@storybook/react';
 import notes from './SEO.notes.md';
 
 storiesOf('Constructs', module).add('SEO', () => <>No preview available</>, {
-    notes,
+  notes,
 });

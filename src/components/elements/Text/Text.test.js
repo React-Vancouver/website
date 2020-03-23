@@ -5,8 +5,8 @@ import renderer from 'react-test-renderer';
 import Text from './Text';
 
 describe('Text', () => {
-    it('renders correctly', () => {
-        const tree = renderer.create(<Text />).toJSON();
-        expect(tree).toMatchSnapshot();
-    });
+  it('renders correctly', () => {
+    const tree = renderer.create(<Text />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

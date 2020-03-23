@@ -4,8 +4,8 @@
 
 A round user avatar photo of a specified size (using vertical rhythm scale).
 
--   `<picture>` variant, if provided `src` and `srcSets`. The provided image needs to be 1:1 ration (square) to avoid distortion.
--   `gatsby-image` variant, if provided data returned from the `fixed` or `fluid` query. Learn more about [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/#gatsby-image).
+- `<picture>` variant, if provided `src` and `srcSets`. The provided image needs to be 1:1 ration (square) to avoid distortion.
+- `gatsby-image` variant, if provided data returned from the `fixed` or `fluid` query. Learn more about [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/#gatsby-image).
 
 ### Usage
 

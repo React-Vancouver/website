@@ -8,8 +8,8 @@ Theme or brand colors are used to create the look and feel of the design system.
 
 ###### Usage
 
--   Accents
--   Logos
+- Accents
+- Logos
 
 | Symbol                    | Hex Code | Name        |
 | ------------------------- | -------- | ----------- |
@@ -24,7 +24,7 @@ Theme or brand colors are used to create the look and feel of the design system.
 
 ###### Usage
 
--   …
+- …
 
 | Symbol                      | Hex Code | Name       |
 | --------------------------- | -------- | ---------- |
@@ -40,7 +40,7 @@ Theme or brand colors are used to create the look and feel of the design system.
 
 ###### Usage
 
--   …
+- …
 
 | Symbol                  | Hex Code                       | Name |
 | ----------------------- | ------------------------------ | ---- |

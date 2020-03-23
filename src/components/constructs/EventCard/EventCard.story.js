@@ -8,7 +8,7 @@ import fakeEvent from '../../../../__mocks__/data/event-mock';
 const data = fakeEvent({ withTalks: true });
 
 storiesOf('Constructs', module).add(
-    'EventCard',
-    () => <EventCard data={data} onClick={action('onClick')} />,
-    { notes }
+  'EventCard',
+  () => <EventCard data={data} onClick={action('onClick')} />,
+  { notes }
 );
