@@ -3,7 +3,3 @@ export const linksStyles = {
   height: '100%',
   alignItems: 'center',
 };
-
-export const buttonStyles = {
-  textAlign: 'right',
-};

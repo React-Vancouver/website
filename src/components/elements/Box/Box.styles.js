@@ -1,6 +1,9 @@
-import { cssSwitch } from '@utilities/styles';
+import { cssSwitch, cssMap } from '@utilities/styles';
 import S from '@symbols';
 const { calcSpace } = S;
+
+const colors = { ...S.COLOR_THEME, ...S.COLOR_GREYS };
+const makeColorModifier = (backgroundColor) => ({ backgroundColor });
 
 const container = {
   maxWidth: S.LAYOUT_CONTAINER,
@@ -17,4 +20,10 @@ const container = {
 
 export const constructStyles = (props) => [
   cssSwitch({ props, prop: 'container', css: container }),
+  cssMap({
+    props,
+    prop: 'backgroundColor',
+    map: colors,
+    makeCSS: makeColorModifier,
+  }),
 ];

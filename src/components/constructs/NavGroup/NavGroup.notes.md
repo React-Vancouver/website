@@ -1,4 +1,4 @@
-# Nav
+# NavGroup
 
 ---
 
@@ -7,7 +7,7 @@ A tiny navigation component: renders links and a button.
 ### Usage
 
 ```JS
-@import Nav from '@constructs/Nav`;
+@import NavGroup from '@constructs/NavGroup`;
 
 const links = [
     { title: 'Events', to: '/events' },
@@ -15,7 +15,7 @@ const links = [
     { title: 'Sponsors', to: '/sponsors' },
 ];
 
-<Nav
+<NavGroup
     links={links}
     buttonText="Get involved!"
     onButtonClick={() => {}}

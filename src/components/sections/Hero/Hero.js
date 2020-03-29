@@ -13,7 +13,7 @@ import Box from '@elements/Box';
 import GatsbyImage from 'gatsby-image';
 import Grid from '@elements/Grid';
 import Logo from '@elements/Logo';
-import Nav from '@constructs/Nav';
+import Nav from '@constructs/NavGroup';
 import Text from '@elements/Text';
 
 const Hero = ({

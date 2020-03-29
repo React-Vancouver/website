@@ -1,9 +1,11 @@
 import S from '@symbols';
 const { calcSpace } = S;
 
+export const ASIDE_WIDTH = '8rem';
+
 export const rootStyles = {
   height: '100%',
-  width: '8rem',
+  width: ASIDE_WIDTH,
   display: 'grid',
   gridAutoColumns: '8rem',
   gridAutoRows: calcSpace(10),

@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { EVENTS, SPEAKERS, SPONSORS, ABOUT_US } from '@constants/routes';
 import { select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import Footer from '@sections/Footer';
-import notes from './Footer.notes.md';
+import Nav from '@sections/Nav';
+import notes from './Nav.notes.md';
 
 const themeOptions = {
   dark: 'dark',
@@ -19,9 +19,9 @@ const links = [
 ];
 
 storiesOf('Sections', module).add(
-  'Footer',
+  'Nav',
   () => (
-    <Footer
+    <Nav
       links={links}
       background={select('background', themeOptions)}
       onButtonClick={action('onButtonClick')}

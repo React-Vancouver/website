@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 function Icon({ className }) {
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       className={className}
       fill="none"
       viewBox="0 0 1439 216"
-      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         fill="#52577A"
-        d="M1250.96 80.119V61.81h-195.51v31.462H885.488V36H771.152v30.586H451.005v21.03H280.51V61.81H0v125.22h273.174v11.47h195.505v-30.591h148.028v23.901h195.505v-30.59h54.538v15.215h195.51V144.97h181.23V216H1439V80.119h-188.04z"
+        d="M1250.96 61.81V80.12H1439V216H0V61.81h280.51v25.806h170.495v-21.03h320.147V36h114.336v57.272h169.962V61.81h195.51z"
       ></path>
       <path
         fill="#C2C5D6"

@@ -61,7 +61,7 @@ const NextEvent = ({ className, data = {} }) => {
 
       {talks.map((talk, i) => (
         <Talk
-          key={talk.id}
+          key={`${talk.id}-${i}`}
           talk={talk}
           i={i}
           isPlaceholder={!data?.talks || (data?.talks && !data?.talks[i])}
