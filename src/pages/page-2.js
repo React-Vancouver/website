@@ -24,7 +24,8 @@ const navLinks = [
   { title: 'About Us', to: ABOUT_US },
 ];
 
-import Avatar from '@elements/Avatar';
+import Avatar from '@constructs/Avatar';
+import Image from '@elements/Image';
 import Box from '@elements/Box';
 import Layout from '@constructs/Layout';
 import Text from '@elements/Text';
@@ -60,6 +61,13 @@ const SecondPage = ({ data }) => {
         <br />
 
         <Link to="/">Go back to the homepage</Link>
+      </Box>
+      <Box css={{ height: '20rem', position: 'relative' }}>
+        <Image
+          isBackground
+          alt="test"
+          fixed={data.file.childImageSharp.fixed}
+        />
       </Box>
     </Layout>
   );

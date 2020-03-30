@@ -1,7 +1,7 @@
 import S from '@symbols';
 import { ASIDE_WIDTH } from '@constructs/AsideMenu/AsideMenu.styles';
 
-export const NEXT_EVENT_WIDTH = '32rem';
+export const NEXT_EVENT_WIDTH = '36rem';
 
 const FOOTER_HEIGHT = '8rem';
 const NAV_HEIGHT = '8rem';

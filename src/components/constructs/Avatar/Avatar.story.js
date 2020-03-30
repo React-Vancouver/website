@@ -1,7 +1,7 @@
 import React from 'react';
 import { number, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import Avatar from '@elements/Avatar';
+import Avatar from '@constructs/Avatar';
 import notes from './Avatar.notes.md';
 
 const src = 'https://placehold.co/600x400';
@@ -12,7 +12,7 @@ const src = 'https://placehold.co/600x400';
 //   { srcSet: 'https://placehold.co/200x200', media: '(max-width: 1120px)' },
 // ];
 
-storiesOf('Elements', module).add(
+storiesOf('Constructs', module).add(
   'Avatar',
   () => (
     <Avatar

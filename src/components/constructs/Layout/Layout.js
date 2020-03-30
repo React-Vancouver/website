@@ -56,7 +56,7 @@ const Layout = ({
   const [isNextEventOpen, setNextEventOpen] = useState(true);
 
   const animation = useSpring({
-    transform: `translate3d(${isNextEventOpen ? 100 : 2}%, 0, 0)`,
+    transform: `translate3d(${isNextEventOpen ? 2 : 100}%, 0, 0)`,
     config: { mass: 5, tension: 500, friction: 80 },
   });
 
@@ -129,10 +129,9 @@ Layout.propTypes = {
   withNav: PropTypes.bool,
 };
 
-export const withLayout = (Component) => {
-  console.log('withLayout');
+export const withLayout = (Component, { withNav, withLayout }) => {
   const WithLayout = (props) => (
-    <Layout>
+    <Layout withNav={withNav} withLayout={withLayout}>
       <Component {...props} />
     </Layout>
   );

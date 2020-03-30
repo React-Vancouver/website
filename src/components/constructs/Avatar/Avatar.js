@@ -5,6 +5,13 @@ import GatsbyImage from 'gatsby-image';
 import { constructStyles } from './Avatar.styles';
 import Picture from '@elements/Picture';
 
+/**
+ * @todo Add <Image />
+ * @body Avatar implements a lot of duplicate logic from Image element.
+ * Placeholder should be moved to a separate partial component and passed to
+ * <Image placeholder={AvatarPlaceholder} />
+ */
+
 const Avatar = ({
   alt,
   className,

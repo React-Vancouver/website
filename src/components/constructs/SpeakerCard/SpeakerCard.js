@@ -5,7 +5,7 @@ import { withSpacing } from '@utilities/styles/spacing';
 import personPropTypes from '@utilities/prop-types/person';
 import moment from 'moment';
 
-import Avatar from '@elements/Avatar';
+import Avatar from '@constructs/Avatar';
 import Box from '@elements/Box';
 import Link from '@elements/Link';
 import Text from '@elements/Text';

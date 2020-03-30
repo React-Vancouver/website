@@ -32,14 +32,13 @@ const SpeakerGallery = ({ className, data }) => {
     <div className={className}>
       <div ref={carouselRef} css={carouselStyles}>
         <div style={style} css={carouselContentStyles}>
-          <PlaceholderItem ref={carouselItemRef} />
           {data &&
             data.map((event) => (
               <div css={carouselItemStyles} key={event.id}>
                 <SpeakerCard data={event} />
               </div>
             ))}
-          <PlaceholderItem />
+          <PlaceholderItem ref={carouselItemRef} />
         </div>
       </div>
 

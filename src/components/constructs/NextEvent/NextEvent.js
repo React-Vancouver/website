@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { rootStyles } from './NextEvent.styles';
+import { rootStyles, buttonStyles } from './NextEvent.styles';
 import { withSpacing } from '@utilities/styles/spacing';
 import eventPropTypes from '@utilities/prop-types/event';
 import format, {
@@ -72,6 +72,7 @@ const NextEvent = ({ className, data = {} }) => {
         mt3
         color={hasEvent ? 'primary' : 'tertiary'}
         onClick={handleClick}
+        css={buttonStyles}
       >
         {hasEvent ? 'Get tickets › ›' : 'Join Slack for updates'}
       </Button>

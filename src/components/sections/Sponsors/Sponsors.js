@@ -66,7 +66,7 @@ Sponsors.defaultProps = {
 Sponsors.propTypes = {
   background: PropTypes.oneOf(['light', 'dark']),
   className: PropTypes.string,
-  data: PropTypes.arrayOf(companyPropTypes),
+  data: PropTypes.arrayOf(PropTypes.shape(companyPropTypes)),
 };
 
 export default withSpacing(Sponsors);

@@ -8,7 +8,7 @@ import {
   textStyles,
 } from './EventCard.styles';
 import { withSpacing } from '@utilities/styles/spacing';
-import Avatar from '@elements/Avatar';
+import Avatar from '@constructs/Avatar';
 import Box from '@elements/Box';
 import eventPropTypes from '@utilities/prop-types/event';
 import moment from 'moment';

@@ -8,6 +8,8 @@ import fakePerson from '../../../../__mocks__/data/person-mock';
 import fakeEvent from '../../../../__mocks__/data/event-mock';
 import fakeCompany from '../../../../__mocks__/data/company-mock';
 
+const heroData = { title: 'Title', description: 'Description', image: {} };
+
 const sponsorsData = Array.from(Array(12)).map(() => fakeCompany());
 const statsData = [
   { color: 'secondary_d', number: '2500+', title: 'React Vancouver fans' },
@@ -35,7 +37,9 @@ storiesOf('Views', module).add(
   () => (
     <Home
       creditsData={creditsData}
+      currentEventData={eventsData[0]}
       eventsData={eventsData}
+      heroData={heroData}
       navLinks={navLinks}
       onGetInvolved={onGetInvolved}
       speakersData={speakersData}

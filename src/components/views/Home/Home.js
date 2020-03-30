@@ -3,20 +3,22 @@ import PropTypes from 'prop-types';
 import { withSpacing } from '@utilities/styles/spacing';
 
 import Box from '@elements/Box';
+import Credits from '@sections/Credits';
+import EventGallery from '@sections/EventGallery';
 import Grid from '@elements/Grid';
+import Hero from './partials/Hero';
 import Illustration from '@constructs/Illustration';
-import Hero from '@sections/Hero';
+import SpeakerGallery from '@sections/SpeakerGallery';
 import Sponsors from '@sections/Sponsors';
 import Stat from '@constructs/Stat';
-import EventGallery from '@sections/EventGallery';
-import SpeakerGallery from '@sections/SpeakerGallery';
-import Credits from '@sections/Credits';
 import Text from '@elements/Text';
 
 const Home = ({
   className,
   creditsData,
+  currentEventData,
   eventsData,
+  heroData,
   navLinks,
   onGetInvolved,
   speakersData,
@@ -26,8 +28,12 @@ const Home = ({
   return (
     <Box className={className}>
       {/* HERO */}
-      <Illustration name="glitch-one" css={{ maxWidth: '144rem' }} />
-      <Hero links={navLinks} onButtonClick={onGetInvolved} />
+      <Hero
+        links={navLinks}
+        data={heroData}
+        onButtonClick={onGetInvolved}
+        event={currentEventData}
+      />
 
       {/* SPONSORS */}
       <Box backgroundColor="grey_40">
@@ -40,7 +46,7 @@ const Home = ({
       {/* STATS */}
       <Grid fixed={3} py15>
         {statsData?.map((statProps) => (
-          <Stat {...statProps} />
+          <Stat key={statProps.id} {...statProps} />
         ))}
       </Grid>
 
@@ -79,12 +85,14 @@ const Home = ({
 Home.propTypes = {
   className: PropTypes.string,
   creditsData: PropTypes.array,
+  currentEventData: PropTypes.object,
   eventsData: PropTypes.array,
+  heroData: PropTypes.object,
   navLinks: PropTypes.array,
+  onGetInvolved: PropTypes.func,
   speakersData: PropTypes.array,
   sponsorsData: PropTypes.array,
   statsData: PropTypes.array,
-  onGetInvolved: PropTypes.func,
 };
 
 export default withSpacing(Home);
