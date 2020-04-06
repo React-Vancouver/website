@@ -17,14 +17,14 @@ import Nav from '@sections/Nav';
 import NextEvent from '@constructs/NextEvent';
 
 const asideLinks = [
-  { linkBrandName: 'react', out: 'https://reactjs.org/', title: 'React' },
+  { brandName: 'react', out: 'https://reactjs.org/', title: 'React' },
   {
-    linkBrandName: 'meetup',
+    brandName: 'meetup',
     out: 'https://www.meetup.com/ReactJS-Vancouver-Meetup/',
     title: 'Meetup',
   },
   {
-    linkBrandName: 'slack',
+    brandName: 'slack',
     out: 'https://slackrv.now.sh/',
     title: 'Slack',
   },
@@ -113,7 +113,7 @@ Layout.propTypes = {
   children: PropTypes.node,
   asideLinks: PropTypes.arrayOf(
     PropTypes.shape({
-      linkBrandName: PropTypes.string,
+      brandName: PropTypes.string,
       title: PropTypes.string,
       to: PropTypes.string,
       out: PropTypes.string,

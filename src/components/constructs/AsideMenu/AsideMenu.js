@@ -27,10 +27,10 @@ const AsideMenu = ({ className, links }) => {
         </Text>
       </Link>
       {links &&
-        links.map(({ linkBrandName, out, to, title }) => (
-          <Link css={linkStyles} key={linkBrandName} out={out} to={to}>
+        links.map(({ brandName, out, to, title }) => (
+          <Link css={linkStyles} key={brandName} out={out} to={to}>
             <Box css={[logoStyles, brandStyles]}>
-              <BrandLogo css={iconStyles} name={linkBrandName} />
+              <BrandLogo css={iconStyles} name={brandName} />
             </Box>
             <Text mt1 caption>
               {title}
@@ -45,7 +45,7 @@ AsideMenu.propTypes = {
   className: PropTypes.string,
   links: PropTypes.arrayOf(
     PropTypes.shape({
-      linkBrandName: PropTypes.string,
+      brandName: PropTypes.string,
       title: PropTypes.string,
       to: PropTypes.string,
       out: PropTypes.string,

@@ -5,14 +5,14 @@ import Layout from '@constructs/Layout';
 import notes from './Layout.notes.md';
 
 const asideLinks = [
-  { linkBrandName: 'react', out: 'https://reactjs.org/', title: 'React' },
+  { brandName: 'react', out: 'https://reactjs.org/', title: 'React' },
   {
-    linkBrandName: 'meetup',
+    brandName: 'meetup',
     out: 'https://www.meetup.com/ReactJS-Vancouver-Meetup/',
     title: 'Meetup',
   },
   {
-    linkBrandName: 'slack',
+    brandName: 'slack',
     out: 'https://slackrv.now.sh/',
     title: 'Slack',
   },
@@ -27,7 +27,11 @@ const navLinks = [
 
 storiesOf('Constructs', module).add(
   'Layout',
-  () => <Layout asideLinks={asideLinks} navLinks={navLinks} />,
+  () => (
+    <Layout asideLinks={asideLinks} navLinks={navLinks}>
+      Children
+    </Layout>
+  ),
   {
     notes,
   }
