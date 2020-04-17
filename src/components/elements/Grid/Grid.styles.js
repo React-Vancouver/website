@@ -13,6 +13,9 @@ const makeGapModifier = (scale) => ({
 
 const makeFixedModifier = (columns) => ({
   gridTemplateColumns: `repeat(${columns}, 1fr)`,
+  [`@media (max-width: ${S.LAYOUT_MOBILE_MAX})`]: {
+    gridTemplateColumns: '1fr',
+  },
 });
 
 const makeFluidModifier = (size) => ({

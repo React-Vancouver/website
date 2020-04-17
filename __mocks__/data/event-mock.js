@@ -10,7 +10,7 @@ const fakeEvent = (options = {}) => {
     host: fakeCompany(),
     photos: [],
     sponsors: [fakeCompany(), fakeCompany()],
-    ticketsUrl: 'https://eventbrite.ca',
+    eventUrl: 'https://eventbrite.ca',
   };
   if (withTalks) {
     _event.talks = [

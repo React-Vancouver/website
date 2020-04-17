@@ -17,7 +17,7 @@ import Text from '@elements/Text';
 
 const AsideMenu = ({ className, links }) => {
   return (
-    <Box py6 css={rootStyles} className={className}>
+    <Box css={rootStyles} className={className}>
       <Link css={linkStyles} to="/">
         <Box p1 css={[logoStyles, homeStyles]}>
           <Logo css={iconStyles} type="mark-inverse" />

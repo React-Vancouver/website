@@ -13,7 +13,8 @@ import PropTypes from 'prop-types';
 
 import AsideMenu from '@constructs/AsideMenu';
 import Box from '@elements/Box';
-import Nav from '@sections/Nav';
+import Footer from '@sections/Nav';
+import Nav from './partials/Nav';
 import NextEvent from '@constructs/NextEvent';
 
 const asideLinks = [
@@ -53,7 +54,8 @@ const Layout = ({
     () => constructChildrenStyles({ withFooter, withNav }),
     [withFooter, withNav]
   );
-  const [isNextEventOpen, setNextEventOpen] = useState(true);
+  const [isNextEventOpen, setNextEventOpen] = useState(false);
+  const closeNextEvent = useCallback(() => setNextEventOpen(false), []);
 
   const animation = useSpring({
     transform: `translate3d(${isNextEventOpen ? 2 : 100}%, 0, 0)`,
@@ -71,25 +73,23 @@ const Layout = ({
       <div css={rootStyles} className={className}>
         <AsideMenu css={asideStyles} links={asideLinks} />
         <animated.div css={nextEventStyles} style={animation}>
-          <NextEvent />
+          <NextEvent onClose={closeNextEvent} />
         </animated.div>
         <LayoutContext.Provider value={context}>
           <Box css={wrapperStyles}>
             {/* NAV */}
-            {withNav && (
-              <Nav
-                links={navLinks}
-                background="light"
-                onButtonClick={onGetInvolved}
-              />
-            )}
+            <Nav
+              links={navLinks}
+              background="light"
+              onButtonClick={onGetInvolved}
+            />
 
             {/* CHILDREN */}
             <Box css={childrenStyles}>{children}</Box>
 
             {/* FOOTER */}
             {withFooter && (
-              <Nav
+              <Footer
                 element="footer"
                 links={navLinks}
                 background="dark"

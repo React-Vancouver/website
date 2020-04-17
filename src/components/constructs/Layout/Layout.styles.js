@@ -1,7 +1,9 @@
 import S from '@symbols';
-import { ASIDE_WIDTH } from '@constructs/AsideMenu/AsideMenu.styles';
+import { mobilePadding } from '@blocks/container';
 
 export const NEXT_EVENT_WIDTH = '36rem';
+export const ASIDE_DESKTOP_WIDTH = '8rem';
+export const ASIDE_MOBILE_HEIGHT = S.calcSpace(10);
 
 const FOOTER_HEIGHT = '8rem';
 const NAV_HEIGHT = '8rem';
@@ -16,13 +18,32 @@ export const rootStyles = {
 
 export const asideStyles = {
   position: 'fixed',
-  left: 0,
-  height: '100%',
-  height: '100vh', // eslint-disable-line no-dupe-keys
+  [`@media (max-width: ${S.LAYOUT_MOBILE_MAX})`]: {
+    width: '100%',
+    height: ASIDE_MOBILE_HEIGHT,
+    bottom: 0,
+    left: 0,
+    zIndex: 1,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    ...mobilePadding,
+  },
+  [`@media (min-width: ${S.LAYOUT_TABLET_MIN})`]: {
+    display: 'grid',
+    gridAutoColumns: '8rem',
+    gridAutoRows: S.calcSpace(10),
+    rowGap: S.calcSpace(2),
+    height: '100%',
+    height: '100vh', // eslint-disable-line no-dupe-keys
+    width: ASIDE_DESKTOP_WIDTH,
+    paddingTop: S.calcSpace(4),
+    paddingBottom: S.calcSpace(4),
+  },
 };
 
 export const nextEventStyles = {
-  position: 'absolute',
+  position: 'fixed',
   right: 0,
   width: NEXT_EVENT_WIDTH,
   height: '100vh',
@@ -32,7 +53,12 @@ export const nextEventStyles = {
 };
 
 export const wrapperStyles = {
-  marginLeft: ASIDE_WIDTH,
+  marginBottom: ASIDE_MOBILE_HEIGHT,
+
+  [`@media (min-width: ${S.LAYOUT_TABLET_MIN})`]: {
+    marginBottom: 0,
+    marginLeft: ASIDE_DESKTOP_WIDTH,
+  },
 };
 
 const subtract = (amount) => `- ${amount}`;

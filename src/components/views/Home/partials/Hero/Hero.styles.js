@@ -19,7 +19,9 @@ export const contentStyles = {
 };
 
 export const logoStyles = {
-  width: '48rem',
+  [`@media (min-width: ${S.LAYOUT_TABLET_MIN})`]: {
+    width: '48rem',
+  },
 };
 
 export const sponsorStyles = {

@@ -1,16 +1,18 @@
 import React, { useContext } from 'react';
-import { withLayout, LayoutContext } from '@constructs/Layout';
 import { formatHome } from '@utilities/content';
+import { graphql } from 'gatsby';
+import { withLayout, LayoutContext } from '@constructs/Layout';
 
 import Home from '@views/Home';
 import SEO from '@constructs/SEO';
 
 const IndexPage = ({ data }) => {
-  const { isNextEventOpen, setNextEventOpen } = useContext(LayoutContext);
-  const toggle = () => {
-    console.log('toggle');
-    setNextEventOpen(!isNextEventOpen);
+  const { setNextEventOpen } = useContext(LayoutContext);
+  const openNextEvent = () => {
+    setNextEventOpen(true);
   };
+
+  const onGetInvolved = () => {};
 
   const {
     creditsData,
@@ -25,14 +27,15 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
-      <SEO title="Home" />
+      <SEO page="Home" />
       <Home
         creditsData={creditsData}
         currentEventData={currentEventData}
         eventsData={eventsData}
         heroData={heroData}
         navLinks={navLinks}
-        onGetInvolved={toggle}
+        onGetInvolved={onGetInvolved}
+        onGetTickets={openNextEvent}
         speakersData={speakersData}
         sponsorsData={sponsorsData}
         statsData={statsData}
@@ -42,3 +45,11 @@ const IndexPage = ({ data }) => {
 };
 
 export default withLayout(IndexPage, { withNav: false });
+
+export const query = graphql`
+  query {
+    sanityAside {
+      ...AsideData
+    }
+  }
+`;

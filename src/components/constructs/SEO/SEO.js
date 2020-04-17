@@ -1,18 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { getSiteMetadata } from '@utilities/data';
+import { useSiteMetadata } from '@data';
 
-function SEO({ description, lang, meta, title }) {
-  const siteMetadata = getSiteMetadata();
-
-  const metaDescription = description || siteMetadata.description;
+function SEO({ page, description, lang, meta }) {
+  const { title, author } = useSiteMetadata();
+  const metaDescription = description;
 
   return (
     <Helmet
       htmlAttributes={{ lang }}
-      title={siteMetadata.title || title}
-      titleTemplate={`%s | ${siteMetadata.title}`}
+      title={title}
+      titleTemplate={`%s | ${page}`}
       meta={[
         {
           name: 'description',
@@ -36,7 +35,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: 'twitter:creator',
-          content: siteMetadata.author,
+          content: author,
         },
         {
           name: 'twitter:title',
@@ -61,6 +60,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
+  page: PropTypes.string,
   title: PropTypes.string.isRequired,
 };
 

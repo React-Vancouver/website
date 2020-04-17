@@ -12,9 +12,9 @@ const Talk = ({ className, talk, isPlaceholder, i }) => {
   return (
     <Box mb2 css={styles} className={className}>
       <Avatar
-        firstName={talk.speaker.firstName}
-        lastName={talk.speaker.lastName}
-        alt={`${talk.speaker.firstName} ${talk.speaker.lastName} avatar photo`}
+        firstName={talk?.speaker?.firstName}
+        lastName={talk?.speaker?.lastName}
+        alt={`${talk?.speaker?.firstName} ${talk?.speaker?.lastName} avatar photo`}
       />
       <Box>
         <Text mt2 color="white" element="h2">
@@ -26,9 +26,9 @@ const Talk = ({ className, talk, isPlaceholder, i }) => {
           color="white"
           font="heading"
           element="h3"
-          scale={talk.title.length > 30 ? 5 : 7}
+          scale={talk?.title?.length > 30 ? 5 : 7}
         >
-          {talk.title}
+          {talk?.title}
         </Text>
       </Box>
     </Box>

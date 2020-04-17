@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withSpacing } from '@utilities/styles/spacing';
+import { rootStyles, illustrationStyles } from './Home.styles';
 
 import Box from '@elements/Box';
 import Credits from '@sections/Credits';
@@ -21,25 +22,27 @@ const Home = ({
   heroData,
   navLinks,
   onGetInvolved,
+  onGetTickets,
   speakersData,
   sponsorsData,
   statsData,
 }) => {
   return (
-    <Box className={className}>
+    <Box className={className} css={rootStyles}>
       {/* HERO */}
       <Hero
         links={navLinks}
         data={heroData}
         onButtonClick={onGetInvolved}
         event={currentEventData}
+        onGetTickets={onGetTickets}
       />
 
       {/* SPONSORS */}
       <Box backgroundColor="grey_40">
         <Box container pt8>
           <Sponsors mb6 background="dark" data={sponsorsData} />
-          <Illustration name="glitch-two" />
+          <Illustration css={illustrationStyles} name="glitch-two" />
         </Box>
       </Box>
 
@@ -50,7 +53,7 @@ const Home = ({
         ))}
       </Grid>
 
-      <Illustration mb8 name="glitch-three" />
+      <Illustration css={illustrationStyles} mb8 name="glitch-three" />
 
       {/* TEXT */}
       <Box container>
@@ -69,7 +72,10 @@ const Home = ({
       <SpeakerGallery mb8 data={speakersData} />
 
       {/* CREDITS */}
-      <Illustration name="glitch-four" css={{ marginBottom: '-0.1rem' }} />
+      <Illustration
+        css={[illustrationStyles, { marginBottom: '-0.1rem' }]}
+        name="glitch-four"
+      />
       <Box backgroundColor="grey_40">
         <Box container py5>
           <Text scale={7} element="h2" lead color="light" mb4>

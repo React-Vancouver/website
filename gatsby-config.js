@@ -1,11 +1,13 @@
 const path = require(`path`);
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 module.exports = {
   siteMetadata: {
     title: 'ReactVancouver',
-    description:
-      'Join one of the biggest tech communities in Vancouver. Do you want to learn more about React? Or are you looking for job opportunities? A recruiter who wants to find talent, or an entrepreneur who wishes to connect with new people? React Vancouver is the place.',
     author: '@ReactVan',
+    siteUrl: 'https://reactvancouver.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -51,13 +53,9 @@ module.exports = {
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: 'q92c7i68',
-        dataset: 'production',
-        token:
-          'skIK39Ja74JBeb9YkYCaa3jqXyjJjUcBPpWr3ncD9KeF01Pwo9isPqHKd4TfYbj3LrF3oWNLqGzrWS4a8rxVmpZQrGhr7TLo5jPyc9sU86JtW0kDB2XYCWsCYqrDVPB3k4JMy235Sdanpy0o2ZNfnRLt9oZfxarWJJtJdvFwe4xCQ1zO1x0B',
-        // projectId: process.env.SANITY_PROJECT_ID,
-        // dataset: process.env.SANITY_DATASET,
-        // token: process.env.SANITY_TOKEN,
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
+        token: process.env.SANITY_TOKEN,
         watchMode: true,
         overlayDrafts: true,
       },

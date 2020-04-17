@@ -9,10 +9,14 @@ import {
   rootStyles,
   sponsorStyles,
 } from './Hero.styles';
+import { illustrationStyles } from '../../Home.styles';
 import eventPropTypes from '@utilities/prop-types/event';
+import useMedia from '@utilities/hooks/use-media';
+import S from '@symbols';
 
 import Background from '@constructs/Background';
 import Box from '@elements/Box';
+import Button from '@elements/Button';
 import ButtonWithIcon from '@elements/ButtonWithIcon';
 import GatsbyImage from 'gatsby-image';
 import Grid from '@elements/Grid';
@@ -21,59 +25,87 @@ import Logo from '@elements/Logo';
 import NavGroup from '@constructs/NavGroup';
 import Text from '@elements/Text';
 
-const Hero = ({ className, links, onButtonClick, data, event }) => (
-  <div css={rootStyles} className={className}>
-    <Background {...data.image} />
-    <Background css={gradientStyles} />
-    <Illustration name="glitch-one" css={{ maxWidth: '144rem' }} />
+const MOBILE_BREAKPOINT = `(max-width: ${S.LAYOUT_MOBILE_MAX})`;
 
-    <Box container pt6 css={contentStyles}>
-      <Box mb6 css={navStyles}>
-        <NavGroup links={links} />
-        <Box>
-          <ButtonWithIcon capped color="secondary_d" onClick={onButtonClick}>
-            Get involved!
-          </ButtonWithIcon>
-        </Box>
+const Hero = ({
+  className,
+  links,
+  onButtonClick,
+  onGetTickets,
+  data,
+  event,
+}) => {
+  const { [MOBILE_BREAKPOINT]: isMobile } = useMedia([MOBILE_BREAKPOINT]);
+
+  return (
+    <div css={rootStyles} className={className}>
+      <Background {...data.image} />
+      <Background css={gradientStyles} />
+      <Illustration
+        name="glitch-one"
+        css={[illustrationStyles, { maxWidth: '144rem' }]}
+      />
+
+      <Box container pt6 css={contentStyles}>
+        {!isMobile && (
+          <Box mb6 css={navStyles}>
+            <NavGroup links={links} />
+            <Box>
+              <ButtonWithIcon
+                capped
+                color="secondary_d"
+                onClick={onButtonClick}
+              >
+                Get involved!
+              </ButtonWithIcon>
+            </Box>
+          </Box>
+        )}
+        <Logo css={logoStyles} />
+        <Text my3 element="p" heading color="tertiary">
+          <em>{data?.title}</em>
+        </Text>
+        <Text my3 element="p">
+          {data?.description}
+        </Text>
+        {isMobile && (
+          <Button mb3 onClick={onGetTickets}>
+            Get tickets!
+          </Button>
+        )}
+        <Text mb2 element="p" caption css={{ textTransform: 'uppercase' }}>
+          Sponsored by
+        </Text>
+        <Grid fluid={20} gap={2}>
+          {event?.sponsors.map(({ fluid, fixed, id, name }) => {
+            if (fluid || fixed) {
+              return (
+                <GatsbyImage
+                  key={id}
+                  fluid={fluid}
+                  fixed={fixed}
+                  alt={`${name} logo`}
+                />
+              );
+            } else {
+              return (
+                <Text key={id} py4 px2 subheading css={sponsorStyles}>
+                  {name}
+                </Text>
+              );
+            }
+          })}
+        </Grid>
       </Box>
-      <Logo css={logoStyles} />
-      <Text my3 element="p" heading color="tertiary">
-        <em>{data?.title}</em>
-      </Text>
-      <Text my3 element="p">
-        {data?.description}
-      </Text>
-      <Text mb2 element="p" caption css={{ textTransform: 'uppercase' }}>
-        Sponsored by
-      </Text>
-      <Grid fluid={20} gap={2}>
-        {event?.sponsors.map(({ fluid, fixed, id, name }) => {
-          if (fluid || fixed) {
-            return (
-              <GatsbyImage
-                key={id}
-                fluid={fluid}
-                fixed={fixed}
-                alt={`${name} logo`}
-              />
-            );
-          } else {
-            return (
-              <Text key={id} py4 px2 subheading css={sponsorStyles}>
-                {name}
-              </Text>
-            );
-          }
-        })}
-      </Grid>
-    </Box>
-  </div>
-);
+    </div>
+  );
+};
 
 Hero.propTypes = {
   className: PropTypes.string,
   links: PropTypes.array,
   onButtonClick: PropTypes.func,
+  onGetTickets: PropTypes.func,
   data: PropTypes.shape({
     title: PropTypes.string,
     description: PropTypes.string,
