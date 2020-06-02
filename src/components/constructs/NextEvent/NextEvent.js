@@ -75,4 +75,4 @@ NextEvent.propTypes = {
   onClose: PropTypes.func,
 };
 
-export default withSpacing(NextEvent);
+export default React.memo(withSpacing(NextEvent));

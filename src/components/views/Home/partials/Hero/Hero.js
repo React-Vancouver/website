@@ -30,8 +30,8 @@ const MOBILE_BREAKPOINT = `(max-width: ${S.LAYOUT_MOBILE_MAX})`;
 const Hero = ({
   className,
   links,
-  onButtonClick,
-  onGetTickets,
+  openNextEvent,
+  closeNextEvent,
   data,
   event,
 }) => {
@@ -45,7 +45,6 @@ const Hero = ({
         name="glitch-one"
         css={[illustrationStyles, { maxWidth: '144rem' }]}
       />
-
       <Box container pt6 css={contentStyles}>
         {!isMobile && (
           <Box mb6 css={navStyles}>
@@ -54,7 +53,7 @@ const Hero = ({
               <ButtonWithIcon
                 capped
                 color="secondary_d"
-                onClick={onButtonClick}
+                onClick={openNextEvent}
               >
                 Get involved!
               </ButtonWithIcon>
@@ -69,7 +68,7 @@ const Hero = ({
           {data?.description}
         </Text>
         {isMobile && (
-          <Button mb3 onClick={onGetTickets}>
+          <Button mb3 onClick={openNextEvent}>
             Get tickets!
           </Button>
         )}
@@ -104,8 +103,8 @@ const Hero = ({
 Hero.propTypes = {
   className: PropTypes.string,
   links: PropTypes.array,
-  onButtonClick: PropTypes.func,
-  onGetTickets: PropTypes.func,
+  openNextEvent: PropTypes.func,
+  closeNextEvent: PropTypes.func,
   data: PropTypes.shape({
     title: PropTypes.string,
     description: PropTypes.string,
@@ -114,4 +113,4 @@ Hero.propTypes = {
   event: PropTypes.shape(eventPropTypes),
 };
 
-export default withSpacing(Hero);
+export default React.memo(withSpacing(Hero));

@@ -1,5 +1,7 @@
 import S from '@symbols';
 
+import { ASIDE_DESKTOP_WIDTH } from '@constructs/Layout/Layout.styles';
+
 export const asideStyles = {
   position: 'fixed',
   width: '100vw',
@@ -8,7 +10,7 @@ export const asideStyles = {
   top: 0,
 };
 
-export const mobileNavigationStyles = {
+export const mobileNavStyles = {
   position: 'fixed',
   width: '100%',
   zIndex: 100,
@@ -19,6 +21,13 @@ export const mobileNavigationStyles = {
     gridTemplateColumns: '5.4rem 2fr 1fr',
     columnGap: '1.6rem',
   },
+};
+
+export const navStyles = {
+  position: 'fixed',
+  width: `calc(100% - ${ASIDE_DESKTOP_WIDTH})`,
+  zIndex: 100,
+  top: 0,
 };
 
 export const menuButtonStyles = {

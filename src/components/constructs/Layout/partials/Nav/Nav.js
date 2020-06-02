@@ -1,8 +1,10 @@
 import React, { useState, useCallback } from 'react';
+import PropTypes from 'prop-types';
 import {
   asideStyles,
-  mobileNavigationStyles,
   menuButtonStyles,
+  mobileNavStyles,
+  navStyles,
 } from './Nav.styles';
 import { useSpring, animated } from 'react-spring';
 import S from '@symbols';
@@ -19,7 +21,7 @@ import Text from '@elements/Text';
 const MOBILE_BREAKPOINT = `(max-width: ${S.LAYOUT_MOBILE_MAX})`;
 const SECONDARY_NAV_BREAKPOINT = '>56';
 
-const LayoutNav = ({ links, background, onButtonClick }) => {
+const LayoutNav = ({ links, background, onButtonClick, isCollapsing }) => {
   const { [MOBILE_BREAKPOINT]: showMobileNav } = useMedia([MOBILE_BREAKPOINT]);
   const { [SECONDARY_NAV_BREAKPOINT]: isSecondaryNav } = usePageOffset([
     SECONDARY_NAV_BREAKPOINT,
@@ -35,8 +37,9 @@ const LayoutNav = ({ links, background, onButtonClick }) => {
       friction: 100,
     },
   });
+  const START = isCollapsing ? -100 : 0;
   const { translateY } = useSpring({
-    translateY: isSecondaryNav ? 0 : -100,
+    translateY: isSecondaryNav ? 0 : START,
     config: {
       mass: 5,
       tension: 500,
@@ -47,7 +50,7 @@ const LayoutNav = ({ links, background, onButtonClick }) => {
   return showMobileNav ? (
     <>
       <animated.nav
-        css={mobileNavigationStyles}
+        css={mobileNavStyles}
         style={{
           transform: translateY.interpolate((y) => `translate3d(0,${y}%,0)`),
         }}
@@ -87,8 +90,26 @@ const LayoutNav = ({ links, background, onButtonClick }) => {
       </animated.aside>
     </>
   ) : (
-    <Nav links={links} background={background} onButtonClick={onButtonClick} />
+    <animated.nav
+      css={navStyles}
+      style={{
+        transform: translateY.interpolate((y) => `translate3d(0,${y}%,0)`),
+      }}
+    >
+      <Nav
+        links={links}
+        background={background}
+        onButtonClick={onButtonClick}
+      />
+    </animated.nav>
   );
+};
+
+LayoutNav.propTypes = {
+  background: PropTypes.oneOf('dark', 'light'),
+  isCollapsing: PropTypes.bool,
+  links: PropTypes.array,
+  onButtonClick: PropTypes.func,
 };
 
 export default LayoutNav;

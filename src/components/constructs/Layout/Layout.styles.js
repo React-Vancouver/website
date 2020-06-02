@@ -43,13 +43,18 @@ export const asideStyles = {
 };
 
 export const nextEventStyles = {
-  position: 'fixed',
   right: 0,
   width: NEXT_EVENT_WIDTH,
   height: '100vh',
   paddingTop: S.calcSpace(4),
   paddingBottom: S.calcSpace(4),
   zIndex: 1000,
+  [`@media (max-width: ${S.LAYOUT_MOBILE_MAX})`]: {
+    position: 'fixed',
+  },
+  [`@media (min-width: ${S.LAYOUT_TABLET_MIN})`]: {
+    position: 'absolute',
+  },
 };
 
 export const wrapperStyles = {
@@ -62,9 +67,7 @@ export const wrapperStyles = {
 };
 
 const subtract = (amount) => `- ${amount}`;
-
 export const constructChildrenStyles = ({ withFooter, withNav }) => ({
-  minHeight: `calc(100vh ${withFooter ? subtract(FOOTER_HEIGHT) : ''} ${
-    withNav ? subtract(NAV_HEIGHT) : ''
-  })`,
+  paddingTop: withNav ? NAV_HEIGHT : 0,
+  minHeight: `calc(100vh ${withFooter ? subtract(FOOTER_HEIGHT) : ''})`,
 });

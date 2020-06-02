@@ -16,3 +16,10 @@ export const base = {
   [`@media (max-width: ${S.LAYOUT_CONTAINER_MAX})`]: tabletPadding,
   [`@media (max-width: ${S.LAYOUT_MOBILE_MAX})`]: mobilePadding,
 };
+
+export const article = {
+  maxWidth: S.LAYOUT_ARTICLE,
+  margin: '0 auto',
+  [`@media (max-width: ${S.LAYOUT_CONTAINER_MAX})`]: tabletPadding,
+  [`@media (max-width: ${S.LAYOUT_MOBILE_MAX})`]: mobilePadding,
+};

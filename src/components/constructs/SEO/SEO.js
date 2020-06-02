@@ -5,7 +5,6 @@ import { useSiteMetadata } from '@data';
 
 function SEO({ page, description, lang, meta }) {
   const { title, author } = useSiteMetadata();
-  const metaDescription = description;
 
   return (
     <Helmet
@@ -15,7 +14,7 @@ function SEO({ page, description, lang, meta }) {
       meta={[
         {
           name: 'description',
-          content: metaDescription,
+          content: description,
         },
         {
           property: 'og:title',
@@ -23,7 +22,7 @@ function SEO({ page, description, lang, meta }) {
         },
         {
           property: 'og:description',
-          content: metaDescription,
+          content: description,
         },
         {
           property: 'og:type',
@@ -43,7 +42,7 @@ function SEO({ page, description, lang, meta }) {
         },
         {
           name: 'twitter:description',
-          content: metaDescription,
+          content: description,
         },
       ].concat(meta)}
     />
@@ -60,8 +59,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  page: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  page: PropTypes.string.isRequired,
 };
 
 export default SEO;

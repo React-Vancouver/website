@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { withSpacing } from '@utilities/styles/spacing';
 import { rootStyles, illustrationStyles } from './Home.styles';
@@ -16,26 +16,27 @@ import Text from '@elements/Text';
 
 const Home = ({
   className,
+  closeNextEvent,
   creditsData,
   currentEventData,
   eventsData,
   heroData,
   navLinks,
-  onGetInvolved,
-  onGetTickets,
+  openNextEvent,
   speakersData,
   sponsorsData,
   statsData,
 }) => {
+  useEffect(() => openNextEvent?.(), []);
   return (
     <Box className={className} css={rootStyles}>
       {/* HERO */}
       <Hero
-        links={navLinks}
+        closeNextEvent={closeNextEvent}
         data={heroData}
-        onButtonClick={onGetInvolved}
         event={currentEventData}
-        onGetTickets={onGetTickets}
+        links={navLinks}
+        openNextEvent={openNextEvent}
       />
 
       {/* SPONSORS */}
@@ -90,15 +91,16 @@ const Home = ({
 
 Home.propTypes = {
   className: PropTypes.string,
+  closeNextEvent: PropTypes.func,
   creditsData: PropTypes.array,
   currentEventData: PropTypes.object,
   eventsData: PropTypes.array,
   heroData: PropTypes.object,
   navLinks: PropTypes.array,
-  onGetInvolved: PropTypes.func,
+  openNextEvent: PropTypes.func,
   speakersData: PropTypes.array,
   sponsorsData: PropTypes.array,
   statsData: PropTypes.array,
 };
 
-export default withSpacing(Home);
+export default React.memo(withSpacing(Home));

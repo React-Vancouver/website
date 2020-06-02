@@ -1,0 +1,27 @@
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import { format{{pascalCase name}} } from '@utilities/content';
+import { graphql } from 'gatsby';
+import { withLayout, LayoutContext } from '@constructs/Layout';
+
+import SEO from '@constructs/SEO';
+
+const {{pascalCase name}} = ({ data }) => {
+  const layoutContext = useContext(LayoutContext);
+  const formattedData = format{{pascalCase name}}(data);
+
+  return (
+    <>
+      <SEO page="{{titleCase name}}" />
+      {{titleCase name}}
+    </>
+  );
+};
+
+{{pascalCase name}}.propTypes = {
+  data: PropTypes.object,
+};
+
+export default withLayout({{pascalCase name}});
+
+// export const query = graphql``;
