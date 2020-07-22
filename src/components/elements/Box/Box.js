@@ -18,7 +18,7 @@ Box.defaultProps = {
 };
 
 Box.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]),
   className: PropTypes.string,
   element: PropTypes.node,
 };

@@ -1,1 +1,0 @@
-export { getSiteMetadata } from './getSiteMetadata';

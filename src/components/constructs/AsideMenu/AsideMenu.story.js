@@ -4,14 +4,14 @@ import AsideMenu from '@constructs/AsideMenu';
 import notes from './AsideMenu.notes.md';
 
 const links = [
-  { linkBrandName: 'react', out: 'https://reactjs.org/', title: 'React' },
+  { brandName: 'react', out: 'https://reactjs.org/', title: 'React' },
   {
-    linkBrandName: 'meetup',
+    brandName: 'meetup',
     out: 'https://www.meetup.com/ReactJS-Vancouver-Meetup/',
     title: 'Meetup',
   },
   {
-    linkBrandName: 'slack',
+    brandName: 'slack',
     out: 'https://slackrv.now.sh/',
     title: 'Slack',
   },

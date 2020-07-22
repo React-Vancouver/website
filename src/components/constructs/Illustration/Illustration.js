@@ -10,7 +10,7 @@ const IllustrationWrapper = ({ name, className }) => {
     return <div />;
   }
 
-  return <Illustration className={className} />;
+  return <Illustration className={className} css={{ display: 'block' }} />;
 };
 
 IllustrationWrapper.propTypes = {

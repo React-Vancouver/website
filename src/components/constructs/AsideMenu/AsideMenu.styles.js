@@ -2,12 +2,6 @@ import S from '@symbols';
 const { calcSpace } = S;
 
 export const rootStyles = {
-  height: '100%',
-  width: '8rem',
-  display: 'grid',
-  gridAutoColumns: '8rem',
-  gridAutoRows: calcSpace(10),
-  rowGap: calcSpace(2),
   backgroundColor: S.COLOR_GREYS.WHITE,
 };
 
@@ -15,6 +9,8 @@ export const linkStyles = {
   textTransform: 'uppercase',
   textAlign: 'center',
   textDecoration: 'none',
+  display: 'inline-grid',
+  margin: '0 auto',
 
   ['& > span']: {
     display: 'inline-block',

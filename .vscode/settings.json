@@ -1,3 +1,9 @@
 {
-  "eslint.enable": true
+  "eslint.enable": true,
+  "editor.tabSize": 2,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#11332B",
+    "titleBar.activeBackground": "#17483C",
+    "titleBar.activeForeground": "#F6FCFA"
+  }
 }

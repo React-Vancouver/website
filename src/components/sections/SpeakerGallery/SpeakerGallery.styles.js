@@ -1,3 +1,4 @@
+import S from '@symbols';
 import { secondaryCardAnimated } from '@blocks/interactive';
 
 export const carouselItemStyles = {
@@ -23,6 +24,7 @@ export const carouselContentStyles = {
   position: 'relative',
   display: 'flex',
   paddingBottom: '1.6rem',
+  marginLeft: `calc((100% - ${S.LAYOUT_CONTAINER}) / 2)`,
 };
 
 export const footerStyles = {

@@ -8,21 +8,19 @@ module.exports = ({ config }) => {
   // with @babel/core@7)
   config.module.rules[0].use[0].loader = require.resolve('babel-loader');
 
-  // https://github.com/emotion-js/emotion/issues/1306
-  // Replace "@babel/react-preset" with "@emotion/babel-preset-css-prop"
-  // to make Emotion work. See .babelrc.
+  // use @babel/preset-react for JSX and env (instead of staged presets)
   config.module.rules[0].use[0].options.presets = [
-    ...config.module.rules[0].use[0].options.presets,
+    require.resolve('@babel/preset-react'),
     require.resolve('@babel/preset-env'),
+    require.resolve('babel-preset-gatsby'),
+    require.resolve('@emotion/babel-preset-css-prop'),
   ];
 
   config.module.rules[0].use[0].options.plugins = [
-    // Use @babel/plugin-proposal-class-properties for class arrow functions
-    require.resolve('@babel/plugin-proposal-class-properties'),
+    ...config.module.rules[0].use[0].options.plugins,
     // Use babel-plugin-remove-graphql-queries to remove static queries from
     // components when rendering in storybook
     require.resolve('babel-plugin-remove-graphql-queries'),
-    require.resolve('@babel/plugin-proposal-optional-chaining'),
   ];
 
   // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint

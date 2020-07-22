@@ -4,7 +4,7 @@ import { withSpacing } from '@utilities/styles/spacing';
 import { constructStyles, avatarStyles } from './UserChip.styles';
 import personPropTypes from '@utilities/prop-types/person';
 
-import Avatar from '@elements/Avatar';
+import Avatar from '@constructs/Avatar';
 import Text from '@elements/Text';
 
 const UserChip = ({ data, text, className, onClick, ...restProps }) => {

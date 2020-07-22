@@ -5,7 +5,7 @@ import { paragraph, caption, emphasis } from '@blocks/typography';
 import { link, button } from '@blocks/interactive';
 import { input, label } from '@blocks/form';
 
-const { getFontScale, calcFontSize, calcLineHeight, calcSpace } = S;
+const { getFontScale, calcLineHeight, calcSpace } = S;
 
 export const GLOBAL_STYLES = {
   '*': {

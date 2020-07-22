@@ -7,10 +7,10 @@ export default {
   companyName: PropTypes.string,
   title: PropTypes.string,
   bio: PropTypes.string,
-  avatar: {
+  avatar: PropTypes.shape({
     src: PropTypes.string,
     fixed: PropTypes.object,
     fluid: PropTypes.object,
-  },
+  }),
   talks: PropTypes.array,
 };

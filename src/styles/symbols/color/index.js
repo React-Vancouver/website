@@ -28,6 +28,7 @@ export const COLOR_GREYS = {
   MEDIUM: calcGrey(COLOR_GREY_HUE, 60),
   LIGHT: calcGrey(COLOR_GREY_HUE, 98),
   WHITE: '#FFFFFF',
+  GREY_95: calcGrey(COLOR_GREY_HUE, 95),
   GREY_90: calcGrey(COLOR_GREY_HUE, 90),
   GREY_80: calcGrey(COLOR_GREY_HUE, 80),
   GREY_70: calcGrey(COLOR_GREY_HUE, 70),

@@ -1,5 +1,13 @@
 import S from '@symbols';
 
-const base = {};
+export const rootStyles = {
+  width: '100vw',
+  overflowX: 'hidden',
+};
 
-export const constructStyles = (props) => [base];
+export const illustrationStyles = {
+  [`@media (max-width: ${S.LAYOUT_MOBILE_MAX})`]: {
+    width: '240%',
+    marginLeft: '-50%',
+  },
+};
