@@ -8,7 +8,9 @@ import Home from '@views/Home';
 import SEO from '@constructs/SEO';
 
 const IndexPage = ({ data }) => {
-  const { openNextEvent, closeNextEvent } = useContext(LayoutContext);
+  const { isNextEventOpen, openNextEvent, closeNextEvent } = useContext(
+    LayoutContext
+  );
 
   const {
     creditsData,
@@ -24,13 +26,14 @@ const IndexPage = ({ data }) => {
     <>
       <SEO page="Home" />
       <Home
+        closeNextEvent={closeNextEvent}
         creditsData={creditsData}
         currentEventData={currentEventData}
         eventsData={eventsData}
         heroData={heroData}
+        isNextEventOpen={isNextEventOpen}
         navLinks={navLinks}
         openNextEvent={openNextEvent}
-        closeNextEvent={closeNextEvent}
         speakersData={speakersData}
         sponsorsData={sponsorsData}
         statsData={statsData}

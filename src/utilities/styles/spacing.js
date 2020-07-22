@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { calcSpace } from '@symbols/scale';
 
 export const withSpacing = (Component) => {
@@ -71,15 +70,23 @@ export const withSpacing = (Component) => {
         restProps[key] = props[key];
       }
     });
-    const StyledComponent = styled(Component)({
+
+    /**
+     * @todo Implement memoization
+     * @body Figure out how to memoize the spacing object to prevent unnecessary
+     * re-renders.
+     */
+    const spacing = {
       ...margins,
       ...paddings,
-    });
-    return <StyledComponent {...restProps} />;
+    };
+
+    return <Component css={spacing} {...restProps} />;
   };
-  WithSpacing.displayName = `withSpacing(${Component.displayName ||
-    Component.name ||
-    'Component'})`;
+
+  WithSpacing.displayName = `withSpacing(${
+    Component.displayName || Component.name || 'Component'
+  })`;
 
   return WithSpacing;
 };

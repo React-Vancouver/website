@@ -1,10 +1,10 @@
+import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { configure, addDecorator } from '@storybook/react';
 import { Global } from '@emotion/core';
 import { GLOBAL_STYLES } from '@global';
 import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
-import React from 'react';
 
 addDecorator((story) => (
   <>
@@ -34,6 +34,7 @@ global.___loader = {
 // Gatsby internal mocking to prevent unnecessary errors in storybook testing
 // environment
 global.__PATH_PREFIX__ = '';
+global.__BASE_PATH__ = '';
 
 // This is to utilized to override the window.___navigate method Gatsby defines
 // and uses to report what path a Link would be taking us to if it wasn't inside
