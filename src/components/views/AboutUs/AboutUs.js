@@ -27,7 +27,7 @@ const AboutUs = ({ className, blocks, title, ...restProps }) => {
 };
 
 AboutUs.propTypes = {
-  blocks: PropTypes.array,
+  blocks: PropTypes.array.isRequired,
   className: PropTypes.string,
   title: PropTypes.string,
 };
