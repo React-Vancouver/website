@@ -8,8 +8,7 @@ import clientConfig from '../../../../config/client';
 import Image from '@elements/Image';
 
 const Figure = ({ className, node }) => {
-  console.log('Figure', node);
-  if (!node || !node.asset || !node.asset._ref) {
+  if (!node?.asset?._ref) {
     return null;
   }
   const fluid = getFluidGatsbyImage(

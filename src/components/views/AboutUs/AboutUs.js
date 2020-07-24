@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withSpacing } from '@utilities/styles/spacing';
-import { constructStyles } from './AboutUs.styles';
 
 import BlockContent from '@sanity/block-content-to-react';
 import Box from '@elements/Box';
@@ -14,10 +13,9 @@ const serializers = {
   },
 };
 
-const AboutUs = ({ className, blocks, title, ...restProps }) => {
-  const styles = useMemo(() => constructStyles(restProps), [restProps]);
+const AboutUs = ({ className, blocks, title }) => {
   return (
-    <Box my10 article css={styles} className={className}>
+    <Box my10 article className={className}>
       <Text element="h1" title color="tertiary">
         {title}
       </Text>
