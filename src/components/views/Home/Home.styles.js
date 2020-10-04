@@ -1,7 +1,7 @@
 import S from '@symbols';
 
 export const rootStyles = {
-  width: '100vw',
+  // width: '100vw',
   overflowX: 'hidden',
 };
 
