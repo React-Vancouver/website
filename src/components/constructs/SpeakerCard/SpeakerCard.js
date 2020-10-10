@@ -1,9 +1,9 @@
 import React from 'react';
+import { format } from 'date-fns';
 import PropTypes from 'prop-types';
 import { rootStyles, cardStyles, avatarStyles } from './SpeakerCard.styles';
 import { withSpacing } from '@utilities/styles/spacing';
 import personPropTypes from '@utilities/prop-types/person';
-import moment from 'moment';
 
 import Avatar from '@constructs/Avatar';
 import Box from '@elements/Box';
@@ -37,7 +37,7 @@ const SpeakerCard = ({ className, data, onClick }) => {
             <Text element="p" key={talk.id}>
               <Text color="grey_50">“{talk.title}”&ensp;</Text>
               <Text color="grey_70">
-                {moment(talk.event.date).format('MMM Do, YYYY')}
+                {format(talk.event.date, 'MMM do, yyyy')}
               </Text>
             </Text>
           ))}

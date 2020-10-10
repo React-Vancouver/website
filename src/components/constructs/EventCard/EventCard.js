@@ -11,12 +11,12 @@ import { withSpacing } from '@utilities/styles/spacing';
 import Avatar from '@constructs/Avatar';
 import Box from '@elements/Box';
 import eventPropTypes from '@utilities/prop-types/event';
-import moment from 'moment';
+import { format } from 'date-fns'
 import Text from '@elements/Text';
 
 const EventCard = ({ className, data, image: Image, onClick }) => {
   const talks = data.talks.map(({ title }) => `“${title}”`).join(', ');
-  const date = moment(data.date).format('MMM Do, YYYY');
+  const date = format(data.date, 'MMM do, yyyy');
   return (
     <article css={rootStyles} className={className} onClick={onClick}>
       <header css={headerStyles}>{Image ? <Image /> : <>&nbsp;</>}</header>
