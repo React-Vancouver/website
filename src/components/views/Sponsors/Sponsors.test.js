@@ -1,14 +1,16 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { render } from "@testing-library/react";
 
 import Sponsors from './Sponsors';
 
+const mockProps = {
+    data: []
+}
+
 describe('Sponsors', () => {
     it('renders correctly', () => {
-        const tree = renderer
-            .create(<Sponsors />)
-            .toJSON()
-        expect(tree).toMatchSnapshot()
+        const component = render(<Sponsors {...mockProps} />)
+
+        expect(component).toBeTruthy();
     })
 });
