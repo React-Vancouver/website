@@ -1,12 +1,42 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 
 import Home from './Home';
 
+const mockProps = {
+  closeNextEvent: jest.fn(),
+  creditsData: [],
+  currentEventData: {
+    sponsors: [
+      {
+        id: 1,
+        name: 'lorem',
+      },
+      {
+        id: 2,
+        name: 'ipsum',
+      },
+    ],
+  },
+  eventsData: [],
+  heroData: {
+    title: 'foo',
+    description: 'bar',
+    image: {
+      alt: 'something cool',
+    },
+  },
+  navLinks: [],
+  openNextEvent: jest.fn(),
+  speakersData: [],
+  sponsorsData: [],
+  statsData: [],
+};
+
 describe('Home', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<Home />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const tree = render(<Home {...mockProps} />);
+
+    expect(tree).toBeTruthy();
   });
 });

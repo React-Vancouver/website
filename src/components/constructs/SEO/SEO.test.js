@@ -1,12 +1,27 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-// import { render } from "@testing-library/react"
+import * as Gatsby from 'gatsby';
+import { render } from '@testing-library/react';
 
 import SEO from './SEO';
 
+jest.spyOn(Gatsby, 'useStaticQuery').mockImplementation(() => ({
+  site: {
+    siteMetadata: {
+      author: 'Jane Doe',
+      description: 'Bar',
+      title: 'Foo',
+    },
+  },
+}));
+
 describe('SEO', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('renders correctly', () => {
-    const tree = renderer.create(<SEO />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const tree = render(<SEO page="test" />);
+
+    expect(tree).toBeTruthy();
   });
 });
