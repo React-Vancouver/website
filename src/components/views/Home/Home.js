@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { withSpacing } from '@utilities/styles/spacing';
-import { rootStyles, illustrationStyles } from './Home.styles';
+import { rootStyles, illustrationStyles, headingStyles } from './Home.styles';
 
 import Box from '@elements/Box';
 import Credits from '@sections/Credits';
@@ -10,6 +10,7 @@ import Grid from '@elements/Grid';
 import Hero from './partials/Hero';
 import Illustration from '@constructs/Illustration';
 import SpeakerGallery from '@sections/SpeakerGallery';
+import ButtonWithIcon from '@elements/ButtonWithIcon';
 import Sponsors from '@sections/Sponsors';
 import Stat from '@constructs/Stat';
 import Text from '@elements/Text';
@@ -42,6 +43,14 @@ const Home = ({
       {/* SPONSORS */}
       <Box backgroundColor="grey_40">
         <Box container pt8>
+          <Box css={headingStyles} mb3>
+            <Text scale={7} element="h2" lead color="grey_90">
+              Sponsors
+            </Text>
+            <ButtonWithIcon color="primary" capped iconName="heart">
+              Become a sponsor
+            </ButtonWithIcon>
+          </Box>
           <Sponsors mb6 background="dark" data={sponsorsData} />
           <Illustration css={illustrationStyles} name="glitch-two" />
         </Box>

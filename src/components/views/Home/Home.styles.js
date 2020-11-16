@@ -5,6 +5,12 @@ export const rootStyles = {
   overflowX: 'hidden',
 };
 
+export const headingStyles = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+};
+
 export const illustrationStyles = {
   [`@media (max-width: ${S.LAYOUT_MOBILE_MAX})`]: {
     width: '240%',
