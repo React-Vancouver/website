@@ -54,7 +54,7 @@ const Background = ({ className, alt, fixed, fluid, src, ...restProps }) => {
 };
 
 Background.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
   className: PropTypes.string,
   fixed: PropTypes.object,
   fluid: PropTypes.object,

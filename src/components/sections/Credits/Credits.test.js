@@ -1,12 +1,22 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 
 import Credits from './Credits';
 
+const mockProps = {
+  data: [
+    {
+      id: 'foo',
+      firstName: 'jane',
+      lastName: 'doe',
+    },
+  ],
+};
+
 describe('Credits', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<Credits />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const tree = render(<Credits {...mockProps} />);
+
+    expect(tree).toBeTruthy();
   });
 });

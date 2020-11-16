@@ -1,12 +1,17 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 
 import AboutUs from './AboutUs';
 
+const mockProps = {
+  title: 'foo bar',
+  blocks: [],
+};
+
 describe('AboutUs', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<AboutUs />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const tree = render(<AboutUs {...mockProps} />);
+
+    expect(tree).toBeTruthy();
   });
 });

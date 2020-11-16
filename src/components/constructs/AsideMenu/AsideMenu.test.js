@@ -1,12 +1,23 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 
 import AsideMenu from './AsideMenu';
 
+const mockLink = {
+  out: 'foo',
+  to: '/the-moon',
+  brandName: 'contoso',
+  title: 'test contoso link',
+};
+
+const mockProps = {
+  links: [mockLink],
+};
+
 describe('AsideMenu', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<AsideMenu />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const component = render(<AsideMenu {...mockProps} />);
+
+    expect(component).toBeTruthy();
   });
 });
