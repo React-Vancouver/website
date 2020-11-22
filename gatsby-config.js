@@ -23,33 +23,16 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'ReactVancouver Meetup',
+        short_name: 'ReactVancouver',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        // icon: 'src/images/gatsby-icon.png',
+        icon: 'src/assets/icon.png',
       },
     },
     'gatsby-plugin-emotion',
-    {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
-      options: {
-        fonts: [
-          {
-            family: 'Space Mono',
-            variants: ['700'],
-            subsets: ['latin'],
-          },
-          {
-            family: 'Open Sans',
-            variants: ['600', '700'],
-            subsets: ['latin'],
-          },
-        ],
-      },
-    },
     {
       resolve: 'gatsby-source-sanity',
       options: {

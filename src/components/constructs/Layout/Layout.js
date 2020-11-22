@@ -1,8 +1,10 @@
 import React, { useMemo, useState, useCallback, createContext } from 'react';
-import { Global } from '@emotion/core';
-import { GLOBAL_STYLES } from '@global';
-// import { useSpring, animated } from 'react-spring';
-import { Spring } from 'react-spring/renderprops';
+import { useSpring, animated } from 'react-spring';
+import { useNavData, useAsideData } from '@data';
+import GlobalStyles from '@global';
+import 'fontsource-space-mono/latin-700-normal.css';
+import 'fontsource-open-sans/latin-600-normal.css';
+import 'fontsource-open-sans/latin-700-normal.css';
 
 import {
   asideStyles,
@@ -19,140 +21,84 @@ import Footer from '@sections/Nav';
 import Nav from './partials/Nav';
 import NextEvent from '@constructs/NextEvent';
 
-const asideLinks = [
-  { brandName: 'react', out: 'https://reactjs.org/', title: 'React' },
-  {
-    brandName: 'meetup',
-    out: 'https://www.meetup.com/ReactJS-Vancouver-Meetup/',
-    title: 'Meetup',
-  },
-  {
-    brandName: 'slack',
-    out: 'https://slackrv.now.sh/',
-    title: 'Slack',
-  },
-];
-
-import { EVENTS, SPEAKERS, SPONSORS, ABOUT_US } from '@constants/routes';
-const navLinks = [
-  { title: 'Events', to: EVENTS },
-  { title: 'Speakers', to: SPEAKERS },
-  { title: 'Sponsors', to: SPONSORS },
-  { title: 'About Us', to: ABOUT_US },
-];
+const makeLinks = (links) =>
+  links.map(({ url, ...rest }) => {
+    if (url.startsWith('http')) {
+      return { out: url, ...rest };
+    }
+    return { to: url, ...rest };
+  });
 
 export const LayoutContext = createContext({});
 
-class Layout extends React.Component {
-  state = {
-    isNextEventOpen: false,
-  };
+const Layout = ({ location, children }) => {
+  // Navigation data ===========================================================
+  const navigationData = useNavData();
+  const asideData = useAsideData();
+  const navLinks = makeLinks(navigationData);
+  const asideLinks = makeLinks(asideData);
+  const withFooter = true;
+
+  // Page layout config ========================================================
+  const isCollapsingNav = ['/'].includes(location.pathname);
+  const childrenStyles = useMemo(
+    () => constructChildrenStyles({ withFooter, withNav: !isCollapsingNav }),
+    [withFooter, isCollapsingNav]
+  );
+  const [isTrayOpen, setTrayOpen] = useState(false);
 
   // Context ===================================================================
-  openNextEvent = () => this.setState({ isNextEventOpen: true });
-  closeNextEvent = () => this.setState({ isNextEventOpen: false });
+  const openTray = useCallback(() => setTrayOpen(true), []);
+  const closeTray = useCallback(() => setTrayOpen(false), []);
 
-  childContext = {
-    isNextEventOpen: this.state.isNextEventOpen,
-    openNextEvent: this.openNextEvent,
-    closeNextEvent: this.closeNextEvent,
+  const context = {
+    isTrayOpen,
+    setTrayOpen,
+    openTray,
+    closeTray,
   };
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log(this.state, nextState);
-    if (this.state.isNextEventOpen !== nextState.isNextEventOpen) {
-      return true;
-    }
-    return false;
-  }
+  const animation = useSpring({
+    transform: `translate3d(${isTrayOpen ? 2 : 100}%, 0, 0)`,
+    config: { mass: 5, tension: 500, friction: 80 },
+  });
 
-  render() {
-    const {
-      //   asideLinks,
-      //   navLinks,
-      children,
-      className,
-      isCollapsingNav,
-      withFooter,
-    } = this.props;
+  return (
+    <>
+      <GlobalStyles />
+      <div css={rootStyles}>
+        <AsideMenu css={asideStyles} links={asideLinks} />
+        <animated.div css={nextEventStyles} style={animation}>
+          <NextEvent onClose={closeTray} />
+        </animated.div>
+        <LayoutContext.Provider value={context}>
+          <Box css={wrapperStyles}>
+            {/* NAV */}
+            <Nav
+              links={navLinks}
+              background="light"
+              onButtonClick={openTray}
+              isCollapsing={isCollapsingNav}
+            />
 
-    const childrenStyles = constructChildrenStyles({
-      withNav: !isCollapsingNav,
-      withFooter,
-    });
-    const START = this.state.isNextEventOpen ? 100 : 2;
-    const END = this.state.isNextEventOpen ? 2 : 100;
-    return (
-      <>
-        <Global styles={GLOBAL_STYLES} />
-        <div css={rootStyles} className={className}>
-          <AsideMenu css={asideStyles} links={asideLinks} />
-          <Spring
-            from={{ transform: `translate3d(${START}%, 0, 0)` }}
-            to={{ transform: `translate3d(${END}%, 0, 0)` }}
-            config={{ mass: 5, tension: 500, friction: 80 }}
-          >
-            {(props) => (
-              <div style={props} css={nextEventStyles}>
-                <NextEvent onClose={this.closeNextEvent} />
-              </div>
-            )}
-          </Spring>
-          {/* <animated.div css={nextEventStyles} style={animation}>
-            <NextEvent onClose={closeNextEvent} />
-          </animated.div> */}
-          <LayoutContext.Provider value={this.childContext}>
-            <Box css={wrapperStyles}>
-              {/* NAV */}
-              <Nav
+            {/* CHILDREN */}
+            <Box css={childrenStyles}>{children}</Box>
+
+            {/* FOOTER */}
+            {withFooter && (
+              <Footer
+                element="footer"
                 links={navLinks}
-                background="light"
-                onButtonClick={this.openNextEvent}
-                isCollapsing={isCollapsingNav}
+                background="dark"
+                onButtonClick={openTray}
               />
-
-              {/* CHILDREN */}
-              <Box css={childrenStyles}>{children}</Box>
-
-              {/* FOOTER */}
-              {withFooter && (
-                <Footer
-                  element="footer"
-                  links={navLinks}
-                  background="dark"
-                  onButtonClick={this.openNextEvent}
-                />
-              )}
-            </Box>
-          </LayoutContext.Provider>
-        </div>
-      </>
-    );
-  }
-}
-
-// const Layout = () => {
-//   const childrenStyles = useMemo(
-//     () => constructChildrenStyles({ withFooter, withNav: !isCollapsingNav }),
-//     [withFooter, isCollapsingNav]
-//   );
-//   const [isNextEventOpen, setNextEventOpen] = useState(true);
-// Context ===================================================================
-// const openNextEvent = useCallback(() => setNextEventOpen(true), []);
-// const closeNextEvent = useCallback(() => setNextEventOpen(false), []);
-
-// const context = {
-//   isNextEventOpen,
-//   setNextEventOpen,
-//   openNextEvent: this.openNextEvent,
-//   closeNextEvent: this.closeNextEvent,
-// };
-
-//   const animation = useSpring({
-//     transform: `translate3d(${isNextEventOpen ? 2 : 100}%, 0, 0)`,
-//     config: { mass: 5, tension: 500, friction: 80 },
-//   });
-// };
+            )}
+          </Box>
+        </LayoutContext.Provider>
+      </div>
+    </>
+  );
+};
 
 Layout.defaultProps = {
   withFooter: true,
@@ -168,7 +114,6 @@ Layout.propTypes = {
       out: PropTypes.string,
     })
   ),
-  className: PropTypes.string,
   children: PropTypes.node,
   navLinks: PropTypes.arrayOf(
     PropTypes.shape({
@@ -178,25 +123,6 @@ Layout.propTypes = {
   ),
   withFooter: PropTypes.bool,
   isCollapsingNav: PropTypes.bool,
-};
-
-export const withLayout = (Component, options = {}) => {
-  const { isCollapsingNav, withFooter } = options;
-  const WithLayout = (props) => (
-    <Layout
-      isCollapsingNav={isCollapsingNav}
-      withFooter={withFooter}
-      {...props}
-    >
-      <Component {...props} />
-    </Layout>
-  );
-
-  WithLayout.displayName = `withLayout(${Component.displayName ||
-    Component.name ||
-    'Component'})`;
-
-  return WithLayout;
 };
 
 export default React.memo(Layout);

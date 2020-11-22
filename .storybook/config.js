@@ -1,14 +1,13 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { configure, addDecorator } from '@storybook/react';
-import { Global } from '@emotion/core';
-import { GLOBAL_STYLES } from '@global';
+import GlobalStyles from '@global';
 import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
 
 addDecorator((story) => (
   <>
-    <Global styles={GLOBAL_STYLES} />
+    <GlobalStyles />
     {story()}
   </>
 ));

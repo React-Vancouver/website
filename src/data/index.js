@@ -1,12 +1,3 @@
-import { graphql } from 'gatsby';
-export { default as useSiteMetadata } from './use-site-metadata';
-
-export const markdownFrontmatterFragment = graphql`
-  fragment AsideData on SanityAside {
-    links {
-      brandName
-      title
-      url
-    }
-  }
-`;
+export { useSiteMetadata } from './use-site-metadata';
+export { useAsideData } from './use-aside-data';
+export { useNavData } from './use-nav-data';

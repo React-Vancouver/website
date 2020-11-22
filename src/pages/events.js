@@ -1,27 +1,28 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { format{{pascalCase name}} } from '@utilities/content';
+import { formatEvents } from '@utilities/content';
 import { graphql } from 'gatsby';
 import { LayoutContext } from '@constructs/Layout';
+import Events from '@views/Events';
 
 import SEO from '@constructs/SEO';
 
-const {{pascalCase name}} = ({ data }) => {
+const EventsPage = ({ data }) => {
   const layoutContext = useContext(LayoutContext);
-  const formattedData = format{{pascalCase name}}(data);
+  const formattedData = formatEvents(data);
 
   return (
     <>
-      <SEO page="{{titleCase name}}" />
-      {{titleCase name}}
+      <SEO page="Events" description="Events at React Vancouver." />
+      <Events />
     </>
   );
 };
 
-{{pascalCase name}}.propTypes = {
+EventsPage.propTypes = {
   data: PropTypes.object,
 };
 
-export default {{pascalCase name}};
+export default EventsPage;
 
 // export const query = graphql``;

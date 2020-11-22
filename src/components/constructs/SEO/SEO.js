@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useSiteMetadata } from '@data';
 
-function SEO({ page, description, lang, meta }) {
+const SEO = ({ page, description, lang, meta }) => {
   const { title, author } = useSiteMetadata();
 
   return (

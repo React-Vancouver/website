@@ -5,9 +5,6 @@ export const NEXT_EVENT_WIDTH = '36rem';
 export const ASIDE_DESKTOP_WIDTH = '8rem';
 export const ASIDE_MOBILE_HEIGHT = S.calcSpace(10);
 
-const FOOTER_HEIGHT = '8rem';
-const NAV_HEIGHT = '8rem';
-
 export const rootStyles = {
   minHeight: '100%',
   minHeight: '100vh', // eslint-disable-line no-dupe-keys
@@ -49,12 +46,7 @@ export const nextEventStyles = {
   paddingTop: S.calcSpace(4),
   paddingBottom: S.calcSpace(4),
   zIndex: 1000,
-  [`@media (max-width: ${S.LAYOUT_MOBILE_MAX})`]: {
-    position: 'fixed',
-  },
-  [`@media (min-width: ${S.LAYOUT_TABLET_MIN})`]: {
-    position: 'absolute',
-  },
+  position: 'fixed',
 };
 
 export const wrapperStyles = {
@@ -68,6 +60,9 @@ export const wrapperStyles = {
 
 const subtract = (amount) => `- ${amount}`;
 export const constructChildrenStyles = ({ withFooter, withNav }) => ({
-  paddingTop: withNav ? NAV_HEIGHT : 0,
-  minHeight: `calc(100vh ${withFooter ? subtract(FOOTER_HEIGHT) : ''})`,
+  paddingTop: withNav ? S.LAYOUT_NAV_HEIGHT : 0,
+  minHeight: `calc(100vh ${withFooter
+    ? subtract(S.LAYOUT_FOOTER_HEIGHT)
+    : ''
+  })`,
 });

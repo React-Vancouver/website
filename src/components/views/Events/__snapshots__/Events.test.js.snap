@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Events renders correctly 1`] = `
+<div
+  className="css-179updh-Events"
+>
+  <div
+    className="css-1yaaf9v-Box"
+  >
+    <span
+      className="css-16ln220-Text"
+    >
+      Events
+    </span>
+  </div>
+</div>
+`;

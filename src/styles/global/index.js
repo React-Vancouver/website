@@ -1,6 +1,6 @@
 import React from 'react';
 import S from '@symbols';
-import { Global } from '@emotion/core';
+import { Global } from '@emotion/react';
 import { paragraph, caption, emphasis } from '@blocks/typography';
 import { link, button } from '@blocks/interactive';
 import { input, label } from '@blocks/form';
@@ -77,7 +77,6 @@ export const GLOBAL_STYLES = {
     height: 0,
     border: 'none',
     borderTop: S.LINE_DEFAULT_BORDER,
-    marginBottom: S.LINE_WIDTH,
   },
   'ul, ol': {
     marginBlockStart: calcSpace(2),
@@ -94,7 +93,7 @@ export const GLOBAL_STYLES = {
     ...emphasis,
   },
   // MEDIA ===================================================================
-  'img, video': {
+  'svg, img, video': {
     width: '100%',
   },
   figure: {
