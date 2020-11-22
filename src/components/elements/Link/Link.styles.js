@@ -1,6 +1,7 @@
 import { cssValue, cssMap } from '@utilities/styles';
 import { link } from '@blocks/interactive';
 import S from '@symbols';
+import { darken } from 'polished';
 const { getFontScale } = S;
 
 const base = {
@@ -8,7 +9,12 @@ const base = {
   display: 'inline-block',
 };
 
-const makeColorModifier = (color) => ({ color });
+const makeColorModifier = (color) => ({
+  color,
+  '&:hover': {
+    color: darken(0.2, color),
+  },
+});
 
 export const constructStyles = (props) => [
   base,

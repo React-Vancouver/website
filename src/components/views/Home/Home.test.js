@@ -27,7 +27,7 @@ const mockProps = {
     },
   },
   navLinks: [],
-  openNextEvent: jest.fn(),
+  setTrayOpen: jest.fn(),
   speakersData: [],
   sponsorsData: [],
   statsData: [],

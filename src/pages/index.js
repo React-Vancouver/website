@@ -1,16 +1,13 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { formatHome } from '@utilities/content';
-import { graphql } from 'gatsby';
-import { withLayout, LayoutContext } from '@constructs/Layout';
+import { LayoutContext } from '@constructs/Layout';
 
 import Home from '@views/Home';
 import SEO from '@constructs/SEO';
 
 const IndexPage = ({ data }) => {
-  const { isNextEventOpen, openNextEvent, closeNextEvent } = useContext(
-    LayoutContext
-  );
+  const { isTrayOpen, openTray, closeTray } = useContext(LayoutContext);
 
   const {
     creditsData,
@@ -26,14 +23,14 @@ const IndexPage = ({ data }) => {
     <>
       <SEO page="Home" />
       <Home
-        closeNextEvent={closeNextEvent}
+        closeTray={closeTray}
         creditsData={creditsData}
         currentEventData={currentEventData}
         eventsData={eventsData}
         heroData={heroData}
-        isNextEventOpen={isNextEventOpen}
+        isTrayOpen={isTrayOpen}
         navLinks={navLinks}
-        openNextEvent={openNextEvent}
+        openTray={openTray}
         speakersData={speakersData}
         sponsorsData={sponsorsData}
         statsData={statsData}
@@ -46,12 +43,4 @@ IndexPage.propTypes = {
   data: PropTypes.object,
 };
 
-export default withLayout(IndexPage, { isCollapsingNav: true });
-
-export const query = graphql`
-  query {
-    sanityAside {
-      ...AsideData
-    }
-  }
-`;
+export default IndexPage;

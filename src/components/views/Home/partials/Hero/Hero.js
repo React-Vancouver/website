@@ -27,14 +27,7 @@ import Text from '@elements/Text';
 
 const MOBILE_BREAKPOINT = `(max-width: ${S.LAYOUT_MOBILE_MAX})`;
 
-const Hero = ({
-  className,
-  links,
-  openNextEvent,
-  closeNextEvent,
-  data,
-  event,
-}) => {
+const Hero = ({ className, links, openTray, data, event }) => {
   const { [MOBILE_BREAKPOINT]: isMobile } = useMedia([MOBILE_BREAKPOINT]);
 
   return (
@@ -50,11 +43,7 @@ const Hero = ({
           <Box mb6 css={navStyles}>
             <NavGroup links={links} />
             <Box>
-              <ButtonWithIcon
-                capped
-                color="secondary_d"
-                onClick={openNextEvent}
-              >
+              <ButtonWithIcon capped color="secondary_d" onClick={openTray}>
                 Get involved!
               </ButtonWithIcon>
             </Box>
@@ -68,7 +57,7 @@ const Hero = ({
           {data?.description}
         </Text>
         {isMobile && (
-          <Button mb3 onClick={openNextEvent}>
+          <Button mb3 onClick={openTray}>
             Get tickets!
           </Button>
         )}
@@ -103,8 +92,8 @@ const Hero = ({
 Hero.propTypes = {
   className: PropTypes.string,
   links: PropTypes.array,
-  openNextEvent: PropTypes.func,
-  closeNextEvent: PropTypes.func,
+  openTray: PropTypes.func,
+  closeTray: PropTypes.func,
   data: PropTypes.shape({
     title: PropTypes.string,
     description: PropTypes.string,

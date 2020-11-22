@@ -1,14 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { formatAboutUs } from '@utilities/content';
 import { graphql } from 'gatsby';
-import { withLayout, LayoutContext } from '@constructs/Layout';
 
 import SEO from '@constructs/SEO';
 import AboutUs from '@views/AboutUs';
 
 const AboutUsPage = ({ data }) => {
-  const { setNextEventOpen } = useContext(LayoutContext);
   const { blocks, title, description } = formatAboutUs(data);
 
   return (
@@ -23,7 +21,7 @@ AboutUsPage.propTypes = {
   data: PropTypes.object,
 };
 
-export default withLayout(AboutUsPage);
+export default AboutUsPage;
 
 export const query = graphql`
   query {

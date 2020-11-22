@@ -16,27 +16,31 @@ import Text from '@elements/Text';
 
 const Home = ({
   className,
-  closeNextEvent,
+  closeTray,
   creditsData,
   currentEventData,
   eventsData,
   heroData,
   navLinks,
-  openNextEvent,
+  openTray,
   speakersData,
   sponsorsData,
   statsData,
 }) => {
-  useEffect(() => openNextEvent?.(), []);
+  useEffect(() => {
+    openTray?.();
+
+    return () => closeTray?.();
+  }, []);
   return (
     <Box className={className} css={rootStyles}>
       {/* HERO */}
       <Hero
-        closeNextEvent={closeNextEvent}
+        closeTray={closeTray}
         data={heroData}
         event={currentEventData}
         links={navLinks}
-        openNextEvent={openNextEvent}
+        openTray={openTray}
       />
 
       {/* SPONSORS */}
@@ -91,13 +95,13 @@ const Home = ({
 
 Home.propTypes = {
   className: PropTypes.string,
-  closeNextEvent: PropTypes.func,
+  closeTray: PropTypes.func,
   creditsData: PropTypes.array,
   currentEventData: PropTypes.object,
   eventsData: PropTypes.array,
   heroData: PropTypes.object,
   navLinks: PropTypes.array,
-  openNextEvent: PropTypes.func,
+  openTray: PropTypes.func,
   speakersData: PropTypes.array,
   sponsorsData: PropTypes.array,
   statsData: PropTypes.array,

@@ -4,8 +4,8 @@ import { render } from '@testing-library/react';
 import Hero from './Hero';
 
 const mockProps = {
-  openNextEvent: jest.fn(),
-  closeNextEvent: jest.fn(),
+  openTray: jest.fn(),
+  closeTray: jest.fn(),
   event: {
     sponsors: [
       {

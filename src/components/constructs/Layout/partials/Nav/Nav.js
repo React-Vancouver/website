@@ -106,7 +106,7 @@ const LayoutNav = ({ links, background, onButtonClick, isCollapsing }) => {
 };
 
 LayoutNav.propTypes = {
-  background: PropTypes.oneOf('dark', 'light'),
+  background: PropTypes.oneOf(['dark', 'light']),
   isCollapsing: PropTypes.bool,
   links: PropTypes.array,
   onButtonClick: PropTypes.func,
