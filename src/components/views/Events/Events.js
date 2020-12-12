@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withSpacing } from '@utilities/styles/spacing';
-import EventCard from '@constructs/EventCard';
+import TalkCard from '@constructs/TalkCard';
 import Button from '@elements/Button';
-import { format } from 'date-fns'
+import { format } from 'date-fns';
 
 import {
   heroStyles,
@@ -11,6 +11,8 @@ import {
   timelineMarkStyles,
   timestampStyles,
   eventStyles,
+  talksStyles,
+  periodsStyles,
 } from './Events.styles';
 
 import fakeEvent from '../../../../__mocks__/data/event-mock';
@@ -39,7 +41,8 @@ const Events = ({ className }) => {
           </Text>
           <Box>
             <Text element="h2" mt2 mb8 subheading color="white">
-              Monthly gatherings of engineers of all levels. Get inspired, meet your peers and get connected to opportunities.
+              Monthly gatherings of engineers of all levels. Get inspired, meet
+              your peers and get connected to opportunities.
             </Text>
             <Button mb4>Check our next event</Button>
           </Box>
@@ -48,12 +51,46 @@ const Events = ({ className }) => {
       <Line />
       <Box container py4 css={timelineContainerStyles}>
         {Array.from(Array(6)).map((_, i) => (
-          <Box css={eventStyles} key={i} mb4>
+          <Box css={eventStyles} key={i} mb6>
             <div css={timelineMarkStyles} />
-            <Text mt2 ml2 caption css={timestampStyles}>{format(eventsData.date, 'do MMMM, y')}</Text>
-            <EventCard ml4 data={eventsData} />
+            <Text mt2 ml2 caption css={timestampStyles}>
+              {format(eventsData.date, 'do MMMM, y')}
+            </Text>
+            <div css={talksStyles}>
+              {eventsData.talks.map((talk) => (
+                <TalkCard data={talk} />
+              ))}
+            </div>
           </Box>
         ))}
+        <Box css={eventStyles} mb6>
+          <div />
+          <div>
+            <Text element="p" caption>
+              Choose a Period
+            </Text>
+            <div css={periodsStyles}>
+              <Button outline disabled>
+                Dec ’19 – Jun’19
+              </Button>
+              <Button outline>
+                Dec ’19 – Jun’19
+              </Button>
+              <Button outline>
+                Dec ’19 – Jun’19
+              </Button>
+              <Button outline>
+                Dec ’19 – Jun’19
+              </Button>
+              <Button outline>
+                Dec ’19 – Jun’19
+              </Button>
+              <Button outline>
+                Dec ’19 – Jun’19
+              </Button>
+            </div>
+          </div>
+        </Box>
       </Box>
     </Box>
   );

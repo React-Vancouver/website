@@ -38,8 +38,27 @@ export const timelineMarkStyles = {
 export const eventStyles = {
   position: 'relative',
   display: 'grid',
-  gridTemplateColumns: '1fr 3fr',
+  gridTemplateColumns: '16rem auto',
+  columnGap: S.calcSpace(3),
+  [`@media (max-width: ${S.LAYOUT_MOBILE_MAX})`]: {
+    gridTemplateColumns: '1fr',
+  },
+};
+
+export const talksStyles = {
+  position: 'relative',
+  display: 'grid',
+  gridTemplateColumns: 'repeat(2, 1fr)',
   gap: S.calcSpace(3),
+  [`@media (max-width: ${S.LAYOUT_MOBILE_MAX})`]: {
+    gridTemplateColumns: '1fr',
+  },
+};
+
+export const periodsStyles = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(4, 1fr)',
+  gap: S.calcSpace(2),
   [`@media (max-width: ${S.LAYOUT_MOBILE_MAX})`]: {
     gridTemplateColumns: '1fr',
   },
