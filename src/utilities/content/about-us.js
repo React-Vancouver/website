@@ -3,6 +3,6 @@ export default function(data) {
   return {
     title,
     blocks: _rawText,
-    desctiption: '',
+    description: '',
   };
 }

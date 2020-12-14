@@ -5,7 +5,6 @@ import {
   headerStyles,
   rootStyles,
   speakerStyles,
-  textStyles,
 } from './TalkCard.styles';
 import { withSpacing } from '@utilities/styles/spacing';
 import Avatar from '@constructs/Avatar';
@@ -30,7 +29,7 @@ const TalkCard = ({ className, data, image: Image, onClick }) => {
         />
       </Box>
       <Box p3 css={footerStyles}>
-        <Text element="h2" css={textStyles} subheading color="secondary_d">
+        <Text element="h2" subheading color="secondary_d">
           {title}
         </Text>
         <Text element="p" m0 color="grey_50">

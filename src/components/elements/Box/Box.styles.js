@@ -15,6 +15,17 @@ const makeBorderRadius = (corner) => ({
   borderRadius: corner,
 });
 
+const elevation = {
+  base: S.PLANE_SHADOWS[0],
+  low: S.PLANE_SHADOWS[2],
+  middle: S.PLANE_SHADOWS[4],
+  high: S.PLANE_SHADOWS[6],
+}
+
+const makeElevation = (boxShadow) => ({
+  boxShadow
+});
+
 export const constructStyles = (props) => [
   cssSwitch({ props, prop: 'container', css: container }),
   cssSwitch({ props, prop: 'article', css: article }),
@@ -29,5 +40,11 @@ export const constructStyles = (props) => [
     prop: 'corner',
     map: borders,
     makeCSS: makeBorderRadius,
+  }),
+  cssMap({
+    props,
+    prop: 'elevation',
+    map: elevation,
+    makeCSS: makeElevation,
   }),
 ];

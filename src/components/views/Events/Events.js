@@ -9,21 +9,17 @@ import {
   heroStyles,
   timelineContainerStyles,
   timelineMarkStyles,
-  timestampStyles,
   eventStyles,
   talksStyles,
   periodsStyles,
 } from './Events.styles';
 
-import fakeEvent from '../../../../__mocks__/data/event-mock';
-
-const eventsData = fakeEvent({ withTalks: true });
-
 import Text from '@elements/Text';
 import Line from '@elements/Line';
 import Box from '@elements/Box';
 
-const Events = ({ className }) => {
+const Events = ({ className, data }) => {
+  console.log(data)
   return (
     <Box className={className}>
       <Box container>
@@ -53,11 +49,11 @@ const Events = ({ className }) => {
         {Array.from(Array(6)).map((_, i) => (
           <Box css={eventStyles} key={i} mb6>
             <div css={timelineMarkStyles} />
-            <Text mt2 ml2 caption css={timestampStyles}>
-              {format(eventsData.date, 'do MMMM, y')}
+            <Text mt2 ml2 caption>
+              {format(data.date, 'do MMMM, y')}
             </Text>
             <div css={talksStyles}>
-              {eventsData.talks.map((talk) => (
+              {data.talks.map((talk) => (
                 <TalkCard data={talk} />
               ))}
             </div>
