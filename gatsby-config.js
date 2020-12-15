@@ -9,6 +9,7 @@ module.exports = {
     author: '@ReactVan',
     siteUrl: 'https://reactvancouver.com',
   },
+  flags : { DEV_SSR: true },
   plugins: [
     'gatsby-plugin-react-helmet',
     {

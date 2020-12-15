@@ -2,23 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withSpacing } from '@utilities/styles/spacing';
 import {
-  rootStyles,
-  heroStyles,
-  wallStyles,
-  profilePhotoStyles,
   formInnerStyles,
+  heroStyles,
+  profilePhotoStyles,
+  rootStyles,
+  statsStyles,
+  wallStyles,
+  topicsStyles,
 } from './Speakers.styles';
 
 import Background from '@constructs/Background';
 import Box from '@elements/Box';
-import Text from '@elements/Text';
-import Field from '@elements/Field';
-import TextArea from '@elements/TextArea';
 import Button from '@elements/Button';
+import Field from '@elements/Field';
+import Stat from '@constructs/Stat';
+import Text from '@elements/Text';
+import TextArea from '@elements/TextArea';
+import Topic from './partials/Topic';
 
-const Speakers = ({ className, data }) => {
+const Speakers = ({ className, speakersData, topicsData }) => {
   return (
     <Box css={rootStyles} className={className} backgroundColor="grey_20" pt8>
+      {/* Hero */}
       <Box px4 pb4 pt8 container css={heroStyles}>
         <div>
           <Text element="h1" title scale={20} color="white">
@@ -32,21 +37,34 @@ const Speakers = ({ className, data }) => {
         </div>
         <Box p4 backgroundColor="white" corner="sm" elevation="high">
           <form>
-            <Text element="legend" subheading mb3>Talk Proposal</Text>
+            <Text element="legend" subheading mb3>
+              Talk Proposal
+            </Text>
             <div css={formInnerStyles}>
               <Field label="First name" />
               <Field label="Last name" />
-              <Field label="Email"/>
-              <Field label="Talk title"/>
+              <Field label="Email" />
+              <Field label="Talk title" />
             </div>
-            <TextArea label="Description" my3/>
+            <TextArea label="Description" my3 />
             <Button>Submit</Button>
           </form>
-
         </Box>
       </Box>
+
+      {/* Stats */}
+      <Box mt4 mb10 container css={statsStyles}>
+        <div css={topicsStyles}>
+          {topicsData.map((topic, i) => (
+            <Topic topic={topic} i={i} key={i} />
+          ))}
+        </div>
+        <Stat number={234} color="secondary_l" title="amazing speakers" />
+      </Box>
+
+      {/* Wall of Fame */}
       <Box pb10 container css={wallStyles}>
-        {data.map((speaker) => (
+        {speakersData.map((speaker) => (
           <Box key={speaker.id}>
             <div css={profilePhotoStyles}>
               <Background

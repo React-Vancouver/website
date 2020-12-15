@@ -5,18 +5,17 @@ import { formatSpeakers } from '@utilities/content';
 
 import { LayoutContext } from '@constructs/Layout';
 import Speakers from '@views/Speakers';
-import Box from '@elements/Box';
 
 import SEO from '@constructs/SEO';
 
 const SpeakersPage = ({ data }) => {
   const layoutContext = useContext(LayoutContext);
-  const formattedData = formatSpeakers(data);
+  const { speakersData, topicsData } = formatSpeakers(data);
 
   return (
     <>
       <SEO page="Speakers" />
-      <Speakers data={formattedData}/>
+      <Speakers speakersData={speakersData} topicsData={topicsData} />
     </>
   );
 };

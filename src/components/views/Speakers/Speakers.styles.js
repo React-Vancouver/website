@@ -30,21 +30,35 @@ export const formInnerStyles = {
   display: 'grid',
   gap: S.calcSpace(3),
   gridTemplateColumns: `repeat(2, 1fr)`,
-}
+};
+
+export const statsStyles = {
+  display: 'grid',
+  gap: S.calcSpace(3),
+  gridTemplateColumns: `repeat(2, 1fr)`,
+
+  [`@media (max-width: ${S.LAYOUT_MOBILE_MAX})`]: {
+    gridTemplateColumns: '1fr',
+  },
+};
 
 export const wallStyles = {
   display: 'grid',
   gap: S.calcSpace(3),
   gridTemplateColumns: `repeat(auto-fit, minmax(${S.calcSpace(28)}, 1fr))`,
-}
+};
 
 export const profilePhotoStyles = {
   position: 'relative',
   height: S.calcSpace(20),
-  borderRadius: S.LINE_BORDER_RADIUS_0,
+  borderRadius: S.LINE_BORDER_RADIUS_2,
   overflow: 'hidden',
 
   '& > div': {
     zIndex: 0,
-  }
-}
+  },
+};
+
+export const topicsStyles = {
+  position: 'relative',
+};
