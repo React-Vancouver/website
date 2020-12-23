@@ -2,8 +2,8 @@ import S from '@symbols';
 
 const base = {
   position: 'absolute',
-  color: S.COLOR_THEME.PRIMARY,
-  textShadow: S.makePlaneShadow({ color: S.COLOR_THEME.PRIMARY, level: 0 }),
+  color: S.COLOR_THEME.PRIMARY_L,
+  textShadow: S.makePlaneShadow({ color: S.COLOR_THEME.PRIMARY_L, level: 0 }),
 }
 
 export const makeRootStyles = (i) => {

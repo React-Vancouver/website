@@ -13,3 +13,9 @@ export const rootStyles = {
     alignItems: 'center',
   },
 };
+
+export const constructWrapperStyles = ({ isDarkBackground }) =>
+  !isDarkBackground && {
+    borderBottom: '0.0625rem solid #E0DEED',
+    borderTop: '0.0625rem solid #E0DEED',
+  };

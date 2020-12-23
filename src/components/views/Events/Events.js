@@ -22,6 +22,7 @@ const Events = ({ className, data }) => {
   console.log(data)
   return (
     <Box className={className}>
+      {/* Hero */}
       <Box container>
         <Box
           px4
@@ -40,10 +41,12 @@ const Events = ({ className, data }) => {
               Monthly gatherings of engineers of all levels. Get inspired, meet
               your peers and get connected to opportunities.
             </Text>
-            <Button mb4>Check our next event</Button>
+            <Button mb4 outline>Check our next event</Button>
           </Box>
         </Box>
       </Box>
+
+      {/* Timeline */}
       <Line />
       <Box container py4 css={timelineContainerStyles}>
         {Array.from(Array(6)).map((_, i) => (

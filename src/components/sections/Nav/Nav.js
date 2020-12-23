@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { withSpacing } from '@utilities/styles/spacing';
-import { rootStyles } from './Nav.styles';
+import { rootStyles, constructWrapperStyles } from './Nav.styles';
 import useMedia from '@utilities/hooks/use-media';
 import S from '@symbols';
 
@@ -21,11 +21,18 @@ const Nav = ({
   onButtonClick,
 }) => {
   const isDarkBackground = background === 'dark';
+  const wrapperStyles = useMemo(
+    () => constructWrapperStyles({ isDarkBackground }),
+    [background]
+  );
 
   const { [MOBILE_BREAKPOINT]: isMobile } = useMedia([MOBILE_BREAKPOINT]);
 
   return (
-    <Box backgroundColor={isDarkBackground ? 'grey_30' : 'secondary_l'}>
+    <Box
+      backgroundColor={isDarkBackground ? 'grey_30' : 'secondary_l'}
+      css={wrapperStyles}
+    >
       <Box container py2>
         <Element css={rootStyles} className={className}>
           <Link to="/" css={{ display: 'flex' }}>
@@ -37,7 +44,7 @@ const Nav = ({
             <>
               <NavGroup
                 links={links}
-                color={isDarkBackground ? 'primary' : 'secondary_d'}
+                color={isDarkBackground ? 'white' : 'secondary_d'}
               />
               <ButtonWithIcon color="secondary_d" onClick={onButtonClick}>
                 Get involved!
