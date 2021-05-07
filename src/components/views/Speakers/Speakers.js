@@ -20,19 +20,17 @@ import Text from '@elements/Text';
 import TextArea from '@elements/TextArea';
 import Topic from './partials/Topic';
 
-const Speakers = ({ className, speakersData, topicsData }) => {
+const Speakers = ({ className, speakersData, topicsData, title, catchLine }) => {
   return (
     <Box css={rootStyles} className={className} backgroundColor="grey_20" pt8>
       {/* Hero */}
       <Box px4 pb4 pt8 container css={heroStyles}>
         <div>
           <Text element="h1" title scale={20} color="white">
-            Speakers
+            {title}
           </Text>
           <Text element="h2" mt2 mb8 subheading color="white">
-            Apply to speak at ReactVancouver. Lorem, ipsum dolor sit amet
-            consectetur adipisicing elit. Praesentium enim cumque at corporis
-            blanditiis illo ipsum! Nostrum, aperiam ipsa dolorem,
+            {catchLine}
           </Text>
         </div>
         <Box p4 backgroundColor="white" corner="sm" elevation="high">
@@ -68,7 +66,7 @@ const Speakers = ({ className, speakersData, topicsData }) => {
           <Box key={speaker.id}>
             <div css={profilePhotoStyles}>
               <Background
-                src="http://placeimg.com/640/360/any"
+                src={speaker.avatar?.asset?.url}
                 alt={`${speaker.firstName} ${speaker.lastName} profile photo`}
               />
             </div>
@@ -76,7 +74,7 @@ const Speakers = ({ className, speakersData, topicsData }) => {
               {speaker.firstName} {speaker.lastName}
             </Text>
             <Text element="p" color="grey_70">
-              {speaker.title} @ {speaker.company.name}
+              {speaker.title} @ {speaker.company?.name ?? ''}
             </Text>
           </Box>
         ))}

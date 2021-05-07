@@ -23,3 +23,8 @@ export const avatarStyles = {
   display: 'flex',
   justifyContent: 'flex-end',
 };
+
+export const talkStyles = {
+  lineHeight: calcSpace(2),
+  marginBottom: 0,
+};

@@ -2,9 +2,9 @@ import React, { useMemo, useState, useCallback, createContext } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { useNavData, useAsideData } from '@data';
 import GlobalStyles from '@global';
-import 'fontsource-space-mono/latin-700-normal.css';
-import 'fontsource-open-sans/latin-600-normal.css';
-import 'fontsource-open-sans/latin-700-normal.css';
+import '@fontsource/open-sans/latin-700.css';
+import '@fontsource/open-sans/latin-600.css';
+import '@fontsource/space-mono/latin-700.css';
 
 import {
   asideStyles,

@@ -15,7 +15,6 @@ const base = {
     justifyContent: 'center',
     textAlign: 'center',
     fontSize: calcFontSize(2),
-    lineHeight: calcSpace(2),
   },
 };
 

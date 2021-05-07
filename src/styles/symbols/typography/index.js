@@ -23,5 +23,5 @@ export const calcLineHeight = (n) => `${space(roundUpToEven(n))}rem`;
 
 export const getFontScale = (n) => ({
   fontSize: calcFontSize(n),
-  lineHeight: calcLineHeight(n),
+  lineHeight: calcLineHeight(n+1),
 });

@@ -9,12 +9,12 @@ import Sponsors from '@views/Sponsors';
 
 const SponsorsPage = ({ data }) => {
   const layoutContext = useContext(LayoutContext);
-  const { optionsData } = formatSponsors(data);
+  const sponsorsData = formatSponsors(data);
 
   return (
     <>
-      <SEO page="SponsorsPage" />
-      <Sponsors optionsData={optionsData} />
+      <SEO page="SponsorsPage" description={sponsorsData.description}/>
+      <Sponsors sponsorsData={sponsorsData} />
     </>
   );
 };
@@ -25,4 +25,27 @@ SponsorsPage.propTypes = {
 
 export default SponsorsPage;
 
-// export const query = graphql``;
+export const query = graphql`
+  query SponsorsPageQuery {
+    sanitySponsorsPage(_id: {eq: "sponsors-page"}) {
+      description
+      title
+      catchLine
+      cta {
+        isAction
+        title
+        isLink {
+          title
+          url
+        }
+      }
+      sponsorshipOptions {
+        _key
+        commitment
+        description
+        title
+      }
+    }
+  }
+`;
+

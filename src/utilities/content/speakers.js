@@ -1,8 +1,9 @@
-import fakeSpeaker from '../../../__mocks__/data/person-mock';
-
 export default function (data) {
   return {
-    speakersData: Array.from(Array(12)).map(() => fakeSpeaker()),
+    title: data?.sanitySpeakersPage?.title ?? '',
+    description: data?.sanitySpeakersPage?.description ?? '',
+    catchLine: data?.sanitySpeakersPage?.catchLine ?? '',
+    speakersData: data?.allSanityPerson?.nodes ?? [],
     topicsData: [
       'state management',
       'CSS-in-JS',

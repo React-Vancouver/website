@@ -1,7 +1,12 @@
 import React from 'react';
 import { format } from 'date-fns';
 import PropTypes from 'prop-types';
-import { rootStyles, cardStyles, avatarStyles } from './SpeakerCard.styles';
+import {
+  rootStyles,
+  cardStyles,
+  avatarStyles,
+  talkStyles,
+} from './SpeakerCard.styles';
 import { withSpacing } from '@utilities/styles/spacing';
 import personPropTypes from '@utilities/prop-types/person';
 
@@ -34,7 +39,7 @@ const SpeakerCard = ({ className, data, onClick }) => {
         </Text>
         <Box>
           {talks.map((talk) => (
-            <Text element="p" key={talk.id}>
+            <Text element="p" key={talk.id} css={talkStyles}>
               <Text color="grey_50">“{talk.title}”&ensp;</Text>
               <Text color="grey_70">
                 {format(talk.event.date, 'MMM do, yyyy')}
