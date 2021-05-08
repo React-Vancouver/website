@@ -18,7 +18,7 @@ import Background from '@constructs/Background';
 import Box from '@elements/Box';
 import Button from '@elements/Button';
 import ButtonWithIcon from '@elements/ButtonWithIcon';
-import GatsbyImage from 'gatsby-image';
+import Image from '@elements/Image';
 import Grid from '@elements/Grid';
 import Illustration from '@constructs/Illustration';
 import Logo from '@elements/Logo';
@@ -65,16 +65,11 @@ const Hero = ({ className, links, openTray, data, event }) => {
           Sponsored by
         </Text>
         <Grid fluid={20} gap={2}>
-          {event?.sponsors.map(({ fluid, fixed, id, name }) => {
-            if (fluid || fixed) {
-              return (
-                <GatsbyImage
-                  key={id}
-                  fluid={fluid}
-                  fixed={fixed}
-                  alt={`${name} logo`}
-                />
-              );
+          {event?.sponsors.map((sponsor) => {
+            const { id, name } = sponsor;
+            console.log(sponsor);
+            if (false) {
+              return <Image key={id} alt={`${name} logo`} />;
             } else {
               return (
                 <Text key={id} py4 px2 subheading css={sponsorStyles}>

@@ -5,7 +5,7 @@ import fakeTalk from './talk-mock';
 const fakeEvent = (options = {}) => {
   const { withTalks } = options;
   const _event = {
-    id: faker.random.uuid(),
+    id: faker.datatype.uuid(),
     date: faker.date.recent(),
     host: fakeCompany(),
     photos: [],

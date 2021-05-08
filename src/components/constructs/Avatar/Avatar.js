@@ -1,23 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withSpacing } from '@utilities/styles/spacing';
-import GatsbyImage from 'gatsby-image';
 import { constructStyles } from './Avatar.styles';
-import Picture from '@elements/Picture';
+import Image from '@elements/Image';
 
-/**
- * @todo Add <Image />
- * @body Avatar implements a lot of duplicate logic from Image element.
- * Placeholder should be moved to a separate partial component and passed to
- * <Image placeholder={AvatarPlaceholder} />
- */
+import Placeholder from './partials/Placeholder';
 
 const Avatar = ({
   alt,
   className,
   firstName,
-  fixed,
-  fluid,
+  data,
   lastName,
   scale,
   src,
@@ -26,50 +19,21 @@ const Avatar = ({
 }) => {
   const styles = constructStyles({ scale });
 
-  if (src) {
+  if (src || data) {
     return (
-      <Picture
+      <Image
         className={className}
         css={styles}
         src={src}
         srcSets={srcSets}
+        data={data}
         alt={alt}
-      />
-    );
-  }
-
-  if (fixed) {
-    return (
-      <GatsbyImage
-        alt={alt}
-        className={className}
-        css={styles}
-        fixed={fixed}
         {...restProps}
       />
     );
   }
 
-  if (fluid) {
-    return (
-      <GatsbyImage
-        alt={alt}
-        className={className}
-        css={styles}
-        fluid={fluid}
-        {...restProps}
-      />
-    );
-  }
-
-  return (
-    <div css={styles} className={className}>
-      <span>
-        {firstName[0]}
-        {lastName[0]}
-      </span>
-    </div>
-  );
+  return <Placeholder css={styles} firstName={firstName} lastName={lastName} />;
 };
 
 Avatar.defaultProps = {
@@ -82,8 +46,7 @@ Avatar.propTypes = {
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
   firstName: PropTypes.string,
-  fixed: PropTypes.object,
-  fluid: PropTypes.object,
+  data: PropTypes.object,
   lastName: PropTypes.string,
   scale: PropTypes.number,
   src: PropTypes.string,

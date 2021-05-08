@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import { withSpacing } from '@utilities/styles/spacing';
 import { placeholderStyles } from './Image.styles';
 
-import GatsbyImage from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Picture from '@elements/Picture';
 
 const Image = ({
   className,
   alt,
-  fixed,
-  fluid,
+  data,
   src,
   srcSets,
   placeholder: Placeholder,
@@ -22,23 +21,13 @@ const Image = ({
     );
   }
 
-  if (fixed) {
+  if (data) {
     return (
       <GatsbyImage
         alt={alt}
         className={className}
-        fixed={fixed}
-        {...restProps}
-      />
-    );
-  }
-
-  if (fluid) {
-    return (
-      <GatsbyImage
-        alt={alt}
-        className={className}
-        fluid={fluid}
+        image={data}
+        placeholder="dominantColor"
         {...restProps}
       />
     );
@@ -54,8 +43,7 @@ const Image = ({
 Image.propTypes = {
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
-  fixed: PropTypes.object,
-  fluid: PropTypes.object,
+  data: PropTypes.object,
   placeholder: PropTypes.node,
   src: PropTypes.string,
   srcSets: PropTypes.array,

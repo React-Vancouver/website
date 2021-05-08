@@ -19,7 +19,6 @@ import Line from '@elements/Line';
 import Box from '@elements/Box';
 
 const Events = ({ className, data }) => {
-  console.log(data)
   return (
     <Box className={className}>
       {/* Hero */}
@@ -41,7 +40,9 @@ const Events = ({ className, data }) => {
               Monthly gatherings of engineers of all levels. Get inspired, meet
               your peers and get connected to opportunities.
             </Text>
-            <Button mb4 outline>Check our next event</Button>
+            <Button mb4 outline>
+              Check our next event
+            </Button>
           </Box>
         </Box>
       </Box>
@@ -57,7 +58,7 @@ const Events = ({ className, data }) => {
             </Text>
             <div css={talksStyles}>
               {data.talks.map((talk) => (
-                <TalkCard data={talk} />
+                <TalkCard key={talk.id} data={talk} />
               ))}
             </div>
           </Box>
@@ -72,21 +73,11 @@ const Events = ({ className, data }) => {
               <Button outline disabled>
                 Dec ’19 – Jun’19
               </Button>
-              <Button outline>
-                Dec ’19 – Jun’19
-              </Button>
-              <Button outline>
-                Dec ’19 – Jun’19
-              </Button>
-              <Button outline>
-                Dec ’19 – Jun’19
-              </Button>
-              <Button outline>
-                Dec ’19 – Jun’19
-              </Button>
-              <Button outline>
-                Dec ’19 – Jun’19
-              </Button>
+              <Button outline>Dec ’19 – Jun’19</Button>
+              <Button outline>Dec ’19 – Jun’19</Button>
+              <Button outline>Dec ’19 – Jun’19</Button>
+              <Button outline>Dec ’19 – Jun’19</Button>
+              <Button outline>Dec ’19 – Jun’19</Button>
             </div>
           </div>
         </Box>
@@ -97,6 +88,7 @@ const Events = ({ className, data }) => {
 
 Events.propTypes = {
   className: PropTypes.string,
+  data: PropTypes.object,
 };
 
 export default withSpacing(Events);

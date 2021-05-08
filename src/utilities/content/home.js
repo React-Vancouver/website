@@ -1,9 +1,7 @@
 import { EVENTS, SPEAKERS, SPONSORS, ABOUT_US } from '@constants/routes';
 import fakePerson from '../../../__mocks__/data/person-mock';
 import fakeEvent from '../../../__mocks__/data/event-mock';
-import fakeCompany from '../../../__mocks__/data/company-mock';
 
-const sponsorsData = Array.from(Array(12)).map(() => fakeCompany());
 const statsData = [
   {
     id: 'A',
@@ -38,7 +36,9 @@ const heroData = {
   },
 };
 
-export default function() {
+const formatSponsors = (edges = []) => edges.map((el) => el.node);
+
+export default function (data) {
   return {
     creditsData,
     currentEventData: eventsData[0],
@@ -46,7 +46,7 @@ export default function() {
     heroData,
     navLinks,
     speakersData,
-    sponsorsData,
+    sponsorsData: formatSponsors(data?.allSanityCompany?.edges),
     statsData,
   };
 }

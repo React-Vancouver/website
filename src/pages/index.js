@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { formatHome } from '@utilities/content';
 import { LayoutContext } from '@constructs/Layout';
+import { graphql } from 'gatsby';
 
 import Home from '@views/Home';
 import SEO from '@constructs/SEO';
@@ -44,3 +45,22 @@ IndexPage.propTypes = {
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query IndexPageQuery {
+    allSanityCompany(filter: { isSponsor: { eq: true } }) {
+      edges {
+        node {
+          logo {
+            asset {
+              gatsbyImageData
+            }
+            alt
+          }
+          id
+          name
+        }
+      }
+    }
+  }
+`;

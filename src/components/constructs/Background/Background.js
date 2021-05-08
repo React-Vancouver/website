@@ -6,9 +6,10 @@ import {
   imageStyles,
   placeholderStyles,
 } from './Background.styles';
-import GatsbyImage from 'gatsby-image';
 
-const Background = ({ className, alt, fixed, fluid, src, ...restProps }) => {
+import Image from '@elements/Image';
+
+const Background = ({ className, alt, data, src, ...restProps }) => {
   const backgroundStyles = useMemo(() => constructBackgroundStyles({ src }), [
     src,
   ]);
@@ -26,25 +27,13 @@ const Background = ({ className, alt, fixed, fluid, src, ...restProps }) => {
     );
   }
 
-  if (fixed) {
+  if (data) {
     return (
-      <GatsbyImage
+      <Image
         alt={alt}
         css={imageStyles}
         className={className}
-        fixed={fixed}
-        {...restProps}
-      />
-    );
-  }
-
-  if (fluid) {
-    return (
-      <GatsbyImage
-        alt={alt}
-        css={imageStyles}
-        className={className}
-        fluid={fluid}
+        data={data}
         {...restProps}
       />
     );
@@ -56,8 +45,7 @@ const Background = ({ className, alt, fixed, fluid, src, ...restProps }) => {
 Background.propTypes = {
   alt: PropTypes.string,
   className: PropTypes.string,
-  fixed: PropTypes.object,
-  fluid: PropTypes.object,
+  data: PropTypes.object,
   src: PropTypes.string,
   srcSets: PropTypes.array,
 };

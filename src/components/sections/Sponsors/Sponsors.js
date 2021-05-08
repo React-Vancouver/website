@@ -11,9 +11,9 @@ import companyPropTypes from '@utilities/prop-types/company';
 
 import Box from '@elements/Box';
 import ButtonWithIcon from '@elements/ButtonWithIcon';
-import GatsbyImage from 'gatsby-image';
 import Grid from '@elements/Grid';
 import Text from '@elements/Text';
+import Image from '@elements/Image';
 
 const Sponsors = ({ className, data, background }) => {
   return (
@@ -36,23 +36,19 @@ const Sponsors = ({ className, data, background }) => {
         </ButtonWithIcon>
       </Box>
       <Grid fluid={18} gap={2} css={sponsorsStyles}>
-        {data.map(({ id, name, logo: { fluid, fixed } }) => {
-          if (fluid || fixed) {
-            return (
-              <GatsbyImage
-                key={id}
-                fluid={fluid}
-                fixed={fixed}
-                alt={`${name} logo`}
-              />
-            );
-          } else {
-            return (
-              <Text key={id} py4 px2 subheading css={sponsorStyles}>
-                {name}
-              </Text>
-            );
-          }
+        {data.map(({ id, name, logo: gatsbyImageData }) => {
+          // TODO: Fix images
+          // if (gatsbyImageData) {
+          //   return (
+          //     <Image key={id} alt={`${name} logo`} data={gatsbyImageData} />
+          //   );
+          // } else {
+          return (
+            <Text key={id} py4 px2 subheading css={sponsorStyles}>
+              {name}
+            </Text>
+          );
+          // }
         })}
       </Grid>
     </Box>

@@ -4,7 +4,7 @@ import fakeCompany from './company-mock';
 
 const fakePerson = ({ withTalks, withEvent } = {}) => {
   const _person = {
-    id: faker.random.uuid(),
+    id: faker.datatype.uuid(),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     company: fakeCompany(),

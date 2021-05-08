@@ -52,7 +52,7 @@ const LayoutNav = ({ links, background, onButtonClick, isCollapsing }) => {
       <animated.nav
         css={mobileNavStyles}
         style={{
-          transform: translateY.interpolate((y) => `translate3d(0,${y}%,0)`),
+          transform: translateY.to((y) => `translate3d(0,${y}%,0)`),
         }}
       >
         <Box py2 px2 backgroundColor="secondary_d">
@@ -77,7 +77,7 @@ const LayoutNav = ({ links, background, onButtonClick, isCollapsing }) => {
       <animated.aside
         css={asideStyles}
         style={{
-          transform: translateX.interpolate((x) => `translate3d(${x}%,0,0)`),
+          transform: translateX.to((x) => `translate3d(${x}%,0,0)`),
         }}
       >
         <MobileNav
@@ -93,7 +93,7 @@ const LayoutNav = ({ links, background, onButtonClick, isCollapsing }) => {
     <animated.nav
       css={navStyles}
       style={{
-        transform: translateY.interpolate((y) => `translate3d(0,${y}%,0)`),
+        transform: translateY.to((y) => `translate3d(0,${y}%,0)`),
       }}
     >
       <Nav

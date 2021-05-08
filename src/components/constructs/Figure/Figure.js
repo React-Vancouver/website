@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getFluidGatsbyImage } from 'gatsby-source-sanity';
+import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { withSpacing } from '@utilities/styles/spacing';
 import { figcaptionStyles } from './Figure.styles';
 import clientConfig from '../../../../config/client';
@@ -11,7 +11,7 @@ const Figure = ({ className, node }) => {
   if (!node?.asset?._ref) {
     return null;
   }
-  const fluid = getFluidGatsbyImage(
+  const imageData = getGatsbyImageData(
     node.asset._ref,
     { maxWidth: 675 },
     clientConfig.sanity
@@ -19,7 +19,7 @@ const Figure = ({ className, node }) => {
 
   return (
     <figure className={className}>
-      <Image fluid={fluid} alt={node.alt} />
+      <Image data={imageData} alt={node.alt} />
       <figcaption css={figcaptionStyles}>{node.caption}</figcaption>
     </figure>
   );

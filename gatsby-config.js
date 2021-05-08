@@ -9,7 +9,7 @@ module.exports = {
     author: '@ReactVan',
     siteUrl: 'https://reactvancouver.com',
   },
-  flags : { DEV_SSR: true },
+  flags: { DEV_SSR: true },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
@@ -19,6 +19,7 @@ module.exports = {
         path: path.join(__dirname, `src`, `assets`),
       },
     },
+    'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {

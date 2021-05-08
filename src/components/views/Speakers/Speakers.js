@@ -20,7 +20,13 @@ import Text from '@elements/Text';
 import TextArea from '@elements/TextArea';
 import Topic from './partials/Topic';
 
-const Speakers = ({ className, speakersData, topicsData, title, catchLine }) => {
+const Speakers = ({
+  className,
+  speakersData,
+  topicsData,
+  title,
+  catchLine,
+}) => {
   return (
     <Box css={rootStyles} className={className} backgroundColor="grey_20" pt8>
       {/* Hero */}
