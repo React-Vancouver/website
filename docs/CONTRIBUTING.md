@@ -1,6 +1,7 @@
 # Contributing
+_Thank you for contributing to ReactVancouver open source projects!
 
-## Choosing an issue
+_## Choosing an issue
 
 _If you do know what you want to contribute…_
 Create an issue using a template:
@@ -11,10 +12,54 @@ Create an issue using a template:
 _If you don’t know what you want to contribute…_
 Look at the open [issues](https://github.com/React-Vancouver/website/issues). If you are just starting out, look for _good first issue_ tags. Comment on the issue to discuss the implementation plan or reach out to core maintainers on Slack.
 
-## Get the code
-1. Clone the repo
-2. Install dependencies with  `yarn`
-3. `yarn start` for Gatsby
+## Installation
+
+You will need `node@14.x` and `npm@6.14.x` installed globally on your machine
+
+```bash
+git clone https://github.com/React-Vancouver/website.git
+cd website/
+yarn
+```
+
+### Environment Setup
+
+Add `.env.production` and `.env.development` file with your own keys.
+
+```bash
+$ mv .env.sample .env.production
+$ mv .env.sample .env.development
+```
+
+Ask core maintainers for the keys 🔑.
+
+### Start Development Server
+
+**Gatsby**
+```bash
+yarn start
+```
+
+You can now view `react-vancouver-website` in the browser.⠀
+http://localhost:8000/
+⠀
+View GraphiQL, an in-browser IDE, to explore your site’s data and schema.
+http://localhost:8000/___graphql
+
+**StoryBook**
+```bash
+yarn storybook
+```
+
+Once you’ve started the development server, open http://localhost:3000 with your browser.
+
+### Start StoryBook
+
+```bash
+yarn storybook
+```
+
+---
 
 ## Working on issues
 1. Create a new branch for your work:
@@ -22,5 +67,14 @@ Look at the open [issues](https://github.com/React-Vancouver/website/issues). If
   1.2 off `production` if you are contributing an individual feature or fix.
 2. The naming convention for branches is `[feature|fix]/[issue-number]/[issue-name]` (eg `feature/3/add-readme`)
 
+```bash
+git checkout -b feature/3/add-readme
+yarn && yarn start
+```
+
 ## Pull Request Process
-You may merge the Pull Request in once you have the sign-off of two other developers, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
+1. Open a PR against a project or production branch  depending on what you were working on.
+2. Get at least one review.
+3. You may merge the Pull Request in once you have the sign-off from a core maintainer (see `CODEOWNERS`).
+
+If you were working on a project, the project branch will be merged into `production` when it is complete and ready for release.
