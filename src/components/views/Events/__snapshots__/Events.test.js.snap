@@ -1,0 +1,420 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Events renders correctly 1`] = `
+<div
+  className="css-k59bsg-Box"
+>
+  <div
+    className="css-1nyzfsj-Box"
+  >
+    <div
+      className="css-lezwuk-Events"
+    >
+      <h1
+        className="css-p3o3f5-Text"
+      >
+        Events
+      </h1>
+      <div
+        className="css-10s9usd-Box"
+      >
+        <h2
+          className="css-xn09ws-Text"
+        >
+          Monthly gatherings of engineers of all levels. Get inspired, meet your peers and get connected to opportunities.
+        </h2>
+        <button
+          className="css-gem8l8-Button"
+        >
+          Check our next event
+        </button>
+      </div>
+    </div>
+  </div>
+  <hr
+    className="css-4qef5c-Line"
+  />
+  <div
+    className="css-1n3ucaw-Events"
+  >
+    <div
+      className="css-l0vd90-Box"
+    >
+      <div
+        className="css-nrcgnl"
+      />
+      <span
+        className="css-1fmxv6f-Text"
+      >
+        8th December, 2020
+      </span>
+      <article
+        className="css-6anqyt-EventCard"
+      >
+        <header
+          className="css-18nnq3o-EventCard"
+        >
+           
+        </header>
+        <div
+          className="css-1q662qs-EventCard"
+        >
+          <picture>
+            <img
+              alt="Maximo Ferry avatar photo"
+              className="css-1qdke57-Avatar"
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/ipavelek/128.jpg"
+            />
+          </picture>
+          <picture>
+            <img
+              alt="Lily Emmerich avatar photo"
+              className="css-1qdke57-Avatar"
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/coreyweb/128.jpg"
+            />
+          </picture>
+        </div>
+        <div
+          className="css-1ve326y-EventCard"
+        >
+          <h6
+            className="css-xb9iy2-EventCard"
+          >
+            <span
+              className="css-su99q3-Text"
+            >
+              Dec 8th, 2020
+            </span>
+            <span
+              className="css-1jmhtp8-Text"
+            >
+               @ 
+              Keeling, Cummerata and DuBuque
+            </span>
+          </h6>
+          <p
+            className="css-19v5dho-Text"
+          >
+            “vel occaecati consequatur”, “quos qui temporibus”
+          </p>
+        </div>
+      </article>
+    </div>
+    <div
+      className="css-l0vd90-Box"
+    >
+      <div
+        className="css-nrcgnl"
+      />
+      <span
+        className="css-1fmxv6f-Text"
+      >
+        8th December, 2020
+      </span>
+      <article
+        className="css-6anqyt-EventCard"
+      >
+        <header
+          className="css-18nnq3o-EventCard"
+        >
+           
+        </header>
+        <div
+          className="css-1q662qs-EventCard"
+        >
+          <picture>
+            <img
+              alt="Maximo Ferry avatar photo"
+              className="css-1qdke57-Avatar"
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/ipavelek/128.jpg"
+            />
+          </picture>
+          <picture>
+            <img
+              alt="Lily Emmerich avatar photo"
+              className="css-1qdke57-Avatar"
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/coreyweb/128.jpg"
+            />
+          </picture>
+        </div>
+        <div
+          className="css-1ve326y-EventCard"
+        >
+          <h6
+            className="css-xb9iy2-EventCard"
+          >
+            <span
+              className="css-su99q3-Text"
+            >
+              Dec 8th, 2020
+            </span>
+            <span
+              className="css-1jmhtp8-Text"
+            >
+               @ 
+              Keeling, Cummerata and DuBuque
+            </span>
+          </h6>
+          <p
+            className="css-19v5dho-Text"
+          >
+            “vel occaecati consequatur”, “quos qui temporibus”
+          </p>
+        </div>
+      </article>
+    </div>
+    <div
+      className="css-l0vd90-Box"
+    >
+      <div
+        className="css-nrcgnl"
+      />
+      <span
+        className="css-1fmxv6f-Text"
+      >
+        8th December, 2020
+      </span>
+      <article
+        className="css-6anqyt-EventCard"
+      >
+        <header
+          className="css-18nnq3o-EventCard"
+        >
+           
+        </header>
+        <div
+          className="css-1q662qs-EventCard"
+        >
+          <picture>
+            <img
+              alt="Maximo Ferry avatar photo"
+              className="css-1qdke57-Avatar"
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/ipavelek/128.jpg"
+            />
+          </picture>
+          <picture>
+            <img
+              alt="Lily Emmerich avatar photo"
+              className="css-1qdke57-Avatar"
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/coreyweb/128.jpg"
+            />
+          </picture>
+        </div>
+        <div
+          className="css-1ve326y-EventCard"
+        >
+          <h6
+            className="css-xb9iy2-EventCard"
+          >
+            <span
+              className="css-su99q3-Text"
+            >
+              Dec 8th, 2020
+            </span>
+            <span
+              className="css-1jmhtp8-Text"
+            >
+               @ 
+              Keeling, Cummerata and DuBuque
+            </span>
+          </h6>
+          <p
+            className="css-19v5dho-Text"
+          >
+            “vel occaecati consequatur”, “quos qui temporibus”
+          </p>
+        </div>
+      </article>
+    </div>
+    <div
+      className="css-l0vd90-Box"
+    >
+      <div
+        className="css-nrcgnl"
+      />
+      <span
+        className="css-1fmxv6f-Text"
+      >
+        8th December, 2020
+      </span>
+      <article
+        className="css-6anqyt-EventCard"
+      >
+        <header
+          className="css-18nnq3o-EventCard"
+        >
+           
+        </header>
+        <div
+          className="css-1q662qs-EventCard"
+        >
+          <picture>
+            <img
+              alt="Maximo Ferry avatar photo"
+              className="css-1qdke57-Avatar"
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/ipavelek/128.jpg"
+            />
+          </picture>
+          <picture>
+            <img
+              alt="Lily Emmerich avatar photo"
+              className="css-1qdke57-Avatar"
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/coreyweb/128.jpg"
+            />
+          </picture>
+        </div>
+        <div
+          className="css-1ve326y-EventCard"
+        >
+          <h6
+            className="css-xb9iy2-EventCard"
+          >
+            <span
+              className="css-su99q3-Text"
+            >
+              Dec 8th, 2020
+            </span>
+            <span
+              className="css-1jmhtp8-Text"
+            >
+               @ 
+              Keeling, Cummerata and DuBuque
+            </span>
+          </h6>
+          <p
+            className="css-19v5dho-Text"
+          >
+            “vel occaecati consequatur”, “quos qui temporibus”
+          </p>
+        </div>
+      </article>
+    </div>
+    <div
+      className="css-l0vd90-Box"
+    >
+      <div
+        className="css-nrcgnl"
+      />
+      <span
+        className="css-1fmxv6f-Text"
+      >
+        8th December, 2020
+      </span>
+      <article
+        className="css-6anqyt-EventCard"
+      >
+        <header
+          className="css-18nnq3o-EventCard"
+        >
+           
+        </header>
+        <div
+          className="css-1q662qs-EventCard"
+        >
+          <picture>
+            <img
+              alt="Maximo Ferry avatar photo"
+              className="css-1qdke57-Avatar"
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/ipavelek/128.jpg"
+            />
+          </picture>
+          <picture>
+            <img
+              alt="Lily Emmerich avatar photo"
+              className="css-1qdke57-Avatar"
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/coreyweb/128.jpg"
+            />
+          </picture>
+        </div>
+        <div
+          className="css-1ve326y-EventCard"
+        >
+          <h6
+            className="css-xb9iy2-EventCard"
+          >
+            <span
+              className="css-su99q3-Text"
+            >
+              Dec 8th, 2020
+            </span>
+            <span
+              className="css-1jmhtp8-Text"
+            >
+               @ 
+              Keeling, Cummerata and DuBuque
+            </span>
+          </h6>
+          <p
+            className="css-19v5dho-Text"
+          >
+            “vel occaecati consequatur”, “quos qui temporibus”
+          </p>
+        </div>
+      </article>
+    </div>
+    <div
+      className="css-l0vd90-Box"
+    >
+      <div
+        className="css-nrcgnl"
+      />
+      <span
+        className="css-1fmxv6f-Text"
+      >
+        8th December, 2020
+      </span>
+      <article
+        className="css-6anqyt-EventCard"
+      >
+        <header
+          className="css-18nnq3o-EventCard"
+        >
+           
+        </header>
+        <div
+          className="css-1q662qs-EventCard"
+        >
+          <picture>
+            <img
+              alt="Maximo Ferry avatar photo"
+              className="css-1qdke57-Avatar"
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/ipavelek/128.jpg"
+            />
+          </picture>
+          <picture>
+            <img
+              alt="Lily Emmerich avatar photo"
+              className="css-1qdke57-Avatar"
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/coreyweb/128.jpg"
+            />
+          </picture>
+        </div>
+        <div
+          className="css-1ve326y-EventCard"
+        >
+          <h6
+            className="css-xb9iy2-EventCard"
+          >
+            <span
+              className="css-su99q3-Text"
+            >
+              Dec 8th, 2020
+            </span>
+            <span
+              className="css-1jmhtp8-Text"
+            >
+               @ 
+              Keeling, Cummerata and DuBuque
+            </span>
+          </h6>
+          <p
+            className="css-19v5dho-Text"
+          >
+            “vel occaecati consequatur”, “quos qui temporibus”
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+`;

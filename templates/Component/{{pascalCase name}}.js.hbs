@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { withSpacing } from '@utilities/styles/spacing';
+import { constructStyles } from './{{pascalCase name}}.styles';
 
-const {{pascalCase name}} = ({ className }) => {
-    return (
-        <div className={className}>
-            {{pascalCase name}}
-        </div>
-    )
+const {{pascalCase name}} = ({ className, ...restProps }) => {
+  const styles = useMemo(() => constructStyles(restProps), [restProps]);
+  return (
+    <div css={styles} className={className}>
+      {{pascalCase name}}
+    </div>
+  );
 };
 
 {{pascalCase name}}.propTypes = {
-    className: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default withSpacing({{pascalCase name}});
