@@ -3,14 +3,17 @@ Thank you for contributing to ReactVancouver open source projects!
 
 ## Choosing an issue
 
-If you do know what you want to contribute…_
-Create an issue using a template:
+💡 **TIP:** Get feedback from the core maintainers and / or community before jumping into code.
+
+_If you do know what you want to contribute…_
+
+→ Create an issue using a template:
 - Feature: if you want to implement something new.
 - Bug: if you want to fix something broken.
-💡TIP: Get feedback from the core maintainers and / or community before jumping into code.
 
 _If you don’t know what you want to contribute…_
-Look at the open [issues](https://github.com/React-Vancouver/website/issues). If you are just starting out, look for _good first issue_ tags. Comment on the issue to discuss the implementation plan or reach out to core maintainers on Slack.
+
+→ Look at the open [issues](https://github.com/React-Vancouver/website/issues). If you are just starting out, look for _good first issue_ tags. Comment on the issue to discuss the implementation plan or reach out to core maintainers on Slack.
 
 ## Setting Up
 
