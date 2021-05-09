@@ -1,9 +1,9 @@
 # Contributing
-_Thank you for contributing to ReactVancouver open source projects!
+Thank you for contributing to ReactVancouver open source projects!
 
-_## Choosing an issue
+## Choosing an issue
 
-_If you do know what you want to contribute…_
+If you do know what you want to contribute…_
 Create an issue using a template:
 - Feature: if you want to implement something new.
 - Bug: if you want to fix something broken.
@@ -12,8 +12,9 @@ Create an issue using a template:
 _If you don’t know what you want to contribute…_
 Look at the open [issues](https://github.com/React-Vancouver/website/issues). If you are just starting out, look for _good first issue_ tags. Comment on the issue to discuss the implementation plan or reach out to core maintainers on Slack.
 
-## Installation
+## Setting Up
 
+#### 1. Get the code
 You will need `node@14.x` and `npm@6.14.x` installed globally on your machine
 
 ```bash
@@ -22,7 +23,7 @@ cd website/
 yarn
 ```
 
-### Environment Setup
+#### 2. Create environment files
 
 Add `.env.production` and `.env.development` file with your own keys.
 
@@ -33,28 +34,17 @@ $ mv .env.sample .env.development
 
 Ask core maintainers for the keys 🔑.
 
-### Start Development Server
+#### 3. Start Development Server
 
 **Gatsby**
 ```bash
 yarn start
 ```
 
-You can now view `react-vancouver-website` in the browser.⠀
-http://localhost:8000/
-⠀
-View GraphiQL, an in-browser IDE, to explore your site’s data and schema.
-http://localhost:8000/___graphql
+- You can now view `react-vancouver-website` in the browser. http://localhost:8000/
+- View GraphiQL, an in-browser IDE, to explore your site’s data and schema. http://localhost:8000/___graphql
 
-**StoryBook**
-```bash
-yarn storybook
-```
-
-Once you’ve started the development server, open http://localhost:3000 with your browser.
-
-### Start StoryBook
-
+**Storybook**
 ```bash
 yarn storybook
 ```
