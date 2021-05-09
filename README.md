@@ -1,71 +1,43 @@
-# React Vanocuver Website
+# React Vancouver | Website
 
-React Vancouver is one of the biggest tech communities in Vancouver, BC.
+### What is ReactVancouver?
+
+ReactVancouver is a monthly gathering of front end engineers and designers of all levels, from boot camp grads to super senior. Every month, we provide 2~3 short educational and informative talks about React and social time with other developers, recruiters, and tech enthusiasts.
 
 You’re a developer who wants to learn more about React or is looking for a job, a recruiter who wants to find talent, or an entrepreneur who wishes to connect with new people? You’re in the right place.
 
-Live website at: [reactvancouver.com](https://reactvancouver.com/)
-
-This project is currently under development.
+Live website is at [reactvancouver.com](https://reactvancouver.com/). ⚠ This project is currently under development. ⚠
 
 ---
 
-## Getting Started
+### How to contribute?
 
-### Installation
+Running this event every month would not be possible without our generous sponsors, speakers, and volunteers. We welcome any collaborations. For any inquiries please contact us at admin@reactvancouver.com.
 
-You will need `node@14.x` and `npm@6.14.x` installed globally on your machine
+##### Code
 
-```bash
-git clone https://github.com/React-Vancouver/website.git
-cd website/
-yarn  ## npm install
-```
+You can contribute to the project by helping us maintain and improve our website. Our stack is:
 
-### Environment Setup
+- [Gatsby](https://www.gatsbyjs.com/docs/)
+- [Emotion](https://emotion.sh/docs/introduction)
+- [Sanity CMS](https://www.sanity.io/docs/getting-started)
+- [Storybook](https://storybook.js.org/docs/react/get-started/introduction)
 
-Add .env file with your own keys
+Please, help us improve the code quality, accessibility and content! You can find the list of the current needs in the [Issues](https://github.com/React-Vancouver/website/issues) _*or*_ be proactive and find something to fix.
 
-```bash
-$ mv .env.sample .env
-# rename .env.sample to .env.local
-```
+See `CONTRIBUTING.md` for more information on how to gets started with this repository.
 
-Add provided keys
+##### Ops
 
-### Start Development Server
+Running events every month is a lot of work, and if you have time to help out, please reach out. Here are some of the things you could be helping with:
 
-```bash
-yarn dev
-```
+- At event operations
+- Manning the lounge, fireside chats, and promo booths
+- Copywriting
+- Photo / video editing
 
-Once you've started the development server, open http://localhost:3000 with your browser.
+_*Have other ideas? We are open to suggestions!*_
 
-### Start StoryBook
+##### Sponsor
 
-```bash
-yarn storybook
-```
-
----
-
-## Work in progress
-
-We're using Github Projects to keep track of issues in progress and todo's. Here is our
-[Board](https://github.com/orgs/React-Vancouver/projects)
-
-People actively working on this project: @AkimaLunar.
-
-## Contribute
-
-Our commitment to Open Source can be found [here](https://github.com/React-Vancouver/website).
-
-1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device.
-2. Create a new branch `git checkout -b MY_BRANCH_NAME`
-3. Install yarn: `npm install -g yarn`
-4. Install the dependencies: `yarn`
-5. Duplicate `.env.template` and rename it to `.env.local`.
-6. Add proper store values to `.env.local`.
-7. Run `yarn dev` to build and watch for code changes
-8. The development branch is `project/rebrand-2.0` (this is the branch pull requests should be made against).
-   On a release, `project/rebrand-2.0` branch is rebased into `production`.
+Want to share job opportunities at your awesome company? Or show off a dev tool you’ve been working on? Get involved with the community of frontend engineers of all levels. We are always looking for collaborations.
