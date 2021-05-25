@@ -1,4 +1,26 @@
 const alias = require('../config/alias');
+const { merge } = require('webpack-merge');
+const path = require('path');
+const fs = require('fs');
+
+// Fix breaking name change for emotion11
+// Storybook internally is still looking for v10 names to integrate emotion packkages
+// https://stackoverflow.com/questions/65894711/module-not-found-error-cant-resolve-emotion-styled-base-when-running-story
+function getPackageDir(filepath) {
+  let currDir = path.dirname(require.resolve(filepath));
+  while (true) {
+    if (fs.existsSync(path.join(currDir, 'package.json'))) {
+      return currDir;
+    }
+    const { dir, root } = path.parse(currDir);
+    if (dir === root) {
+      throw new Error(
+        `Could not find package.json in the parent directories starting from ${filepath}.`
+      );
+    }
+    currDir = dir;
+  }
+}
 
 module.exports = ({ config }) => {
   // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
@@ -28,7 +50,26 @@ module.exports = ({ config }) => {
   config.resolve.alias = {
     ...config.resolve.alias,
     ...alias,
+    '@emotion/core': getPackageDir('@emotion/react'),
+    '@emotion/styled': getPackageDir('@emotion/styled'),
+    'emotion-theming': getPackageDir('@emotion/react'),
   };
 
   return config;
+};
+
+module.exports = {
+  stories: [
+    '../stories/**/*.stories.mdx',
+    '../components/**/*.stories.@(ts|tsx|mdx)',
+  ],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  webpackFinal: async (config) => {
+    config.resolve.alias = {
+      '@emotion/core': getPackageDir('@emotion/react'),
+      '@emotion/styled': getPackageDir('@emotion/styled'),
+      'emotion-theming': getPackageDir('@emotion/react'),
+    };
+    return config;
+  },
 };
