@@ -27,8 +27,8 @@ const LayoutNav = ({ links, background, onButtonClick, isCollapsing }) => {
     SECONDARY_NAV_BREAKPOINT,
   ]);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
-  const openMobileNav = useCallback(() => setIsMobileNavOpen(true));
-  const closeMobileNav = useCallback(() => setIsMobileNavOpen(false));
+  const openMobileNav = () => setIsMobileNavOpen(true);
+  const closeMobileNav = () => setIsMobileNavOpen(false);
   const { translateX } = useSpring({
     translateX: isMobileNavOpen ? 0 : 100,
     config: {
